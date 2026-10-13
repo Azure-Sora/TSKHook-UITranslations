@@ -73,3 +73,5 @@ dotnet run --project tests/WorkbenchTests -c Release -- .
 ```
 
 `tools/BuildPackage` 的 `--publish` 开关用于显式命令行发布，凭据从进程环境变量 `TSKHOOK_GITHUB_TOKEN` 读取。普通使用建议直接操作工作台。
+
+0.3.1 起，模型无法可靠翻译时可以返回空译文，工作台将该项标记为“需要核对”，同批其余有效结果继续保存。不会因为单项留空反复重试整批。输出仍必须完整包含每个输入的 key/sourceHash/translation，不得添加 status 或省略项目。

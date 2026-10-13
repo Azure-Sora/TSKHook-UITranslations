@@ -81,7 +81,7 @@ public sealed partial class TranslationWorkspace
                     current.Status != original.Status || current.Translation != original.Translation || current.Protected ||
                     current.Status is "reviewed" or "verified" || !translated.TryGetValue(current.Key, out var text)) continue;
                 var next = current.Copy(); next.Translation = text;
-                next.Status = ValidationRules.Check(next).Count == 0 ? "translated" : "needs_review";
+                next.Status = string.IsNullOrWhiteSpace(text) || ValidationRules.Check(next).Count != 0 ? "needs_review" : "translated";
                 changes.Add(next);
             }
             SaveReplacements(changes);

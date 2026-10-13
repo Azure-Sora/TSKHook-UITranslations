@@ -89,6 +89,20 @@ internal static class GroupAndSkillTests
         var badTower = Create(Path.Combine(root, "bad-tower"), floors);
         var badFixture = new ModelFixture(); using var badClient = new HttpClient(badFixture);
         Check(await new TranslationRunner(badClient).RunAsync(badTower, settings, "fixture", false, _ => { }, default) == 0 && badTower.Snapshot().All(x => x.Status == "new"), "missing model placeholder cannot silently create wrong floors");
+        var uncertain = Create(Path.Combine(root, "uncertain"), [Row("sure", "攻撃", "", "new"), Row("unsure", "不明名称", "", "new")]);
+        var uncertainFixture = new ModelFixture { Translate = s => s == "不明名称" ? "" : "攻击" };
+        using var uncertainClient = new HttpClient(uncertainFixture);
+        Check(await new TranslationRunner(uncertainClient).RunAsync(uncertain, settings, "fixture", false, _ => { }, default) == 2 &&
+            uncertain.Snapshot().Single(x => x.Key == "unsure").Status == "needs_review" &&
+            uncertain.Snapshot().Single(x => x.Key == "sure").Translation == "攻击", "uncertain text is quarantined without discarding valid batch results");
+        var uncertainTower = Create(Path.Combine(root, "uncertain-tower"), floors);
+        using var uncertainTowerClient = new HttpClient(new ModelFixture { Translate = _ => "" });
+        Check(await new TranslationRunner(uncertainTowerClient).RunAsync(uncertainTower, settings, "fixture", false, _ => { }, default) == 230 &&
+            uncertainTower.Snapshot().All(x => x.Status == "needs_review" && x.Translation == ""), "empty numbered-template result safely defers all members");
+        var invalidContract = Create(Path.Combine(root, "invalid-contract"), [Row("bad-contract", "攻撃", "", "new")]);
+        using var invalidContractClient = new HttpClient(new ModelFixture { RewriteOutput = text => text.Replace("\"translation\":", "\"status\":\"translated\",\"translation\":") });
+        Check(await new TranslationRunner(invalidContractClient).RunAsync(invalidContract, settings, "fixture", false, _ => { }, default) == 0 &&
+            invalidContract.Snapshot().Single().Status == "new", "legacy status output rejected without modifying data");
         return assertions;
     }
 

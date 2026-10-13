@@ -117,12 +117,18 @@ public sealed class TranslationRunner(HttpClient client)
                           ?? throw new InvalidDataException("模型没有返回文本。");
             if (content.StartsWith("```", StringComparison.Ordinal))
             { var newline = content.IndexOf('\n'); if (newline >= 0 && content.EndsWith("```")) content = content[(newline + 1)..^3].Trim(); }
+            using var contract = JsonDocument.Parse(content);
+            if (contract.RootElement.ValueKind != JsonValueKind.Array || contract.RootElement.EnumerateArray().Any(item =>
+                    item.ValueKind != JsonValueKind.Object || item.EnumerateObject().Count() != 3 ||
+                    new[] { "key", "sourceHash", "translation" }.Any(name => !item.TryGetProperty(name, out var field) || field.ValueKind != JsonValueKind.String)))
+                throw new InvalidDataException("模型输出必须是仅含 key、sourceHash、translation 字符串的数组。");
             var output = JsonData.Read<List<ModelTranslation>>(content);
-            if (output.Count != rows.Length || output.Select(x => x.Key).Distinct().Count() != rows.Length)
+            if (output.Count != rows.Length || output.Select(x => x.Key).Distinct().Count() != rows.Length ||
+                !output.Select(x => x.Key).SequenceEqual(rows.Select(x => x.Key), StringComparer.Ordinal))
                 throw new InvalidDataException("模型返回条数或 key 不一致。");
             var source = rows.ToDictionary(x => x.Key);
             foreach (var row in output)
-                if (!source.TryGetValue(row.Key, out var expected) || row.SourceHash != expected.SourceHash || string.IsNullOrWhiteSpace(row.Translation))
+                if (!source.TryGetValue(row.Key, out var expected) || row.SourceHash != expected.SourceHash)
                     throw new InvalidDataException("模型修改了身份、原文哈希或漏译。");
             json.RootElement.TryGetProperty("usage", out var usage);
             long? Count(string name) => usage.ValueKind == JsonValueKind.Object && usage.TryGetProperty(name, out var value) && value.ValueKind == JsonValueKind.Number && value.TryGetInt64(out var count) ? count : null;
@@ -142,7 +148,7 @@ public sealed class TranslationRunner(HttpClient client)
             if (value.Length > 100000) throw new InvalidDataException("翻译规则文件过大：" + name);
             text.AppendLine(name).AppendLine(value);
         }
-        text.AppendLine("本次接口输出约定优先：只返回 [{\"key\":\"原key\",\"sourceHash\":\"原哈希\",\"translation\":\"译文\"}]。不要返回 status 或其他字段。");
+        text.AppendLine("只返回 [{\"key\":\"原key\",\"sourceHash\":\"原哈希\",\"translation\":\"译文\"}]。不确定的译文使用空字符串；不要返回 status 或其他字段。");
         return text.ToString();
     }
     private sealed class ModelTranslation { public string Key { get; set; } = ""; public string SourceHash { get; set; } = ""; public string Translation { get; set; } = ""; }

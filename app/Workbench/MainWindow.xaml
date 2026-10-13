@@ -4,7 +4,7 @@
     <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="112"/></Grid.RowDefinitions>
     <Border Background="White" Padding="24,18" BorderBrush="#E0E6EF" BorderThickness="0,0,0,1">
       <DockPanel>
-        <Border DockPanel.Dock="Right" Background="#EAF0FF" CornerRadius="12" Padding="12,6" VerticalAlignment="Center"><TextBlock Text="维护者工作台 · 0.3" Foreground="#3459D6"/></Border>
+        <Border DockPanel.Dock="Right" Background="#EAF0FF" CornerRadius="12" Padding="12,6" VerticalAlignment="Center"><TextBlock Text="维护者工作台 · 0.3.1" Foreground="#3459D6"/></Border>
         <StackPanel><TextBlock Text="TSKHook  /  翻译工作台" FontSize="23" FontWeight="SemiBold"/><TextBlock Text="收集新文本，处理需要你判断的内容，再发布给所有玩家。" Margin="0,5,0,0" Foreground="#748098"/></StackPanel>
       </DockPanel>
     </Border>

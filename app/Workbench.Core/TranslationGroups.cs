@@ -12,7 +12,7 @@ public sealed record TranslationGroup(TranslationEntry[] Members, bool HasVarian
             return row;
         }
     }
-    public string Expand(string text, TranslationEntry member) => Template == null ? text : NumberedNames.Expand(text, member);
+    public string Expand(string text, TranslationEntry member) => string.IsNullOrWhiteSpace(text) ? "" : Template == null ? text : NumberedNames.Expand(text, member);
 }
 
 public static class TranslationGroups
