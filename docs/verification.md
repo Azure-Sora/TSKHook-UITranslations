@@ -8,6 +8,9 @@
 - 模型测试使用本地 HTTP 替身，没有真实模型 API 调用或费用。
 - 技能纯文本生成器自检通过。
 - 自包含 Windows x64 程序成功启动，加载 46,042 条，默认显示 628 条；三个页面已渲染并检查，DPAPI 加解密往返验证通过。
+- 首次源码推送 `6566ceb` 的 [GitHub Actions](https://github.com/Azure-Sora/TSKHook-UITranslations/actions/runs/38346866207) 已成功，包括工作台测试、WPF 构建与运行文件编译。
+- 使用工作台共享 ReleasePublisher 实际发布 [translations-2026.10.13.1](https://github.com/Azure-Sora/TSKHook-UITranslations/releases/tag/translations-2026.10.13.1)：草稿创建、三个附件上传、正式发布均完成。它只包含迁移基线，未重新调用模型。
+- 插件的真实 HttpClient 从公开 latest 通道下载该包，通过大小、SHA-256、JSONL、45,414 条记录校验，再次检查返回无需切换。没有将该测试包安装到游戏目录。
 
 ## 待实测
 
