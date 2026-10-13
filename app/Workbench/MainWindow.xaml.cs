@@ -23,6 +23,7 @@ public partial class MainWindow : Window
     private CancellationTokenSource? translationCancellation;
     private List<RowView> allRows = [];
     private TranslationEntry? selected;
+    private TranslationEntry[] selectedMembers = [];
     private PackageResult? package;
     private bool ready, binding, refreshing, dirty, busy, scanning, publishing;
     private int refreshVersion;
@@ -121,13 +122,19 @@ public partial class MainWindow : Window
         if (workspace == null) return;
         var version = ++refreshVersion;
         var current = workspace;
-        var views = await Task.Run(() => current.Snapshot().Select(x => new RowView(x, ValidationRules.Check(x))).ToList());
+        var merge = MergeDuplicates.IsChecked == true;
+        var views = await Task.Run(() => TranslationGroups.Create(current.Snapshot(), merge).Select(g =>
+        {
+            var problems = ValidationRules.Check(g.Representative);
+            if (g.HasVariants) problems.Add(new(g.Representative.Key, "translation_variants", "相同原文存在不同译文，请按位置核对；不会自动覆盖或复用。", false));
+            return new RowView(g.Representative, problems, g.Members);
+        }).ToList());
         if (version != refreshVersion || lifetime.IsCancellationRequested) return;
         allRows = views;
-        AllCount.Text = views.Count.ToString("N0");
+        AllCount.Text = views.Sum(x => x.Members.Length).ToString("N0");
         PendingCount.Text = views.Count(x => x.Data.Status is "new" or "stale").ToString("N0");
         ReviewCount.Text = views.Count(x => x.Problems.Count > 0 || x.Data.Status is "needs_review" or "conflict").ToString("N0");
-        ReadyCount.Text = views.Count(x => x.Data.Status is "translated" or "reviewed" or "verified" && !string.IsNullOrWhiteSpace(x.Data.Translation)).ToString("N0");
+        ReadyCount.Text = views.Where(x => x.Data.Status is "translated" or "reviewed" or "verified" && !string.IsNullOrWhiteSpace(x.Data.Translation)).Sum(x => x.Members.Length).ToString("N0");
         ApplyFilter();
     }
 
@@ -144,14 +151,14 @@ public partial class MainWindow : Window
         };
         var query = Search.Text.Trim();
         if (query.Length > 0) filtered = filtered.Where(x => x.Data.Source.Contains(query, StringComparison.OrdinalIgnoreCase) ||
-            x.Data.Translation.Contains(query, StringComparison.OrdinalIgnoreCase) || x.Data.Key.Contains(query, StringComparison.OrdinalIgnoreCase));
+            x.Data.Translation.Contains(query, StringComparison.OrdinalIgnoreCase) || x.Members.Any(m => m.Key.Contains(query, StringComparison.OrdinalIgnoreCase)));
         var matches = filtered.OrderBy(x => x.Data.Key, StringComparer.Ordinal).ToArray();
         var shown = matches.Take(1000).ToList();
         refreshing = true;
         Rows.ItemsSource = shown;
         Rows.SelectedItem = shown.FirstOrDefault(x => x.Data.Key == selected?.Key) ?? (dirty ? null : shown.FirstOrDefault());
         refreshing = false;
-        ResultCount.Text = matches.Length > 1000 ? $"{matches.Length:N0} 条 · 显示前 1,000 条" : $"{matches.Length:N0} 条";
+        ResultCount.Text = $"{matches.Length:N0} 组 / {matches.Sum(x => x.Members.Length):N0} 个位置" + (matches.Length > 1000 ? " · 前 1,000 组" : "");
         if (!dirty && Rows.SelectedItem is RowView row) BindEntry(row);
         else if (!dirty && selected != null && Rows.SelectedItem == null) { selected = null; BindEmpty(); }
     }
@@ -159,9 +166,11 @@ public partial class MainWindow : Window
     private void BindEntry(RowView row)
     {
         binding = true; selected = row.Data.Copy();
+        selectedMembers = row.Members.Select(x => x.Copy()).ToArray();
         Original.Text = row.Data.Source; EditedTranslation.Text = row.Data.Translation;
-        EntryInfo.Text = row.Data.Key + "\n" + (row.Problems.Count == 0 ? string.Join(" · ", row.Data.Origins.Take(2)) : string.Join("；", row.Problems.Select(x => x.Message)));
-        EntryInfo.ToolTip = EntryInfo.Text; Original.ToolTip = string.Join("\n", row.Data.Origins);
+        EntryInfo.Text = $"本组 {row.Members.Length:N0} 个位置；保存审校 / 排除应用于整组。\n" + row.Data.Key + "\n" +
+            (row.Problems.Count == 0 ? string.Join(" · ", row.Data.Origins.Take(2)) : string.Join("；", row.Problems.Select(x => x.Message)));
+        EntryInfo.ToolTip = EntryInfo.Text; Original.ToolTip = string.Join("\n", row.Members.Take(30).Select(x => x.Key + "\n" + string.Join(" · ", x.Origins)));
         dirty = false; binding = false;
     }
     private void BindEmpty() { binding = true; Original.Clear(); EditedTranslation.Clear(); EntryInfo.Text = "选择一条文本查看原文、上下文与译文。"; binding = false; }
@@ -175,23 +184,29 @@ public partial class MainWindow : Window
     private void Editor_Changed(object sender, TextChangedEventArgs e) { if (!binding && selected != null) dirty = true; }
     private void Filter_Changed(object sender, SelectionChangedEventArgs e) => ApplyFilter();
     private void Search_Changed(object sender, TextChangedEventArgs e) => ApplyFilter();
+    private async void Merge_Changed(object sender, RoutedEventArgs e)
+    {
+        if (dirty) { MergeDuplicates.IsChecked = MergeDuplicates.IsChecked != true; Log("请先保存当前修订再切换合并视图。"); return; }
+        await RefreshView();
+    }
 
     private async void SaveEntry_Click(object sender, RoutedEventArgs e) => await Perform(async () =>
     {
         if (workspace == null || selected == null) return;
-        var row = selected; var text = EditedTranslation.Text;
-        await Task.Run(() => workspace.Edit(row.Key, row.SourceHash, text, "reviewed"));
-        dirty = false; await RefreshView(); Log("已保存人工审校：" + row.Key);
+        var members = selectedMembers; var text = EditedTranslation.Text;
+        var count = await Task.Run(() => workspace.EditGroup(members, text, "reviewed"));
+        dirty = false; await RefreshView(); Log($"已保存人工审校，覆盖 {count:N0} 个位置。");
     });
     private async void Exclude_Click(object sender, RoutedEventArgs e) => await Perform(async () =>
     {
         if (workspace == null || selected == null) return;
-        var row = selected; await Task.Run(() => workspace.Edit(row.Key, row.SourceHash, row.Source, "excluded"));
+        var row = selected; var members = selectedMembers; await Task.Run(() => workspace.EditGroup(members, row.Source, "excluded"));
         dirty = false; await RefreshView(); Log("已排除此条翻译。");
     });
     private async void VerifyEntry_Click(object sender, RoutedEventArgs e) => await Perform(async () =>
     {
         if (workspace == null || selected == null) return;
+        if (selectedMembers.Length > 1) throw new InvalidOperationException("实机确认按实际位置记录，请先取消“合并重复原文”再选择已验证的位置。");
         if (string.IsNullOrWhiteSpace(EditedTranslation.Text)) throw new InvalidOperationException("译文不能为空。");
         var row = selected; var text = EditedTranslation.Text;
         await Task.Run(() => workspace.Edit(row.Key, row.SourceHash, text, "verified"));
@@ -265,6 +280,22 @@ public partial class MainWindow : Window
     private async void Retry_Click(object sender, RoutedEventArgs e) { try { await RunTranslation(true); } catch (Exception ex) { Log(ex.Message); } }
     private void Pause_Click(object sender, RoutedEventArgs e) { AutoTranslate.IsChecked = false; translationCancellation?.Cancel(); }
     private async void Import_Click(object sender, RoutedEventArgs e) => await Perform(() => ImportCaptured(true));
+    private async void Reuse_Click(object sender, RoutedEventArgs e) => await Perform(async () =>
+    {
+        if (workspace == null) return;
+        if (dirty || translationCancellation != null) throw new InvalidOperationException("请先保存修订并暂停翻译。");
+        var count = await Task.Run(() => workspace.ReuseTranslations());
+        await RefreshView(); Log($"复用已有一致译文，覆盖 {count:N0} 个位置；不产生模型用量。");
+    });
+    private async void GenerateSkills_Click(object sender, RoutedEventArgs e) => await Perform(GenerateSkills);
+    private async Task GenerateSkills()
+    {
+        if (workspace == null) throw new InvalidOperationException("先加载工作目录。");
+        if (dirty || translationCancellation != null) throw new InvalidOperationException("请先保存修订并暂停翻译。");
+        var result = await Task.Run(() => workspace.GenerateSkillPlainText());
+        await RefreshView();
+        Log($"技能正式文本：新增 {result.Generated}，同步 {result.Updated}，已有 {result.Existing}，译文分歧 {result.Ambiguous} 组。仅移除 color 标签，不推算数值。");
+    }
     private async void Reload_Click(object sender, RoutedEventArgs e) => await Perform(ReloadWorkspace);
 
     private async void SaveSettings_Click(object sender, RoutedEventArgs e) => await Perform(async () =>
@@ -291,6 +322,7 @@ public partial class MainWindow : Window
         if (translationCancellation != null) throw new InvalidOperationException("请先暂停翻译再编译或发布。");
         if (dirty) throw new InvalidOperationException("当前修订尚未保存，请先保存或放弃。");
         var version = Version.Text.Trim(); var repository = Repository.Text.Trim();
+        await GenerateSkills();
         package = await Task.Run(() => workspace.BuildPackage(version, repository));
         PackageSummary.Text = $"版本：{package.Manifest.Version}\n译文：{package.Manifest.Entries:N0} 条\n大小：{package.Manifest.Size:N0} 字节\nSHA-256：{package.Manifest.Sha256}\n\n结构校验通过。需核对警告：{package.Compilation.Issues.Count:N0} 条（包括迁移前已有问题）\n" +
             string.Join("\n", package.Compilation.Issues.Take(30).Select(x => x.Key + " — " + x.Message)) + $"\n\n完整报告：{Path.Combine(package.Directory, "validation.json")}\n包目录：{package.Directory}";
@@ -350,8 +382,10 @@ public partial class MainWindow : Window
                 if (File.Exists(Path.Combine(directory.FullName, "translations/ui/source/ui_source.jsonl"))) return directory.FullName;
         return "";
     }
-    private sealed class RowView(TranslationEntry data, List<ValidationIssue> problems)
+    private sealed class RowView(TranslationEntry data, List<ValidationIssue> problems, TranslationEntry[] members)
     {
+        public TranslationEntry[] Members { get; } = members;
+        public int PositionCount => Members.Length;
         public TranslationEntry Data { get; } = data;
         public List<ValidationIssue> Problems { get; } = problems;
         public string Category => Data.Category;

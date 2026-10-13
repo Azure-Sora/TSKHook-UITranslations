@@ -17,4 +17,5 @@ jobs:
           dotnet-version: '10.0.x'
       - run: dotnet run --project tests/WorkbenchTests -c Release -- .
       - run: dotnet build app/Workbench -c Release
+      - run: dotnet run --project tools/GenerateSkillPlainText -c Release -- --self-test
       - run: dotnet run --project tools/CompileUiRuntime -c Release -- . .local/ci/ui_translations.jsonl

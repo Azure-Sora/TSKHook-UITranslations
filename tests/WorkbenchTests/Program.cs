@@ -79,6 +79,7 @@ try
         }
         else Check(result.Entries > 0, "current translation workspace compiles after baseline evolves");
     }
+    tests += await GroupAndSkillTests.Run(root);
     Console.WriteLine($"PASS: {tests} workbench assertions; model and HTTP use fixtures, no live API calls");
 }
 finally { Directory.Delete(root, true); }
@@ -88,10 +89,14 @@ string Capture(int id, string text) => JsonData.Write(new CaptureRecord { Schema
 sealed class ModelFixture : HttpMessageHandler
 {
     public HttpStatusCode Status { get; set; } = HttpStatusCode.OK;
+    public int RowsReceived;
+    public Action? BeforeResponse;
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
         using var requestJson = JsonDocument.Parse(await request.Content!.ReadAsStringAsync(cancellationToken));
         var rows = JsonData.Read<List<TranslationEntry>>(requestJson.RootElement.GetProperty("messages")[1].GetProperty("content").GetString()!);
+        RowsReceived += rows.Count;
+        BeforeResponse?.Invoke();
         var translated = JsonData.Write(rows.Select(x => new { x.Key, x.SourceHash, translation = "测试译文" }));
         return new HttpResponseMessage(Status) { RequestMessage = request, Content = new StringContent(JsonData.Write(new
         { choices = new[] { new { message = new { content = translated } } }, usage = new { prompt_tokens = 100, completion_tokens = 20, total_tokens = 120 } }), Encoding.UTF8, "application/json") };

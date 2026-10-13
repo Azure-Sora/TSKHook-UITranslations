@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace TSKHook.Workbench;
 
-public sealed class TranslationWorkspace
+public sealed partial class TranslationWorkspace
 {
     private readonly object gate = new();
     private Dictionary<string, TranslationEntry> entries = new(StringComparer.Ordinal);
@@ -124,10 +124,9 @@ public sealed class TranslationWorkspace
                 captured.Add((row, UiTextKeyBuilder.Build(row.ApiName, row.Path, row.Source, row.SourceHash, row.Context)));
             }
             var working = entries.ToDictionary(x => x.Key, x => x.Value.Copy(), StringComparer.Ordinal);
-            var reusable = entries.Values.Where(x => x.Status is "reviewed" or "verified")
-                .Where(x => UiJsonTranslator.Sha256(x.Source) == x.SourceHash)
-                .GroupBy(x => x.Category + "\0" + x.Field + "\0" + x.SourceHash)
-                .Where(g => g.Select(x => x.Translation).Distinct().Count() == 1 && !string.IsNullOrWhiteSpace(g.First().Translation))
+            var reusable = entries.Values.Where(TranslationGroups.IsReady)
+                .GroupBy(TranslationGroups.ContentKey)
+                .Where(g => g.Select(x => x.Translation).Distinct().Count() == 1 && g.All(x => ValidationRules.Check(x).Count == 0))
                 .ToDictionary(g => g.Key, g => g.First().Translation);
             int added = 0, changed = 0, reused = 0, conflicts = 0;
             foreach (var group in captured.GroupBy(x => x.Key.Key))
@@ -152,7 +151,7 @@ public sealed class TranslationWorkspace
                     else added++;
                     if (variants.Length > 1) { next.Status = "conflict"; conflicts++; }
                     else if (next.Protected) next.Status = "excluded";
-                    else if (old == null && reusable.TryGetValue(next.Category + "\0" + next.Field + "\0" + next.SourceHash, out var reusedText))
+                    else if (old == null && reusable.TryGetValue(TranslationGroups.ContentKey(next), out var reusedText))
                     { next.Translation = reusedText; next.Status = "translated"; reused++; }
                     working[identity] = next;
                 }

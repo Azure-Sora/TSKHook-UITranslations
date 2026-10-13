@@ -22,9 +22,16 @@ public sealed class TranslationRunner(HttpClient client)
         var previous = !retryFailures && File.Exists(failuresPath)
             ? JsonData.Read<Dictionary<string, string>>(File.ReadAllText(failuresPath)) : [];
         var failures = new ConcurrentDictionary<string, string>(previous);
-        var candidates = workspace.Snapshot().Where(x => !x.Protected && x.Status is "new" or "stale")
+        var reused = workspace.ReuseTranslations();
+        if (reused > 0) progress($"复用已有一致译文：{reused:N0} 个位置（不调用模型）。");
+        var groups = TranslationGroups.Create(workspace.Snapshot());
+        var candidates = groups.Where(g => !g.HasVariants && !g.Members.Any(x => failures.ContainsKey(Identity(x)))).Select(g => g.Representative)
+            .Where(x => !x.Protected && x.Status is "new" or "stale")
             .Where(x => UiJsonTranslator.Sha256(x.Source) == x.SourceHash)
             .Where(x => !failures.ContainsKey(Identity(x))).OrderBy(x => x.Category).ThenBy(x => x.Key, StringComparer.Ordinal).ToArray();
+        var members = groups.ToDictionary(g => g.Representative.Key, g => g.Members);
+        var targetCount = candidates.Sum(x => members[x.Key].Length);
+        progress($"本轮 {candidates.Length:N0} 个翻译任务，覆盖 {targetCount:N0} 个位置；有译文分歧的原文留待人工核对。");
         var system = BuildInstructions(workspace.Root);
         var saved = 0;
         var writeGate = new object();
@@ -41,24 +48,27 @@ public sealed class TranslationRunner(HttpClient client)
                     { await Task.Delay(TimeSpan.FromSeconds(2 * (attempt + 1)), cancellation); }
                 }
                 cancellation.ThrowIfCancellationRequested();
-                var applied = workspace.ApplyMachineResults(batch, translated!.Translations);
+                var originals = batch.SelectMany(x => members[x.Key]).ToArray();
+                var expanded = batch.SelectMany(x => members[x.Key].Select(m => new KeyValuePair<string, string>(m.Key, translated!.Translations[x.Key])))
+                    .ToDictionary(x => x.Key, x => x.Value);
+                var applied = workspace.ApplyMachineResults(originals, expanded);
                 Interlocked.Add(ref saved, applied);
                 lock (writeGate)
                 {
                     var usagePath = Path.Combine(workspace.Root, ".local/model-usage.jsonl");
                     Directory.CreateDirectory(Path.GetDirectoryName(usagePath)!);
                     File.AppendAllText(usagePath, JsonData.Write(new { time = DateTime.UtcNow, settings.Model, batch = batch.Length,
-                        promptTokens = translated.InputTokens, completionTokens = translated.OutputTokens, totalTokens = translated.TotalTokens }) + Environment.NewLine);
+                        promptTokens = translated!.InputTokens, completionTokens = translated.OutputTokens, totalTokens = translated.TotalTokens }) + Environment.NewLine);
                 }
-                foreach (var row in batch) failures.TryRemove(Identity(row), out _);
-                progress($"已保存 {Volatile.Read(ref saved)}/{candidates.Length} 条；结构异常译文已转入待审。");
+                foreach (var row in originals) failures.TryRemove(Identity(row), out _);
+                progress($"已保存 {Volatile.Read(ref saved)}/{targetCount} 个位置；结构异常译文已转入待审。");
                 if (translated.TotalTokens != null) progress($"本批用量：输入 {translated.InputTokens?.ToString() ?? "未知"}，输出 {translated.OutputTokens?.ToString() ?? "未知"}，合计 {translated.TotalTokens} tokens。");
             }
             catch (OperationCanceledException) when (cancellation.IsCancellationRequested) { throw; }
             catch (Exception e)
             {
                 // Never persist provider bodies, request headers or secrets.
-                foreach (var row in batch) failures[Identity(row)] = e is ModelHttpException h ? "HTTP " + h.StatusCode : e.GetType().Name;
+                foreach (var row in batch.SelectMany(x => members[x.Key])) failures[Identity(row)] = e is ModelHttpException h ? "HTTP " + h.StatusCode : e.GetType().Name;
                 progress($"本批 {batch.Length} 条未完成，已保留到重试列表（{(e is ModelHttpException http ? "HTTP " + http.StatusCode : e.GetType().Name)}）。");
             }
             finally
