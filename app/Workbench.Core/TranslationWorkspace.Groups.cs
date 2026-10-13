@@ -5,6 +5,8 @@ public sealed partial class TranslationWorkspace
     public int EditGroup(IReadOnlyList<TranslationEntry> originals, string translation, string status)
     {
         if (originals.Count == 0) return 0;
+        if (originals.Any(ReviewQueue.IsCaptureConflict)) throw new InvalidOperationException("捕获冲突请在“问题与冲突”中处理，不能直接标为审校通过。");
+        if (status == "reviewed" && string.IsNullOrWhiteSpace(translation)) throw new InvalidOperationException("译文不能为空；不翻译请明确排除。");
         if (status is not ("reviewed" or "excluded")) throw new ArgumentException("组操作只支持审校或排除；实机验证按单个位置记录。");
         lock (gate)
         {

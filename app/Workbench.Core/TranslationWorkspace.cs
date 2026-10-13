@@ -39,6 +39,8 @@ public sealed partial class TranslationWorkspace
                             throw new InvalidDataException("分类归属与源文件不一致：" + row.Key);
                         master.Translation = row.Translation;
                         master.Status = row.Status;
+                        master.CaptureConflictExcluded = row.CaptureConflictExcluded;
+                        master.ModelReview = row.ModelReview;
                     }
             if (loaded.Count != seen.Count) throw new InvalidDataException("分类译文文件不完整；请恢复缺失条目后再加载，避免使用旧主文件覆盖人工译文。");
             entries = loaded;
@@ -59,6 +61,8 @@ public sealed partial class TranslationWorkspace
         {
             EnsureUnchanged();
             var row = entries[key];
+            if (ReviewQueue.IsCaptureConflict(row)) throw new InvalidOperationException("捕获冲突请先在冲突详情中处理。");
+            if (status is "reviewed" or "verified" && string.IsNullOrWhiteSpace(translation)) throw new InvalidOperationException("译文不能为空。");
             if (row.SourceHash != sourceHash) throw new InvalidOperationException("原文已变化，请刷新后再编辑。");
             if (row.Protected && translation != row.Source && !string.IsNullOrEmpty(translation))
                 throw new InvalidOperationException("受保护字段只能保留原文。");
@@ -80,7 +84,7 @@ public sealed partial class TranslationWorkspace
                 if (!entries.TryGetValue(original.Key, out var current) || current.SourceHash != original.SourceHash ||
                     current.Status != original.Status || current.Translation != original.Translation || current.Protected ||
                     current.Status is "reviewed" or "verified" || !translated.TryGetValue(current.Key, out var text)) continue;
-                var next = current.Copy(); next.Translation = text;
+                var next = current.Copy(); next.Translation = text; next.ModelReview = null;
                 next.Status = string.IsNullOrWhiteSpace(text) || ValidationRules.Check(next).Count != 0 ? "needs_review" : "translated";
                 changes.Add(next);
             }
@@ -201,18 +205,18 @@ public sealed partial class TranslationWorkspace
         var directory = Path.Combine(Root, ".local/packages", version);
         var result = Compile(Path.Combine(directory, "ui_translations.jsonl"));
         using var stream = File.OpenRead(result.AssetPath);
-        var manifest = new TranslationManifest { Version = version, Size = stream.Length, Entries = result.Entries,
+        var manifest = new TranslationManifest { Version = version, MinimumPluginVersion = "1.4.3", Size = stream.Length, Entries = result.Entries,
             Sha256 = Convert.ToHexString(SHA256.HashData(stream)).ToLowerInvariant(),
             DownloadUrl = $"https://github.com/{repository}/releases/download/translations-{version}/ui_translations.jsonl" };
         AtomicData.Write(Path.Combine(directory, "manifest.json"), JsonData.Write(manifest));
         return new(directory, manifest, result);
     }
 
-    private void SaveReplacements(List<TranslationEntry> changes)
+    private void SaveReplacements(List<TranslationEntry> changes, Dictionary<string, string>? additionalFiles = null)
     {
         if (changes.Count == 0) return;
         var replacement = changes.ToDictionary(x => x.Key);
-        var files = new Dictionary<string, string>();
+        var files = additionalFiles ?? new Dictionary<string, string>();
         foreach (var category in changes.Select(x => x.Category).Distinct())
             files["translations/ui/source/by_category/" + category + ".jsonl"] = Lines(entries.Values.Where(x => x.Category == category)
                 .Select(x => replacement.GetValueOrDefault(x.Key, x)).OrderBy(x => x.Key, StringComparer.Ordinal));

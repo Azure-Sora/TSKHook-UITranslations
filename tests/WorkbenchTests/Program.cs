@@ -47,15 +47,35 @@ try
     Check(package.Manifest.Entries == 2, "workbench package accepted by plugin verifier");
     using var modelClient = new HttpClient(new ModelFixture());
     var runner = new TranslationRunner(modelClient);
-    var saved = await runner.RunAsync(workspace, new ModelSettings { Endpoint = "https://fixture/chat", Model = "fixture", Concurrency = 1 }, "fixture-not-a-secret", false, _ => { }, default);
+    var states = new List<TranslationProgress>();
+    var saved = await runner.RunAsync(workspace, new ModelSettings { Endpoint = "https://fixture/chat", Model = "fixture", Concurrency = 1 }, "fixture-not-a-secret", false, _ => { }, default, states.Add);
+    Check(states.Any(x => x.ActiveBatches == 1 && x.CompletedTasks == 0), "progress reports waiting before response");
+    Check(states[^1] is { TotalTasks: 1, CompletedTasks: 1, CompletedBatches: 1, ActiveBatches: 0, SavedPositions: 1, FailedTasks: 0 }, "completion progress matches persisted positions");
     Check(saved == 1 && workspace.Snapshot().Single(x => x.Key == stale.Key).Status == "translated", "model protocol end-to-end translates only eligible rows");
     Check(File.ReadAllText(Path.Combine(root, ".local/model-usage.jsonl")).Contains("\"promptTokens\":100"), "provider-reported usage recorded separately");
     File.AppendAllText(capture, Capture(6, "星") + "\n"); workspace.ImportCapture(capture);
     using var denied = new HttpClient(new ModelFixture { Status = HttpStatusCode.Unauthorized });
     var deniedRunner = new TranslationRunner(denied);
-    Check(await deniedRunner.RunAsync(workspace, new ModelSettings { Endpoint = "https://fixture/chat", Model = "fixture" }, "fixture", false, _ => { }, default) == 0, "provider rejection preserves untranslated text");
+    states.Clear();
+    Check(await deniedRunner.RunAsync(workspace, new ModelSettings { Endpoint = "https://fixture/chat", Model = "fixture" }, "fixture", false, _ => { }, default, states.Add) == 0, "provider rejection preserves untranslated text");
+    Check(states[^1] is { CompletedTasks: 1, FailedTasks: 1, SavedPositions: 0, ActiveBatches: 0 }, "failure completes processing but does not claim saved translation");
     Check(File.ReadAllText(Path.Combine(root, ".local/translation-failures.json")).Contains("HTTP 401"), "failed queue persisted without response body");
-    Check(await runner.RunAsync(workspace, new ModelSettings { Endpoint = "https://fixture/chat", Model = "fixture" }, "fixture", false, _ => { }, default) == 0, "automatic run does not repeatedly bill failed rows");
+    states.Clear();
+    Check(await runner.RunAsync(workspace, new ModelSettings { Endpoint = "https://fixture/chat", Model = "fixture" }, "fixture", false, _ => { }, default, states.Add) == 0, "automatic run does not repeatedly bill failed rows");
+    Check(states.Single().TotalTasks == 0, "empty queue reports explicit zero without model request");
+    using var cancel = new CancellationTokenSource();
+    states.Clear();
+    var cancelled = false;
+    try { await runner.RunAsync(workspace, new ModelSettings { Endpoint = "https://fixture/chat", Model = "fixture" }, "fixture", true, _ => { }, cancel.Token,
+        state => { states.Add(state); if (state.ActiveBatches > 0) cancel.Cancel(); }); }
+    catch (OperationCanceledException) { cancelled = true; }
+    Check(cancelled && states[^1] is { CompletedTasks: 0, ActiveBatches: 0, FailedTasks: 0 }, "cancellation clears in-flight progress without counting failure or completion");
+    var attempt = 0;
+    using var retryClient = new HttpClient(new ModelFixture { RewriteOutput = text => ++attempt == 1 ? "invalid json" : text });
+    states.Clear();
+    await new TranslationRunner(retryClient).RunAsync(workspace, new ModelSettings { Endpoint = "https://fixture/chat", Model = "fixture" }, "fixture", true, _ => { }, default, states.Add);
+    Check(attempt == 2 && states.Any(x => x.Message.Contains("秒后重试")) && states[^1].CompletedTasks == 1, "retry is visible and tasks are counted only once");
+    File.AppendAllText(capture, Capture(7, "月") + "\n"); workspace.ImportCapture(capture);
     Check(await runner.RunAsync(workspace, new ModelSettings { Endpoint = "https://fixture/chat", Model = "fixture" }, "fixture", true, _ => { }, default) == 1, "explicit retry resumes failed work");
     var category = Directory.GetFiles(workspace.CategoryDirectory).First();
     File.AppendAllText(category, "\n");
@@ -80,6 +100,11 @@ try
         else Check(result.Entries > 0, "current translation workspace compiles after baseline evolves");
     }
     tests += await GroupAndSkillTests.Run(root);
+    tests += await ReviewTests.Run(root);
+    tests += IdentityRepairTests.Run(root);
+    tests += await ModelReviewTests.Run(root);
+    tests += await ModelTransportTests.Run(root);
+    tests += await ModelReviewProtocolTests.Run(root);
     Console.WriteLine($"PASS: {tests} workbench assertions; model and HTTP use fixtures, no live API calls");
 }
 finally { Directory.Delete(root, true); }

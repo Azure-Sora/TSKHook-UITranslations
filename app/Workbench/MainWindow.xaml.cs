@@ -14,14 +14,20 @@ namespace TSKHook.Workbench.Desktop;
 public partial class MainWindow : Window
 {
     private readonly string[] arguments;
-    private readonly HttpClient modelClient = new(new HttpClientHandler { AllowAutoRedirect = false }) { Timeout = TimeSpan.FromMinutes(3) };
+    private readonly HttpClient modelClient = ModelCompletionClient.CreateHttpClient();
     private readonly HttpClient githubClient = new() { Timeout = TimeSpan.FromMinutes(5) };
     private readonly DispatcherTimer timer = new() { Interval = TimeSpan.FromSeconds(5) };
+    private readonly DispatcherTimer translationTimer = new() { Interval = TimeSpan.FromSeconds(1) };
+    private readonly Stopwatch translationWatch = new();
+    private TranslationProgress? translationProgress;
     private readonly CancellationTokenSource lifetime = new();
     private LocalSettings settings = new();
     private TranslationWorkspace? workspace;
     private CancellationTokenSource? translationCancellation;
     private List<RowView> allRows = [];
+    private Dictionary<string, TranslationEntry[]> relatedByContent = [];
+    private Dictionary<string, TranslationEntry[]> relatedByConflict = [];
+    private TranslationEntry[] relatedMembers = [], conflictMembers = [];
     private TranslationEntry? selected;
     private TranslationEntry[] selectedMembers = [];
     private PackageResult? package;
@@ -37,6 +43,7 @@ public partial class MainWindow : Window
         Loaded += async (_, _) => await InitializeAsync();
         Closing += OnClosing;
         timer.Tick += async (_, _) => await AutomaticTick();
+        translationTimer.Tick += (_, _) => TranslationElapsed.Text = $"已用时 {translationWatch.Elapsed:hh\\:mm\\:ss}";
     }
 
     private async Task InitializeAsync()
@@ -49,15 +56,11 @@ public partial class MainWindow : Window
             if (index >= 0 && index + 1 < arguments.Length) settings.Workspace = arguments[index + 1];
             if (string.IsNullOrWhiteSpace(settings.Workspace)) settings.Workspace = FindWorkspace();
             WorkspacePath.Text = settings.Workspace; GamePath.Text = settings.GameDirectory; CapturePath.Text = settings.CaptureDirectory;
-            Repository.Text = settings.Repository; Endpoint.Text = settings.Model.Endpoint; ModelName.Text = settings.Model.Model;
+            Repository.Text = settings.Repository;
             BatchSize.Text = settings.Model.BatchSize.ToString(); Concurrency.Text = settings.Model.Concurrency.ToString(); MaxTokens.Text = settings.Model.MaxOutputTokens.ToString();
             AutoImport.IsChecked = settings.AutoImport; AutoTranslate.IsChecked = !smoke && settings.AutoTranslate;
             Version.Text = DateTime.Now.ToString("yyyy.MM.dd") + ".1";
-            if (!smoke)
-            {
-                try { var secrets = LocalSecrets.Load(); ModelKey.Password = secrets.GetValueOrDefault("model", ""); GitHubToken.Password = secrets.GetValueOrDefault("github", ""); }
-                catch { Log("本机凭据无法解密，请重新输入并保存。原凭据文件未改动。"); }
-            }
+            InitializeProviders(smoke);
             ready = true;
             if (Directory.Exists(settings.Workspace)) await ReloadWorkspace();
             else Log("先在“模型与路径”中选择翻译仓库目录。");
@@ -65,7 +68,16 @@ public partial class MainWindow : Window
             {
                 var searchIndex = Array.IndexOf(arguments, "--smoke-search");
                 if (searchIndex >= 0 && searchIndex + 1 < arguments.Length) Search.Text = arguments[searchIndex + 1];
+                var filterIndex = Array.IndexOf(arguments, "--smoke-filter");
+                if (filterIndex >= 0 && filterIndex + 1 < arguments.Length) Filter.SelectedIndex = int.Parse(arguments[filterIndex + 1]);
                 LocalSecrets.SelfTest();
+                VerifyProviderBindingsForSmoke();
+                if (arguments.Contains("--smoke-progress"))
+                {
+                    ShowTranslationProgress(new(480, 96, 20, 4, 2, 325, 24, "第 6/20 批：等待模型回复（24 个任务）。"));
+                    TranslationElapsed.Text = "已用时 00:02:15";
+                    TranslateButton.IsEnabled = RetryButton.IsEnabled = false; PauseButton.IsEnabled = true;
+                }
                 await Dispatcher.InvokeAsync(() => { }, DispatcherPriority.ApplicationIdle);
                 var outputIndex = Array.IndexOf(arguments, "--smoke");
                 var output = outputIndex + 1 < arguments.Length ? arguments[outputIndex + 1] : Path.Combine(settings.Workspace, ".local/workbench.png");
@@ -75,6 +87,17 @@ public partial class MainWindow : Window
                 bitmap.Render(visual);
                 var encoder = new PngBitmapEncoder(); encoder.Frames.Add(BitmapFrame.Create(bitmap));
                 using (var file = File.Create(output)) encoder.Save(file);
+                for (var reviewTab = 1; reviewTab < ReviewTabs.Items.Count; reviewTab++)
+                {
+                    ReviewTabs.SelectedIndex = reviewTab;
+                    if (reviewTab == 1 && CandidateList.Items.Count > 0) CandidateList.SelectedIndex = 0;
+                    await Dispatcher.InvokeAsync(() => { UpdateLayout(); }, DispatcherPriority.ApplicationIdle);
+                    await Task.Delay(120);
+                    var reviewBitmap = new RenderTargetBitmap((int)visual.ActualWidth, (int)visual.ActualHeight, 96, 96, PixelFormats.Pbgra32);
+                    reviewBitmap.Render(visual);
+                    var reviewEncoder = new PngBitmapEncoder(); reviewEncoder.Frames.Add(BitmapFrame.Create(reviewBitmap));
+                    using var reviewFile = File.Create(Path.ChangeExtension(output, $"review-{reviewTab}.png")); reviewEncoder.Save(reviewFile);
+                }
                 for (var tab = 1; tab < Pages.Items.Count; tab++)
                 {
                     Pages.SelectedIndex = tab;
@@ -125,19 +148,24 @@ public partial class MainWindow : Window
         var version = ++refreshVersion;
         var current = workspace;
         var merge = MergeDuplicates.IsChecked == true;
-        var views = await Task.Run(() => TranslationGroups.Create(current.Snapshot(), merge).Select(g =>
+        List<TranslationEntry> snapshot = [];
+        var views = await Task.Run(() => { snapshot = current.Snapshot(); return TranslationGroups.Create(snapshot, merge).Select(g =>
         {
             var problems = ValidationRules.Check(g.Representative);
             if (g.HasVariants) problems.Add(new(g.Representative.Key, "translation_variants", "相同原文存在不同译文，请按位置核对；不会自动覆盖或复用。", false));
-            return new RowView(g.Representative, problems, g.Members);
-        }).ToList());
+            return new RowView(g.Representative, problems, g.Members, ReviewQueue.Classify(g, problems));
+        }).ToList(); });
         if (version != refreshVersion || lifetime.IsCancellationRequested) return;
         allRows = views;
+        relatedByContent = snapshot.GroupBy(TranslationGroups.ContentKey).ToDictionary(g => g.Key, g => g.ToArray());
+        relatedByConflict = snapshot.Where(x => x.Status == "conflict").GroupBy(ReviewQueue.ConflictKey).ToDictionary(g => g.Key, g => g.ToArray());
         AllCount.Text = views.Sum(x => x.Members.Length).ToString("N0");
-        PendingCount.Text = views.Count(x => x.Data.Status is "new" or "stale").ToString("N0");
-        ReviewCount.Text = views.Count(x => x.Problems.Count > 0 || x.Data.Status is "needs_review" or "conflict").ToString("N0");
+        PendingCount.Text = views.Count(x => x.Kind == ReviewKind.Pending).ToString("N0");
+        ReviewCount.Text = views.Count(x => x.Kind is ReviewKind.Variants or ReviewKind.Revision or ReviewKind.Conflict).ToString("N0");
+        QueueSummary.Text = $"可自动翻译 {views.Count(x => x.Kind == ReviewKind.Pending):N0} · 译文待统一 {views.Count(x => x.Kind == ReviewKind.Variants):N0} · 译文待修正 {views.Count(x => x.Kind == ReviewKind.Revision):N0} · 捕获冲突 {views.Count(x => x.Kind == ReviewKind.Conflict):N0}";
         ReadyCount.Text = views.Where(x => x.Data.Status is "translated" or "reviewed" or "verified" && !string.IsNullOrWhiteSpace(x.Data.Translation)).Sum(x => x.Members.Length).ToString("N0");
         ApplyFilter();
+        SetReviewButtons();
     }
 
     private void ApplyFilter()
@@ -146,9 +174,14 @@ public partial class MainWindow : Window
         IEnumerable<RowView> filtered = allRows;
         filtered = Filter.SelectedIndex switch
         {
-            0 => filtered.Where(x => x.Data.Status is "new" or "stale" or "needs_review" or "conflict"),
-            1 => filtered.Where(x => x.Problems.Count > 0 || x.Data.Status is "needs_review" or "conflict"),
-            3 => filtered.Where(x => x.Data.Status is "reviewed" or "verified"),
+            0 => filtered.Where(x => x.Kind is ReviewKind.Pending or ReviewKind.Variants or ReviewKind.Revision or ReviewKind.Conflict),
+            1 => filtered.Where(x => x.Kind == ReviewKind.Pending),
+            2 => filtered.Where(x => x.Kind == ReviewKind.Variants),
+            3 => filtered.Where(x => x.Kind == ReviewKind.Revision),
+            4 => filtered.Where(x => x.Kind == ReviewKind.Conflict),
+            5 => filtered.Where(x => x.Data.Status is "reviewed" or "verified"),
+            6 => filtered.Where(x => x.Kind == ReviewKind.Excluded),
+            8 => filtered.Where(x => x.Kind == ReviewKind.Ready && ReviewQueue.HasCurrentModelReview(x.Data)),
             _ => filtered
         };
         var query = Search.Text.Trim();
@@ -170,12 +203,124 @@ public partial class MainWindow : Window
         binding = true; selected = row.Data.Copy();
         selectedMembers = row.Members.Select(x => x.Copy()).ToArray();
         Original.Text = row.Data.Source; EditedTranslation.Text = row.Data.Translation;
-        EntryInfo.Text = (row.Data.Source.Contains(NumberedNames.Token) ? "楼层模板：译文保留 {floor}，保存时填回各层原编号。\n" : "") + $"本组 {row.Members.Length:N0} 个位置；保存审校 / 排除应用于整组。\n" + row.Data.Key + "\n" +
-            (row.Problems.Count == 0 ? string.Join(" · ", row.Data.Origins.Take(2)) : string.Join("；", row.Problems.Select(x => x.Message)));
+        EntryInfo.Text = $"本组 {row.Members.Length:N0} 个位置；保存审校只作用于本组。" +
+            (row.Data.Source.Contains(NumberedNames.Token) ? " 楼层模板须保留 {floor}。" : "");
         EntryInfo.ToolTip = EntryInfo.Text; Original.ToolTip = string.Join("\n", row.Members.Take(30).Select(x => x.Source + "\n" + x.Key + "\n" + string.Join(" · ", x.Origins)));
+        BindReviewDetails(row);
         dirty = false; binding = false;
+        SetReviewButtons();
     }
-    private void BindEmpty() { binding = true; Original.Clear(); EditedTranslation.Clear(); EntryInfo.Text = "选择一条文本查看原文、上下文与译文。"; binding = false; }
+    private void BindReviewDetails(RowView row)
+    {
+        relatedMembers = relatedByContent.GetValueOrDefault(TranslationGroups.ContentKey(row.Members[0]), [])
+            .Where(x => !x.Protected && !ReviewQueue.IsCaptureConflict(x) && x.Status != "excluded").Select(x => x.Copy()).ToArray();
+        conflictMembers = row.Data.Status == "conflict" ? row.Members.Select(ReviewQueue.ConflictKey).Distinct()
+            .SelectMany(key => relatedByConflict.GetValueOrDefault(key, [])).DistinctBy(x => x.Key).Select(x => x.Copy()).ToArray() : [];
+        CandidateList.ItemsSource = relatedMembers.Where(x => !string.IsNullOrWhiteSpace(x.Translation))
+            .GroupBy(x => x.Translation).Select(g => new TranslationChoice(g.Key, g.Count(), string.Join("、", g.Select(x => StatusName(x.Status)).Distinct()),
+                string.Join("\n", g.Select(x => x.Key)))).OrderByDescending(x => x.Count).ToArray();
+        CandidateList.SelectedIndex = -1;
+        CandidateSummary.Text = relatedMembers.Length == 0 ? "没有可选的同原文译文。" :
+            $"同原文共 {relatedMembers.Length:N0} 个位置。模型统一只改非人工位置；手工统一会覆盖这些位置并标为已审校。";
+        NextStep.Text = row.Kind switch
+        {
+            ReviewKind.Variants => "同一原文存在不同译文：可让核对模型选择并统一，或打开“已有译文”手工处理。",
+            ReviewKind.Conflict => "同一匹配位置捕获到不同原文：打开“问题与冲突”对照来源，或暂不发布该冲突组。",
+            ReviewKind.Revision => string.IsNullOrWhiteSpace(row.Data.Translation) ? "译文为空：可重译当前组，或填写译文后保存审校。" :
+                row.Problems.Count == 0 ? "新版校验已无问题：可点“重新校验”恢复为机器初译，无需重新请求模型。" : "可让核对模型判断是否需要修正，也可手工修订后保存审校。",
+            ReviewKind.Pending => "可自动翻译；也可以只翻译当前组。此前失败的项目请点“重试失败任务”。",
+            _ => "可查看、修订译文；人工审校结果不会被选中项重译覆盖。"
+        };
+        var details = new System.Text.StringBuilder();
+        if (row.Data.ModelReview is { } modelReview)
+            details.AppendLine($"模型核对：{modelReview.Provider} / {modelReview.Model}").AppendLine($"判断：{modelReview.Decision} · {modelReview.ReviewedAtUtc.ToLocalTime():yyyy-MM-dd HH:mm}")
+                .AppendLine("理由：" + modelReview.Reason).AppendLine(ReviewQueue.HasCurrentModelReview(row.Data) ? "此判断对应当前原文与译文。" : "该判断未关闭当前待办，或内容已变化。").AppendLine();
+        details.AppendLine(NextStep.Text).AppendLine();
+        foreach (var issue in row.Problems) details.AppendLine((issue.Fatal ? "必须修复：" : "核对提示：") + issue.Message);
+        if (string.IsNullOrWhiteSpace(row.Data.Translation)) details.AppendLine("当前没有译文。");
+        if (conflictMembers.Length > 0)
+        {
+            details.AppendLine().AppendLine($"本次冲突详情包含 {conflictMembers.Length} 条记录。不会自动选择其中一个原文，也不会删除捕获记录。");
+            foreach (var entry in conflictMembers.OrderBy(ReviewQueue.ConflictKey).ThenBy(x => x.Key))
+                details.AppendLine().AppendLine("原文：" + entry.Source).AppendLine("已有译文：" + (entry.Translation.Length == 0 ? "（无）" : entry.Translation))
+                    .AppendLine("位置：" + entry.Key).AppendLine("来源：" + string.Join("；", entry.Origins)).AppendLine("首次捕获：" + entry.FirstSeenUtc);
+        }
+        else details.AppendLine().AppendLine("当前位置与来源：").AppendLine(string.Join("\n\n", row.Members.Select(x => x.Key + "\n" + string.Join("；", x.Origins))));
+        IssueDetails.Text = details.ToString();
+        SaveReviewButton.IsEnabled = ExcludeEntryButton.IsEnabled = !ReviewQueue.IsCaptureConflict(row.Data);
+        RetranslateButton.IsEnabled = translationCancellation == null && row.Members.All(ReviewQueue.CanRetranslate);
+        ExcludeConflictButton.IsEnabled = conflictMembers.Length > 0 && translationCancellation == null;
+        AdoptCandidateButton.IsEnabled = UnifyCandidateButton.IsEnabled = false;
+    }
+    private static string StatusName(string status) => status switch
+    { "new" => "未译", "stale" => "原文更新", "translated" => "机器初译", "reviewed" => "已审校", "verified" => "已实机确认", "needs_review" => "待核对", _ => status };
+    private void Candidate_Changed(object sender, SelectionChangedEventArgs e)
+    {
+        if (AdoptCandidateButton == null) return;
+        AdoptCandidateButton.IsEnabled = CandidateList.SelectedItem is TranslationChoice;
+        UnifyCandidateButton.IsEnabled = CandidateList.SelectedItem is TranslationChoice && relatedMembers.Length > 0 &&
+            selected?.Source.Contains(NumberedNames.Token) != true && translationCancellation == null;
+    }
+    private void AdoptCandidate_Click(object sender, RoutedEventArgs e)
+    {
+        if (CandidateList.SelectedItem is not TranslationChoice choice) return;
+        EditedTranslation.Text = choice.Text;
+        ReviewTabs.SelectedIndex = 0;
+        Log("已填入候选译文；请检查后保存审校。尚未修改其他位置。");
+    }
+    private async void UnifyCandidate_Click(object sender, RoutedEventArgs e) => await Perform(async () =>
+    {
+        if (workspace == null || CandidateList.SelectedItem is not TranslationChoice choice) return;
+        if (translationCancellation != null || dirty) throw new InvalidOperationException("请先暂停翻译并保存当前修订。");
+        var members = relatedMembers; var text = choice.Text;
+        var manual = members.Count(x => x.Status is "reviewed" or "verified");
+        if (MessageBox.Show(this, $"将采用下列译文，统一同分类、字段及原文的 {members.Length} 个位置（其中 {manual} 个已人工确认），全部标为已审校。\n实机确认需在修改后重新记录。已排除及冲突位置不参与。\n\n{text}\n\n确定统一？", "统一同原文译文", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes) return;
+        var count = await Task.Run(() => workspace.UnifyTranslation(members, text));
+        dirty = false; await RefreshView(); Log($"已统一并审校 {count:N0} 个位置。");
+    });
+    private async void RepairIdentity_Click(object sender, RoutedEventArgs e) => await Perform(async () =>
+    {
+        if (workspace == null) return;
+        if (translationCancellation != null || dirty) throw new InvalidOperationException("请先暂停翻译并保存当前修订。");
+        var result = await Task.Run(() => workspace.RepairCapturedIdentities());
+        await RefreshView();
+        Log($"捕获身份修复：迁移 {result.Migrated:N0} 个位置，复用 {result.Reused:N0} 个译文，保留待核对 {result.Skipped:N0} 个位置。" +
+            (result.BackupDirectory == null ? "" : " 备份：" + result.BackupDirectory));
+    });
+    private async void Recheck_Click(object sender, RoutedEventArgs e) => await Perform(async () =>
+    {
+        if (workspace == null) return;
+        if (translationCancellation != null || dirty) throw new InvalidOperationException("请先暂停翻译并保存当前修订。");
+        var count = await Task.Run(() => workspace.RecheckMachineResults());
+        await RefreshView(); Log($"重新校验完成：{count:N0} 个位置已恢复为机器初译；仍有问题或空译文的条目保留待核对。未调用模型。");
+    });
+    private async void Retranslate_Click(object sender, RoutedEventArgs e)
+    {
+        if (dirty) { Log("请先保存当前修订再重译。"); return; }
+        if (selectedMembers.Length == 0) return;
+        await RunTranslation(false, selectedMembers.Select(x => x.Copy()).ToArray());
+    }
+    private async void ExcludeConflict_Click(object sender, RoutedEventArgs e) => await Perform(async () =>
+    {
+        if (workspace == null || conflictMembers.Length == 0) return;
+        if (translationCancellation != null || dirty) throw new InvalidOperationException("请先暂停翻译并保存当前修订。");
+        var members = conflictMembers;
+        if (MessageBox.Show(this, $"将暂不发布详情中 {members.Length} 条冲突记录。原文、已有译文及来源仍保留，可在“已排除”中查看。\n这不会修复插件匹配规则。确定继续？", "暂不发布冲突组", MessageBoxButton.YesNo, MessageBoxImage.Question) != MessageBoxResult.Yes) return;
+        var count = await Task.Run(() => workspace.ExcludeConflicts(members));
+        await RefreshView(); Log($"已暂不发布 {count:N0} 条冲突记录，原始信息保留。");
+    });
+    private void CopyDetails_Click(object sender, RoutedEventArgs e)
+    { try { Clipboard.SetText(IssueDetails.Text); Log("详情已复制。"); } catch (Exception ex) { Log("复制失败：" + ex.Message); } }
+    private sealed record TranslationChoice(string Text, int Count, string States, string Locations)
+    { public string Summary => $"{Count} 个位置 · {States}"; }
+    private void BindEmpty()
+    {
+        binding = true; selectedMembers = relatedMembers = conflictMembers = [];
+        Original.Clear(); EditedTranslation.Clear(); IssueDetails.Clear(); CandidateList.ItemsSource = null;
+        EntryInfo.Text = "选择一条文本查看原文、上下文与译文。"; NextStep.Text = "当前分类没有匹配条目，可切换其他处理队列。"; CandidateSummary.Text = "";
+        SaveReviewButton.IsEnabled = ExcludeEntryButton.IsEnabled = RetranslateButton.IsEnabled = ExcludeConflictButton.IsEnabled = false;
+        binding = false;
+    }
     private void Rows_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (refreshing || Rows.SelectedItem is not RowView row) return;
@@ -245,7 +390,7 @@ public partial class MainWindow : Window
         try
         {
             if (AutoImport.IsChecked == true) await ImportCaptured(false);
-            if (AutoTranslate.IsChecked == true && translationCancellation == null && !string.IsNullOrWhiteSpace(ModelKey.Password) && !string.IsNullOrWhiteSpace(ModelName.Text))
+            if (AutoTranslate.IsChecked == true && translationCancellation == null && !string.IsNullOrWhiteSpace(ReadModelKey()) && !string.IsNullOrWhiteSpace(settings.Models.Translation.Model))
             {
                 var queue = UiJsonTranslator.Sha256(string.Join("\n", allRows.Where(x => x.Data.Status is "new" or "stale").Select(x => x.Data.Key + x.Data.SourceHash)));
                 if (queue != lastAutomaticQueue)
@@ -257,30 +402,70 @@ public partial class MainWindow : Window
         }
         catch (Exception e) { Log("自动任务暂停本轮：" + e.Message); }
     }
-    private async Task RunTranslation(bool retry)
+    private void ShowTranslationProgress(TranslationProgress value)
     {
-        if (workspace == null) throw new InvalidOperationException("先加载工作目录。");
-        if (translationCancellation != null || publishing) return;
-        var model = ReadModel(); var key = ModelKey.Password;
+        TranslationDetails.Visibility = Visibility.Visible;
+        translationProgress = value;
+        TranslationBar.IsIndeterminate = false;
+        TranslationBar.Maximum = Math.Max(1, value.TotalTasks);
+        TranslationBar.Value = value.CompletedTasks;
+        TranslationCounts.Text = $"已处理 {value.CompletedTasks:N0}/{value.TotalTasks:N0} 个任务 · 批次 {value.CompletedBatches}/{value.TotalBatches} · 进行中 {value.ActiveBatches} · 已保存 {value.SavedPositions:N0} 个位置 · 失败 {value.FailedTasks:N0} 个任务";
+        TranslationActivity.Text = value.Message;
+        if (translationCancellation?.IsCancellationRequested != true)
+            TranslationStatus.Text = activeReviewMode != null ? "正在模型核对 · 等待回复 / 处理结果" : value.ActiveBatches > 0 ? "正在翻译 · 等待模型 / 处理结果" : "正在处理翻译队列";
+    }
+    private async Task RunTranslation(bool retry, TranslationEntry[]? selectedRows = null)
+    {
+        if (translationCancellation != null) { Log("翻译已在运行，可在上方查看进度。"); return; }
+        if (busy || scanning || dirty) { Log("请先保存修订并等待当前操作完成。"); return; }
+        if (publishing) { TranslationStatus.Text = "暂不能开始翻译"; TranslationActivity.Text = "请等待当前发布完成。"; return; }
+        translationProgress = null;
+        TranslationDetails.Visibility = Visibility.Visible;
+        TranslationStatus.Text = "准备翻译 · 正在整理待办";
+        TranslationCounts.Text = "正在复用已有译文、合并重复任务并统计本轮数量…";
+        TranslationActivity.Text = "准备完成后会显示总任务数；随后等待模型逐批返回。";
+        TranslationBar.IsIndeterminate = true; TranslationBar.Value = 0;
+        TranslateButton.IsEnabled = RetryButton.IsEnabled = RetranslateButton.IsEnabled = UnifyCandidateButton.IsEnabled = ExcludeConflictButton.IsEnabled = false; PauseButton.IsEnabled = true;
+        translationWatch.Restart(); translationTimer.Start(); TranslationElapsed.Text = "已用时 00:00:00";
         translationCancellation = CancellationTokenSource.CreateLinkedTokenSource(lifetime.Token);
-        Log("开始处理待翻译条目。");
+        SetReviewButtons();
         try
         {
-            var runner = new TranslationRunner(modelClient);
-            var count = await runner.RunAsync(workspace, model, key, retry, Log, translationCancellation.Token);
-            Log($"本轮完成，保存 {count} 条译文。");
+            if (workspace == null) throw new InvalidOperationException("先加载工作目录。");
+            var current = workspace; var model = ReadModel(); var key = ReadModelKey();
+            var cancellation = translationCancellation.Token;
+            Log($"开始翻译：{model.Model}，每批 {model.BatchSize}，并发 {model.Concurrency}。");
+            var count = await Task.Run(() => new TranslationRunner(modelClient).RunAsync(current, model, key, retry, Log, cancellation,
+                value => Dispatcher.Invoke(() => ShowTranslationProgress(value)), selectedRows));
+            TranslationStatus.Text = translationProgress?.TotalTasks == 0 ? "没有可翻译的待办" :
+                translationProgress?.FailedTasks > 0 ? "本轮结束 · 有失败任务" : "本轮翻译完成";
+            TranslationActivity.Text = translationProgress?.TotalTasks == 0 ? translationProgress.Message :
+                $"已保存 {count:N0} 个位置。" + (translationProgress?.FailedTasks > 0 ? "失败项可点击“重试失败任务”继续。" : "机器译文仍需核对。") + " 已保存位置包含待核对结果。";
+            Log(TranslationStatus.Text + "；" + TranslationActivity.Text);
         }
-        catch (OperationCanceledException) { Log("翻译已暂停，已保存结果保留。"); }
-        catch (Exception e) { Log("翻译未完成：" + e.Message); }
+        catch (OperationCanceledException) { TranslationStatus.Text = "翻译已暂停"; TranslationActivity.Text = "已保存结果保留；未完成任务可继续翻译。"; Log(TranslationActivity.Text); }
+        catch (Exception e) { if (translationProgress == null) TranslationCounts.Text = "尚未开始发送翻译任务。"; TranslationStatus.Text = "翻译未能完成"; TranslationActivity.Text = e.Message; Log("翻译未完成：" + e.Message); }
         finally
         {
-            translationCancellation.Dispose(); translationCancellation = null;
-            if (!lifetime.IsCancellationRequested) await RefreshView();
+            translationTimer.Stop(); translationWatch.Stop();
+            TranslationElapsed.Text = $"已用时 {translationWatch.Elapsed:hh\\:mm\\:ss}";
+            TranslationBar.IsIndeterminate = false;
+            TranslateButton.IsEnabled = RetryButton.IsEnabled = true; PauseButton.IsEnabled = false;
+            translationCancellation.Dispose(); translationCancellation = null; SetReviewButtons();
+            if (!lifetime.IsCancellationRequested)
+                try { await RefreshView(); } catch (Exception e) { Log("刷新列表失败：" + e.Message); }
         }
     }
-    private async void Translate_Click(object sender, RoutedEventArgs e) { try { await RunTranslation(false); } catch (Exception ex) { Log(ex.Message); } }
-    private async void Retry_Click(object sender, RoutedEventArgs e) { try { await RunTranslation(true); } catch (Exception ex) { Log(ex.Message); } }
-    private void Pause_Click(object sender, RoutedEventArgs e) { AutoTranslate.IsChecked = false; translationCancellation?.Cancel(); }
+    private async void Translate_Click(object sender, RoutedEventArgs e) => await RunTranslation(false);
+    private async void Retry_Click(object sender, RoutedEventArgs e) => await RunTranslation(true);
+    private void Pause_Click(object sender, RoutedEventArgs e)
+    {
+        AutoTranslate.IsChecked = false;
+        if (translationCancellation == null) return;
+        TranslationStatus.Text = "正在暂停模型任务";
+        TranslationActivity.Text = "正在取消未完成请求，已保存结果会保留。";
+        PauseButton.IsEnabled = false; translationCancellation.Cancel();
+    }
     private async void Import_Click(object sender, RoutedEventArgs e) => await Perform(() => ImportCaptured(true));
     private async void Reuse_Click(object sender, RoutedEventArgs e) => await Perform(async () =>
     {
@@ -302,13 +487,9 @@ public partial class MainWindow : Window
 
     private async void SaveSettings_Click(object sender, RoutedEventArgs e) => await Perform(async () =>
     {
-        settings = new LocalSettings { Workspace = WorkspacePath.Text.Trim(), GameDirectory = GamePath.Text.Trim(), CaptureDirectory = CapturePath.Text.Trim(),
-            Repository = Repository.Text.Trim(), Model = ReadModel(), AutoImport = AutoImport.IsChecked == true, AutoTranslate = AutoTranslate.IsChecked == true };
-        settings.Save(); LocalSecrets.Save(ModelKey.Password, GitHubToken.Password);
+        PersistSettings();
         await ReloadWorkspace(); Log("本机设置已保存；凭据已使用 Windows 账户加密。");
     });
-    private ModelSettings ReadModel() => new() { Endpoint = Endpoint.Text.Trim(), Model = ModelName.Text.Trim(), BatchSize = int.Parse(BatchSize.Text),
-        Concurrency = int.Parse(Concurrency.Text), MaxOutputTokens = int.Parse(MaxTokens.Text) };
     private void WorkspaceBrowse_Click(object sender, RoutedEventArgs e) => Browse(WorkspacePath);
     private void GameBrowse_Click(object sender, RoutedEventArgs e)
     {
@@ -374,7 +555,7 @@ public partial class MainWindow : Window
     {
         if (publishing) { e.Cancel = true; Log("正在提交发布，请等待完成后关闭。"); return; }
         if (dirty && MessageBox.Show(this, "当前修订尚未保存，仍要关闭吗？", "未保存修订", MessageBoxButton.YesNo) != MessageBoxResult.Yes) { e.Cancel = true; return; }
-        timer.Stop(); lifetime.Cancel(); translationCancellation?.Cancel();
+        translationTimer.Stop(); timer.Stop(); lifetime.Cancel(); translationCancellation?.Cancel();
         workspaceMutex?.ReleaseMutex(); workspaceMutex?.Dispose(); workspaceMutex = null;
     }
     private static string FindWorkspace()
@@ -384,8 +565,10 @@ public partial class MainWindow : Window
                 if (File.Exists(Path.Combine(directory.FullName, "translations/ui/source/ui_source.jsonl"))) return directory.FullName;
         return "";
     }
-    private sealed class RowView(TranslationEntry data, List<ValidationIssue> problems, TranslationEntry[] members)
+    private sealed class RowView(TranslationEntry data, List<ValidationIssue> problems, TranslationEntry[] members, ReviewKind kind)
     {
+        public ReviewKind Kind { get; } = kind;
+        public string ActionLabel => ReviewQueue.Label(Kind);
         public TranslationEntry[] Members { get; } = members;
         public int PositionCount => Members.Length;
         public TranslationEntry Data { get; } = data;
@@ -393,6 +576,6 @@ public partial class MainWindow : Window
         public string Category => Data.Category;
         public string Source => Data.Source.Replace("\n", " ↵ ");
         public string Issues => Problems.Count == 0 ? "" : Problems.Count.ToString();
-        public string StatusLabel => Data.Status switch { "new" => "待翻译", "stale" => "原文更新", "translated" => "机器初译", "reviewed" => "已审校", "verified" => "已实机确认", "needs_review" => "待核对", "conflict" => "身份冲突", "excluded" => "已排除", _ => Data.Status };
+        public string StatusLabel => ReviewQueue.HasCurrentModelReview(Data) ? "模型已核对" : Data.Status switch { "new" => "待翻译", "stale" => "原文更新", "translated" => "机器初译", "reviewed" => "已审校", "verified" => "已实机确认", "needs_review" => "待核对", "conflict" => "身份冲突", "excluded" => "已排除", _ => Data.Status };
     }
 }

@@ -15,6 +15,9 @@ public sealed class TranslationEntry
     public string? PreviousSourceHash { get; set; }
     public string Translation { get; set; } = "";
     public string Status { get; set; } = "new";
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public bool CaptureConflictExcluded { get; set; }
+    public ModelReviewEvidence? ModelReview { get; set; }
     public int Occurrences { get; set; }
     public string[] Origins { get; set; } = [];
     public string? FirstSeenUtc { get; set; }

@@ -31,12 +31,12 @@ public static class TranslationGroups
         {
             var variants = content.Where(IsReady).Select(x => x.Translation).Distinct(StringComparer.Ordinal).Skip(1).Any();
             // Do not collapse deliberate overrides, review states or stale reference translations.
-            foreach (var group in content.GroupBy(x => merge ? JsonData.Write(new[] { x.Status, x.Translation }) : x.Key))
+            foreach (var group in content.GroupBy(x => merge ? JsonData.Write(new[] { x.Status, x.Translation, ReviewQueue.HasCurrentModelReview(x) ? "model_checked" : "" }) : x.Key))
                 result.Add(new(group.OrderBy(x => x.Key, StringComparer.Ordinal).ToArray(), variants));
         }
         if (!merge) return result;
         var eligible = result.Where(g => !g.HasVariants && g.Representative.Status is "new" or "stale" or "translated" or "reviewed" or "verified")
-            .Where(g => NumberedNames.Template(g.Representative) != null && NumberedNames.TranslationTemplate(g.Representative) != null).ToArray();
+            .Where(g => g.Members.All(x => x.ModelReview == null) && NumberedNames.Template(g.Representative) != null && NumberedNames.TranslationTemplate(g.Representative) != null).ToArray();
         foreach (var family in eligible.GroupBy(g => NumberedNames.FamilyKey(g.Representative)))
         {
             if (family.Select(g => g.Representative.Source).Distinct().Count() < 3) continue;

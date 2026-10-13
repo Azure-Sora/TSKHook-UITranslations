@@ -11,12 +11,29 @@ public sealed class LocalSettings
     public string GameDirectory { get; set; } = "";
     public string Repository { get; set; } = "Azure-Sora/TSKHook-UITranslations";
     public ModelSettings Model { get; set; } = new();
+    public ModelCatalog Models { get; set; } = new();
     public bool AutoImport { get; set; } = true;
     public bool AutoTranslate { get; set; }
     public static string DirectoryPath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TSKHook-UITranslations");
     public static string FilePath => Path.Combine(DirectoryPath, "settings.json");
-    public static LocalSettings Load() => File.Exists(FilePath) ? JsonData.Read<LocalSettings>(File.ReadAllText(FilePath)) : new();
-    public void Save() { Directory.CreateDirectory(DirectoryPath); File.WriteAllText(FilePath, JsonData.Write(this)); }
+    public static LocalSettings Load()
+    {
+        var settings = File.Exists(FilePath) ? JsonData.Read<LocalSettings>(File.ReadAllText(FilePath)) : new();
+        settings.Models.MigrateLegacy(settings.Model);
+        return settings;
+    }
+    public void Save()
+    {
+        Directory.CreateDirectory(DirectoryPath);
+        var temporary = FilePath + "." + Guid.NewGuid().ToString("N") + ".tmp";
+        try
+        {
+            File.WriteAllText(temporary, JsonData.Write(this));
+            if (File.Exists(FilePath)) File.Copy(FilePath, FilePath + ".bak", true);
+            File.Move(temporary, FilePath, true);
+        }
+        finally { if (File.Exists(temporary)) File.Delete(temporary); }
+    }
 }
 
 // Windows DPAPI encrypts saved credentials for the current Windows account.
@@ -42,10 +59,21 @@ internal static class LocalSecrets
         return File.Exists(path) ? JsonData.Read<Dictionary<string, string>>(Encoding.UTF8.GetString(Transform(File.ReadAllBytes(path), false))) : [];
     }
     public static void Save(string model, string github)
+        => Save(new Dictionary<string, string> { ["model"] = model, ["github"] = github });
+
+    public static void Save(Dictionary<string, string> secrets)
     {
         Directory.CreateDirectory(LocalSettings.DirectoryPath);
-        var bytes = Transform(Encoding.UTF8.GetBytes(JsonData.Write(new Dictionary<string, string> { ["model"] = model, ["github"] = github })), true);
-        File.WriteAllBytes(Path.Combine(LocalSettings.DirectoryPath, "credentials.bin"), bytes);
+        var bytes = Transform(Encoding.UTF8.GetBytes(JsonData.Write(secrets)), true);
+        var path = Path.Combine(LocalSettings.DirectoryPath, "credentials.bin");
+        var temporary = path + "." + Guid.NewGuid().ToString("N") + ".tmp";
+        try
+        {
+            File.WriteAllBytes(temporary, bytes);
+            if (File.Exists(path)) File.Copy(path, path + ".bak", true);
+            File.Move(temporary, path, true);
+        }
+        finally { if (File.Exists(temporary)) File.Delete(temporary); }
     }
     private static byte[] Transform(byte[] data, bool encrypt)
     {
