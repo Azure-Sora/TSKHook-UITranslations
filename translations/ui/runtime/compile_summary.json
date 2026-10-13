@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "masterFile": "ui_source.jsonl",
+  "categoryFiles": 8,
+  "masterRows": 46042,
+  "categoryRows": 46042,
+  "outputEntries": 45414,
+  "untranslatedRows": 628,
+  "ineligibleStatusRows": 0,
+  "protectedSourceDifferences": 0,
+  "richTextMismatches": 0,
+  "placeholderMismatches": 0,
+  "numberMismatches": 894,
+  "newlineMismatches": 410,
+  "parseErrors": 0,
+  "duplicateMasterKeys": 0,
+  "duplicateCategoryKeys": 0,
+  "unknownKeys": 0,
+  "hashMismatches": 0
+}

@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+.vs/
+.local/
+dist/
+*.user
+*.log
+task_plan.md
+findings.md
+progress.md

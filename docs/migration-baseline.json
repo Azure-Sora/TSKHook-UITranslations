@@ -1,0 +1,126 @@
+{
+  "sourceRepository": "https://github.com/Azure-Sora/TSKHook-Plus",
+  "sourceCommit": "9c3ecdf4073f7eebf79088023c7042f338e46d6d",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "11c4a8b414a534365f02da7dad9dc3e471d35b15ed31df9d4006fb2a144c4443",
+      "bytes": 18429
+    },
+    {
+      "path": "tools/CompileUiRuntime/CompileUiRuntime.csproj",
+      "sha256": "9ed8a68d21faeac9fbcab44dcff90aa470ceaa0838e2b709b02a8276122c8924",
+      "bytes": 238
+    },
+    {
+      "path": "tools/CompileUiRuntime/Program.cs",
+      "sha256": "7486169287d1d6e3e628a014eaa21205e2da30a4c5c7b2da1b2402311b13f1c2",
+      "bytes": 7551
+    },
+    {
+      "path": "tools/CompileUiTranslations/CompileUiTranslations.csproj",
+      "sha256": "362eeddfd58c13f6efa4dbdb523100c23c27fa170066a375824c09624e6fe1d0",
+      "bytes": 360
+    },
+    {
+      "path": "tools/CompileUiTranslations/Program.cs",
+      "sha256": "0b72c1e92a37720f1a332abcc18ef68560f9f8c1b247e9d7e1ab9f5bf5adefdd",
+      "bytes": 26927
+    },
+    {
+      "path": "tools/GenerateSkillPlainText/GenerateSkillPlainText.csproj",
+      "sha256": "9ed8a68d21faeac9fbcab44dcff90aa470ceaa0838e2b709b02a8276122c8924",
+      "bytes": 238
+    },
+    {
+      "path": "tools/GenerateSkillPlainText/Program.cs",
+      "sha256": "81a90ea78f0bec648164aed16b132c9d8a7b556398562a8d0da3750c3c2089b0",
+      "bytes": 8308
+    },
+    {
+      "path": "translations/ui/LLM_TRANSLATION_GUIDE.md",
+      "sha256": "7115173d303b1dee83781a46842f6d533a3f06ab33089a1d541e26935426b5c5",
+      "bytes": 7899
+    },
+    {
+      "path": "translations/ui/README.md",
+      "sha256": "72f4d4354341f99ddef0f137ec06842de8f80553d6067ff05233e219433c1ae9",
+      "bytes": 4762
+    },
+    {
+      "path": "translations/ui/TskNames.json",
+      "sha256": "252e39809a6344c0066aae30b434402682b933ace2c44057aeafb5c6698b8014",
+      "bytes": 8963
+    },
+    {
+      "path": "translations/ui/glossary.md",
+      "sha256": "433404f87731bacef25dfbe00f145bf7e25dd504531e61a314a689944fe33903",
+      "bytes": 8424
+    },
+    {
+      "path": "translations/ui/runtime/compile_summary.json",
+      "sha256": "3b93cad034201eb2223656fef3e0bb27ebe0b889666522f9c2c1cf2cfe036b3e",
+      "bytes": 498
+    },
+    {
+      "path": "translations/ui/runtime/ui_translations.jsonl",
+      "sha256": "97250f420d1c58df670c14c3eee2c95f2011d7bc566a4f23f4af5fe251cedbe6",
+      "bytes": 14603801
+    },
+    {
+      "path": "translations/ui/source/by_category/equip.jsonl",
+      "sha256": "01d0b1ef3af6f49792a97c3c0513a1e5b6c6b251e3dfd6541433daf70740fc81",
+      "bytes": 1750885
+    },
+    {
+      "path": "translations/ui/source/by_category/item.jsonl",
+      "sha256": "31358073f1aa631f1aa4c9edc0e601fb95f61caaaf496f2c5b0549e12b23c8f2",
+      "bytes": 639785
+    },
+    {
+      "path": "translations/ui/source/by_category/misc.jsonl",
+      "sha256": "8013f7ed3865c04ab09dccbaa67846eeb95a2098014383b2626c2ffed3c755a2",
+      "bytes": 3119137
+    },
+    {
+      "path": "translations/ui/source/by_category/mission.jsonl",
+      "sha256": "8f9e72b067c162eb234fa27e674cd8714f504f4167595f5b5dd452d69e7b09ad",
+      "bytes": 715112
+    },
+    {
+      "path": "translations/ui/source/by_category/reward.jsonl",
+      "sha256": "20b82e37fecede6bc6454466ce3be007bc79c4ef9801710181d14ce3cf758828",
+      "bytes": 365539
+    },
+    {
+      "path": "translations/ui/source/by_category/shop.jsonl",
+      "sha256": "26db3a7b2e7e2baf9643c57bcd936042eec8d3948809392427c45b472d6f2c4d",
+      "bytes": 1404182
+    },
+    {
+      "path": "translations/ui/source/by_category/skill.jsonl",
+      "sha256": "1d793ddeca4c49530c59d22a9eda226eb433e28080f07d4e76ce8709673e0edd",
+      "bytes": 14670506
+    },
+    {
+      "path": "translations/ui/source/by_category/unit.jsonl",
+      "sha256": "c6a9f1337ee5f4e7217137718a9720965a025531e837e02f868e3fe1d89547bb",
+      "bytes": 14002060
+    },
+    {
+      "path": "translations/ui/source/compile_summary.json",
+      "sha256": "e0c7de8fb2ba7d5f561a63167f2dfbe19ee3e8d35f5fc2cbdeb98138e5af12a4",
+      "bytes": 458
+    },
+    {
+      "path": "translations/ui/source/ui_conflicts.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "translations/ui/source/ui_source.jsonl",
+      "sha256": "33aa7d7e167b3e3cc0bbed178917ed862b37e8194ad380037402bafa3b242b17",
+      "bytes": 36580220
+    }
+  ]
+}

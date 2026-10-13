@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "inputFile": "ui_texts_v2.jsonl",
+  "inputRows": 69121,
+  "parseErrors": 0,
+  "inputStableKeys": 40632,
+  "preservedPreviousEntries": 5385,
+  "stableKeys": 46017,
+  "outputEntries": 46017,
+  "conflictKeys": 0,
+  "conflictEntries": 0,
+  "categoryCounts": {
+    "equip": 1877,
+    "item": 825,
+    "misc": 4600,
+    "mission": 1012,
+    "reward": 562,
+    "shop": 2174,
+    "skill": 12653,
+    "unit": 22314
+  }
+}

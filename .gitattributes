@@ -1,0 +1,7 @@
+*.cs text eol=lf
+*.xaml text eol=lf
+*.csproj text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.jsonl -text whitespace=cr-at-eol
+*.json -text whitespace=cr-at-eol

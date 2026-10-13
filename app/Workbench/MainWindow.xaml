@@ -1,0 +1,80 @@
+<Window x:Class="TSKHook.Workbench.Desktop.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TSKHook · 翻译工作台" Width="1320" Height="880" MinWidth="1080" MinHeight="740" Background="#F2F5FA" Foreground="#24324A" FontFamily="Microsoft YaHei UI" FontSize="13" WindowStartupLocation="CenterScreen">
+  <Grid Background="#F2F5FA">
+    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="112"/></Grid.RowDefinitions>
+    <Border Background="White" Padding="24,18" BorderBrush="#E0E6EF" BorderThickness="0,0,0,1">
+      <DockPanel>
+        <Border DockPanel.Dock="Right" Background="#EAF0FF" CornerRadius="12" Padding="12,6" VerticalAlignment="Center"><TextBlock Text="维护者工作台 · 0.1" Foreground="#3459D6"/></Border>
+        <StackPanel><TextBlock Text="TSKHook  /  翻译工作台" FontSize="23" FontWeight="SemiBold"/><TextBlock Text="收集新文本，处理需要你判断的内容，再发布给所有玩家。" Margin="0,5,0,0" Foreground="#748098"/></StackPanel>
+      </DockPanel>
+    </Border>
+    <UniformGrid Grid.Row="1" Columns="4" Margin="24,18,12,18">
+      <Border Style="{StaticResource Card}"><StackPanel><TextBlock Text="文本总数" Foreground="#748098"/><TextBlock x:Name="AllCount" Text="—" FontSize="27" FontWeight="SemiBold"/></StackPanel></Border>
+      <Border Style="{StaticResource Card}"><StackPanel><TextBlock Text="等待翻译 / 原文更新" Foreground="#748098"/><TextBlock x:Name="PendingCount" Text="—" FontSize="27" FontWeight="SemiBold" Foreground="#3459D6"/></StackPanel></Border>
+      <Border Style="{StaticResource Card}"><StackPanel><TextBlock Text="需要核对" Foreground="#748098"/><TextBlock x:Name="ReviewCount" Text="—" FontSize="27" FontWeight="SemiBold" Foreground="#A56813"/></StackPanel></Border>
+      <Border Style="{StaticResource Card}"><StackPanel><TextBlock Text="可编译译文" Foreground="#748098"/><TextBlock x:Name="ReadyCount" Text="—" FontSize="27" FontWeight="SemiBold" Foreground="#23816D"/></StackPanel></Border>
+    </UniformGrid>
+    <TabControl x:Name="Pages" Grid.Row="2" Margin="24,0,24,10" BorderBrush="#DCE3ED" Background="White">
+      <TabItem Header="工作队列">
+        <Grid Margin="16"><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+          <WrapPanel Margin="0,0,0,12">
+            <Button Content="扫描捕获" Click="Import_Click"/><Button Content="翻译待办" Style="{StaticResource Primary}" Click="Translate_Click"/>
+            <Button Content="重试失败任务" Click="Retry_Click"/><Button Content="暂停翻译" Click="Pause_Click"/>
+            <CheckBox x:Name="AutoImport" Content="自动归档" IsChecked="True"/><CheckBox x:Name="AutoTranslate" Content="自动翻译" ToolTip="定期将新增文本发送给配置的模型接口；会产生接口用量。"/>
+          </WrapPanel>
+          <DockPanel Grid.Row="1" Margin="0,0,0,12">
+            <ComboBox x:Name="Filter" Width="145" DockPanel.Dock="Left" SelectionChanged="Filter_Changed" SelectedIndex="0" Margin="0,0,10,0"><ComboBoxItem Content="待处理"/><ComboBoxItem Content="需要核对"/><ComboBoxItem Content="全部文本"/><ComboBoxItem Content="已人工审校"/></ComboBox>
+            <TextBlock x:Name="ResultCount" DockPanel.Dock="Right" VerticalAlignment="Center" Margin="12,0,0,0" Foreground="#748098"/>
+            <TextBox x:Name="Search" TextChanged="Search_Changed" ToolTip="搜索原文、译文、分类或 key"/>
+          </DockPanel>
+          <Grid Grid.Row="2"><Grid.ColumnDefinitions><ColumnDefinition Width="3*"/><ColumnDefinition Width="12"/><ColumnDefinition Width="2*"/></Grid.ColumnDefinitions>
+            <DataGrid x:Name="Rows" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" SelectionChanged="Rows_SelectionChanged" HeadersVisibility="Column" GridLinesVisibility="Horizontal" HorizontalGridLinesBrush="#EDF0F5" BorderBrush="#E1E6EF" AlternatingRowBackground="#F8FAFD" RowHeight="36" EnableRowVirtualization="True">
+              <DataGrid.Columns><DataGridTextColumn Header="分类" Binding="{Binding Category}" Width="64"/><DataGridTextColumn Header="状态" Binding="{Binding StatusLabel}" Width="90"/><DataGridTextColumn Header="原文" Binding="{Binding Source}" Width="*"/><DataGridTextColumn Header="问题" Binding="{Binding Issues}" Width="60"/></DataGrid.Columns>
+            </DataGrid>
+            <Border Grid.Column="2" BorderBrush="#E1E6EF" BorderThickness="1" Padding="14" CornerRadius="4">
+              <Grid><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+                <TextBlock Text="原文与上下文" FontWeight="SemiBold" Margin="0,0,0,8"/>
+                <TextBox Grid.Row="1" x:Name="Original" IsReadOnly="True" TextWrapping="Wrap" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Auto" Background="#F6F8FC"/>
+                <TextBlock Grid.Row="2" Text="中文译文" FontWeight="SemiBold" Margin="0,12,0,8"/>
+                <TextBox Grid.Row="3" x:Name="EditedTranslation" AcceptsReturn="True" TextWrapping="Wrap" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Auto" TextChanged="Editor_Changed"/>
+                <TextBlock Grid.Row="4" x:Name="EntryInfo" TextWrapping="Wrap" Foreground="#748098" FontSize="11" MaxHeight="62" Margin="0,8,0,8"/>
+                <WrapPanel Grid.Row="5"><Button Content="保存并标记已审校" Click="SaveEntry_Click"/><Button Content="实机确认" Click="VerifyEntry_Click"/><Button Content="保留原文 / 排除" Click="Exclude_Click"/></WrapPanel>
+              </Grid>
+            </Border>
+          </Grid>
+        </Grid>
+      </TabItem>
+      <TabItem Header="模型与路径">
+        <ScrollViewer VerticalScrollBarVisibility="Auto"><Grid Margin="24,8,24,24"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="30"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+          <StackPanel>
+            <TextBlock Text="工作目录" Style="{StaticResource Label}"/><DockPanel><Button DockPanel.Dock="Right" Content="选择" Click="WorkspaceBrowse_Click" Margin="8,0,0,0"/><TextBox x:Name="WorkspacePath"/></DockPanel>
+            <TextBlock Text="选择 TSKHook-UITranslations 仓库根目录。" Foreground="#748098" Margin="0,5,0,0"/>
+            <TextBlock Text="游戏目录" Style="{StaticResource Label}"/><DockPanel><Button DockPanel.Dock="Right" Content="选择" Click="GameBrowse_Click" Margin="8,0,0,0"/><TextBox x:Name="GamePath"/></DockPanel>
+            <TextBlock Text="捕获目录" Style="{StaticResource Label}"/><DockPanel><Button DockPanel.Dock="Right" Content="选择" Click="CaptureBrowse_Click" Margin="8,0,0,0"/><TextBox x:Name="CapturePath"/></DockPanel>
+            <TextBlock Text="工作台关闭时插件仍然捕获；下次打开自动补处理。" Foreground="#748098" TextWrapping="Wrap" Margin="0,5,0,0"/>
+            <TextBlock Text="GitHub 发布凭据" Style="{StaticResource Label}"/><PasswordBox x:Name="GitHubToken"/>
+            <TextBlock Text="需要翻译仓库的 Contents 写入权限；Git 推送使用本机 Git 凭据。" Foreground="#748098" TextWrapping="Wrap" Margin="0,5,0,0"/>
+          </StackPanel>
+          <StackPanel Grid.Column="2">
+            <TextBlock Text="模型接口（完整 chat/completions 地址）" Style="{StaticResource Label}"/><TextBox x:Name="Endpoint"/>
+            <TextBlock Text="模型名称" Style="{StaticResource Label}"/><TextBox x:Name="ModelName"/>
+            <TextBlock Text="API Key" Style="{StaticResource Label}"/><PasswordBox x:Name="ModelKey"/>
+            <TextBlock Text="凭据仅保存在本机，用当前 Windows 账户加密，不写入翻译仓库。" Foreground="#748098" TextWrapping="Wrap" Margin="0,5,0,0"/>
+            <UniformGrid Columns="3" Margin="0,0,0,18"><StackPanel Margin="0,0,10,0"><TextBlock Text="每批条数" Style="{StaticResource Label}"/><TextBox x:Name="BatchSize" Text="8"/></StackPanel><StackPanel Margin="0,0,10,0"><TextBlock Text="并发数" Style="{StaticResource Label}"/><TextBox x:Name="Concurrency" Text="2"/></StackPanel><StackPanel><TextBlock Text="输出上限" Style="{StaticResource Label}"/><TextBox x:Name="MaxTokens" Text="8192"/></StackPanel></UniformGrid>
+            <WrapPanel><Button Content="保存设置并加载" Style="{StaticResource Primary}" Click="SaveSettings_Click"/><Button Content="重新加载工作目录" Click="Reload_Click"/></WrapPanel>
+            <TextBlock Text="规则与术语从 translations/ui 中读取；模型输出经过校验后才写回。任务失败不会反复自动重试，可在工作队列中主动重试。" Foreground="#748098" TextWrapping="Wrap" Margin="0,14,0,0"/>
+          </StackPanel>
+        </Grid></ScrollViewer>
+      </TabItem>
+      <TabItem Header="预览与发布">
+        <Grid Margin="24"><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+          <TextBlock Text="先在本机确认，再让玩家获取更新" FontSize="19" FontWeight="SemiBold"/>
+          <WrapPanel Grid.Row="1" Margin="0,18,0,14"><TextBlock Text="版本" VerticalAlignment="Center" Margin="0,0,8,0"/><TextBox x:Name="Version" Width="190" Margin="0,0,18,0"/><TextBlock Text="GitHub 仓库" VerticalAlignment="Center" Margin="0,0,8,0"/><TextBox x:Name="Repository" Width="320" Text="Azure-Sora/TSKHook-UITranslations"/></WrapPanel>
+          <StackPanel Grid.Row="2"><WrapPanel><Button Content="编译并检查" Click="Compile_Click"/><Button Content="安装到本机预览" Click="Preview_Click"/><Button Content="发布翻译更新…" Style="{StaticResource Primary}" Click="Publish_Click"/><Button Content="打开输出目录" Click="OpenPackage_Click"/></WrapPanel><TextBlock Text="预览后在游戏 F1 设置中开启“本地预览模式”。发布只包含正式可编译条目；待审、冲突和过期条目不会进入包。" Foreground="#748098" TextWrapping="Wrap" Margin="0,12,0,14"/></StackPanel>
+          <TextBox Grid.Row="3" x:Name="PackageSummary" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap" VerticalContentAlignment="Top" VerticalScrollBarVisibility="Auto" Background="#F7F9FC" Text="编译后显示条目数、校验结果和包版本。发布前可在这里检查本次结果。"/>
+        </Grid>
+      </TabItem>
+    </TabControl>
+    <Border Grid.Row="3" Margin="24,0,24,16" Padding="12,8" Background="#E8EDF5" CornerRadius="6"><TextBox x:Name="LogOutput" IsReadOnly="True" Background="Transparent" BorderThickness="0" FontSize="12" Foreground="#5D6B83" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/></Border>
+  </Grid>
+</Window>

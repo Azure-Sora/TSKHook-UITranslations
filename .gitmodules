@@ -1,0 +1,3 @@
+[submodule "vendor/TSKHook"]
+	path = vendor/TSKHook
+	url = https://github.com/Azure-Sora/TSKHook-Plus.git
