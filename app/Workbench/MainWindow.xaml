@@ -4,7 +4,7 @@
     <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="112"/></Grid.RowDefinitions>
     <Border Background="White" Padding="24,18" BorderBrush="#E0E6EF" BorderThickness="0,0,0,1">
       <DockPanel>
-        <Border DockPanel.Dock="Right" Background="#EAF0FF" CornerRadius="12" Padding="12,6" VerticalAlignment="Center"><TextBlock Text="维护者工作台 · 0.2" Foreground="#3459D6"/></Border>
+        <Border DockPanel.Dock="Right" Background="#EAF0FF" CornerRadius="12" Padding="12,6" VerticalAlignment="Center"><TextBlock Text="维护者工作台 · 0.3" Foreground="#3459D6"/></Border>
         <StackPanel><TextBlock Text="TSKHook  /  翻译工作台" FontSize="23" FontWeight="SemiBold"/><TextBlock Text="收集新文本，处理需要你判断的内容，再发布给所有玩家。" Margin="0,5,0,0" Foreground="#748098"/></StackPanel>
       </DockPanel>
     </Border>
@@ -21,7 +21,7 @@
             <Button Content="扫描捕获" Click="Import_Click"/><Button Content="翻译待办" Style="{StaticResource Primary}" Click="Translate_Click"/>
             <Button Content="重试失败任务" Click="Retry_Click"/><Button Content="暂停翻译" Click="Pause_Click"/>
             <CheckBox x:Name="AutoImport" Content="自动归档" IsChecked="True"/><CheckBox x:Name="AutoTranslate" Content="自动翻译" ToolTip="定期将新增文本发送给配置的模型接口；会产生接口用量。"/>
-            <CheckBox x:Name="MergeDuplicates" Content="合并重复原文" IsChecked="True" Click="Merge_Changed" ToolTip="同分类、字段、原文与审校状态合并展示；取消可按单个位置修订。"/>
+            <CheckBox x:Name="MergeDuplicates" Content="合并重复 / 编号模板" IsChecked="True" Click="Merge_Changed" ToolTip="同源文本合并；同字段的塔层名称归为 {floor} 模板。取消可按单个位置修订。"/>
             <Button Content="复用已有译文" Click="Reuse_Click"/>
           </WrapPanel>
           <DockPanel Grid.Row="1" Margin="0,0,0,12">

@@ -63,6 +63,8 @@ public partial class MainWindow : Window
             else Log("先在“模型与路径”中选择翻译仓库目录。");
             if (smoke)
             {
+                var searchIndex = Array.IndexOf(arguments, "--smoke-search");
+                if (searchIndex >= 0 && searchIndex + 1 < arguments.Length) Search.Text = arguments[searchIndex + 1];
                 LocalSecrets.SelfTest();
                 await Dispatcher.InvokeAsync(() => { }, DispatcherPriority.ApplicationIdle);
                 var outputIndex = Array.IndexOf(arguments, "--smoke");
@@ -151,7 +153,7 @@ public partial class MainWindow : Window
         };
         var query = Search.Text.Trim();
         if (query.Length > 0) filtered = filtered.Where(x => x.Data.Source.Contains(query, StringComparison.OrdinalIgnoreCase) ||
-            x.Data.Translation.Contains(query, StringComparison.OrdinalIgnoreCase) || x.Members.Any(m => m.Key.Contains(query, StringComparison.OrdinalIgnoreCase)));
+            x.Data.Translation.Contains(query, StringComparison.OrdinalIgnoreCase) || x.Members.Any(m => m.Key.Contains(query, StringComparison.OrdinalIgnoreCase) || m.Source.Contains(query, StringComparison.OrdinalIgnoreCase)));
         var matches = filtered.OrderBy(x => x.Data.Key, StringComparer.Ordinal).ToArray();
         var shown = matches.Take(1000).ToList();
         refreshing = true;
@@ -168,9 +170,9 @@ public partial class MainWindow : Window
         binding = true; selected = row.Data.Copy();
         selectedMembers = row.Members.Select(x => x.Copy()).ToArray();
         Original.Text = row.Data.Source; EditedTranslation.Text = row.Data.Translation;
-        EntryInfo.Text = $"本组 {row.Members.Length:N0} 个位置；保存审校 / 排除应用于整组。\n" + row.Data.Key + "\n" +
+        EntryInfo.Text = (row.Data.Source.Contains(NumberedNames.Token) ? "楼层模板：译文保留 {floor}，保存时填回各层原编号。\n" : "") + $"本组 {row.Members.Length:N0} 个位置；保存审校 / 排除应用于整组。\n" + row.Data.Key + "\n" +
             (row.Problems.Count == 0 ? string.Join(" · ", row.Data.Origins.Take(2)) : string.Join("；", row.Problems.Select(x => x.Message)));
-        EntryInfo.ToolTip = EntryInfo.Text; Original.ToolTip = string.Join("\n", row.Members.Take(30).Select(x => x.Key + "\n" + string.Join(" · ", x.Origins)));
+        EntryInfo.ToolTip = EntryInfo.Text; Original.ToolTip = string.Join("\n", row.Members.Take(30).Select(x => x.Source + "\n" + x.Key + "\n" + string.Join(" · ", x.Origins)));
         dirty = false; binding = false;
     }
     private void BindEmpty() { binding = true; Original.Clear(); EditedTranslation.Clear(); EntryInfo.Text = "选择一条文本查看原文、上下文与译文。"; binding = false; }
@@ -206,7 +208,7 @@ public partial class MainWindow : Window
     private async void VerifyEntry_Click(object sender, RoutedEventArgs e) => await Perform(async () =>
     {
         if (workspace == null || selected == null) return;
-        if (selectedMembers.Length > 1) throw new InvalidOperationException("实机确认按实际位置记录，请先取消“合并重复原文”再选择已验证的位置。");
+        if (selectedMembers.Length > 1 || selected.Source.Contains(NumberedNames.Token)) throw new InvalidOperationException("实机确认按实际位置记录，请先取消“合并重复原文”再选择已验证的位置。");
         if (string.IsNullOrWhiteSpace(EditedTranslation.Text)) throw new InvalidOperationException("译文不能为空。");
         var row = selected; var text = EditedTranslation.Text;
         await Task.Run(() => workspace.Edit(row.Key, row.SourceHash, text, "verified"));

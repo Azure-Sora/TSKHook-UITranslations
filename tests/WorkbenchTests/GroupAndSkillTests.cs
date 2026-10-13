@@ -63,6 +63,32 @@ internal static class GroupAndSkillTests
         var capturedPlain = Row("skill:captured", "攻撃120%", "现有正式译文120%", "reviewed", "skill", "skill_detail");
         var existing = Create(Path.Combine(root, "existing-skill"), [colored, capturedPlain]);
         Check(existing.GenerateSkillPlainText().Generated == 0 && existing.Snapshot().Single(x => x.Key == capturedPlain.Key).Translation == capturedPlain.Translation, "captured plain source preserved");
+        var floors = Enumerable.Range(1, 230).Select(i => Row("tower:" + i, $"水神の塔{i}F", "", "new", "misc", "stage_name")).ToArray();
+        var tower = Create(Path.Combine(root, "tower"), floors);
+        var towerGroup = TranslationGroups.Create(tower.Snapshot()).Single();
+        Check(towerGroup.Members.Length == 230 && towerGroup.Representative.Source == "水神の塔{floor}F", "230 floors become one placeholder task");
+        Check(TranslationGroups.Create(tower.Snapshot(), false).Count == 230, "numbered names can still be inspected individually");
+        var floorFixture = new ModelFixture { Translate = s => s.Replace("の", "之") };
+        using var floorClient = new HttpClient(floorFixture);
+        Check(await new TranslationRunner(floorClient).RunAsync(tower, settings, "fixture", false, _ => { }, default) == 230 && floorFixture.RowsReceived == 1, "one template model request covers all floors");
+        Check(tower.Snapshot().All(x => x.Translation == x.Source.Replace("の", "之") && !x.Translation.Contains('{')), "each runtime row keeps original floor number");
+        Check(tower.Compile(Path.Combine(root, "tower-package/ui_translations.jsonl")).Entries == 230, "all floor keys and hashes remain readable by plugin");
+        var manualTower = Create(Path.Combine(root, "manual-tower"), floors);
+        Check(manualTower.EditGroup(manualTower.Snapshot(), "水神之塔{floor}F", "reviewed") == 230 && manualTower.Snapshot().Last().Translation == "水神之塔230F", "manual template fills every floor");
+        bool wrongNumberRejected = false;
+        try { manualTower.EditGroup(manualTower.Snapshot(), "水神之塔1F", "reviewed"); } catch (InvalidDataException) { wrongNumberRejected = true; }
+        Check(wrongNumberRejected, "fixed-number bulk overwrite rejected");
+        Check(NumberedNames.Template(Row("skill-num", "水神の塔1F", "", "new", "skill", "skill_detail")) == null &&
+            NumberedNames.Template(Row("multi", "水神の塔1-2F", "", "new", "misc", "stage_name")) == null, "skill and multi-number text excluded from heuristic");
+        var reuseFloors = floors.Take(3).Select(x => x.Copy()).ToArray();
+        foreach (var x in reuseFloors.Take(2)) { x.Translation = x.Source.Replace("の", "之"); x.Status = "reviewed"; }
+        var towerReuse = Create(Path.Combine(root, "tower-reuse"), reuseFloors);
+        Check(towerReuse.ReuseTranslations() == 1 && towerReuse.Snapshot().Single(x => x.Key == "tower:3").Translation == "水神之塔3F", "two consistent existing floors safely seed later floor reuse");
+        reuseFloors[1].Translation = "不同的塔2F";
+        Check(Create(Path.Combine(root, "tower-variants"), reuseFloors).ReuseTranslations() == 0, "conflicting tower translations are not propagated");
+        var badTower = Create(Path.Combine(root, "bad-tower"), floors);
+        var badFixture = new ModelFixture(); using var badClient = new HttpClient(badFixture);
+        Check(await new TranslationRunner(badClient).RunAsync(badTower, settings, "fixture", false, _ => { }, default) == 0 && badTower.Snapshot().All(x => x.Status == "new"), "missing model placeholder cannot silently create wrong floors");
         return assertions;
     }
 

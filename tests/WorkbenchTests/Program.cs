@@ -91,13 +91,14 @@ sealed class ModelFixture : HttpMessageHandler
     public HttpStatusCode Status { get; set; } = HttpStatusCode.OK;
     public int RowsReceived;
     public Action? BeforeResponse;
+    public Func<string, string> Translate { get; set; } = _ => "测试译文";
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
         using var requestJson = JsonDocument.Parse(await request.Content!.ReadAsStringAsync(cancellationToken));
         var rows = JsonData.Read<List<TranslationEntry>>(requestJson.RootElement.GetProperty("messages")[1].GetProperty("content").GetString()!);
         RowsReceived += rows.Count;
         BeforeResponse?.Invoke();
-        var translated = JsonData.Write(rows.Select(x => new { x.Key, x.SourceHash, translation = "测试译文" }));
+        var translated = JsonData.Write(rows.Select(x => new { x.Key, x.SourceHash, translation = Translate(x.Source) }));
         return new HttpResponseMessage(Status) { RequestMessage = request, Content = new StringContent(JsonData.Write(new
         { choices = new[] { new { message = new { content = translated } } }, usage = new { prompt_tokens = 100, completion_tokens = 20, total_tokens = 120 } }), Encoding.UTF8, "application/json") };
     }

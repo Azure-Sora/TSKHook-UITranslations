@@ -30,6 +30,7 @@ public sealed class TranslationRunner(HttpClient client)
             .Where(x => UiJsonTranslator.Sha256(x.Source) == x.SourceHash)
             .Where(x => !failures.ContainsKey(Identity(x))).OrderBy(x => x.Category).ThenBy(x => x.Key, StringComparer.Ordinal).ToArray();
         var members = groups.ToDictionary(g => g.Representative.Key, g => g.Members);
+        var taskGroups = groups.ToDictionary(g => g.Representative.Key);
         var targetCount = candidates.Sum(x => members[x.Key].Length);
         progress($"本轮 {candidates.Length:N0} 个翻译任务，覆盖 {targetCount:N0} 个位置；有译文分歧的原文留待人工核对。");
         var system = BuildInstructions(workspace.Root);
@@ -49,7 +50,7 @@ public sealed class TranslationRunner(HttpClient client)
                 }
                 cancellation.ThrowIfCancellationRequested();
                 var originals = batch.SelectMany(x => members[x.Key]).ToArray();
-                var expanded = batch.SelectMany(x => members[x.Key].Select(m => new KeyValuePair<string, string>(m.Key, translated!.Translations[x.Key])))
+                var expanded = batch.SelectMany(x => members[x.Key].Select(m => new KeyValuePair<string, string>(m.Key, taskGroups[x.Key].Expand(translated!.Translations[x.Key], m))))
                     .ToDictionary(x => x.Key, x => x.Value);
                 var applied = workspace.ApplyMachineResults(originals, expanded);
                 Interlocked.Add(ref saved, applied);
