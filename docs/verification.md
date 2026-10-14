@@ -122,3 +122,12 @@ vendor/TSKHook 固定到本轮插件源提交 4da4e17（本地），供默认 Bu
 用户已授权推送与发布。文字 2026.10.14.2 为 71,892 条、22,029,844 字节，SHA-256 e1f2121d1f5ddcb50091636fa51575c527a3df10fd90bced8cf036593776d8c3，零 fatal，270 条既有提示。图片 2026.10.14.3 ZIP 为 2,480,563 字节，SHA-256 5fcc06576b03bfdfe52624a462bc87ce6ce03ce00de1813f823e4784d6be2ddc。两包在最终 vendor 核心648e6a1下重建且哈希与实机 fixture 输入一致。Plugin v1.6.0 发布准备提交7dc5daa已先推送，子模块核心提交已存在于远端。
 
 文字通过既有 ReleasePublisher 的 draft-upload-publish 流程；图片版本附件全数上传后发布，再激活 image-channel 清单，均 latest=false。当前节仅记录已审核的准备与政策，公开附件、更新入口和 CI 以本机 .local/release-160 后续证据为准。
+
+
+## 2026-10-14 资源公开发布完成
+
+文字 translations-2026.10.14.2、图片 images-2026.10.14.3 和固定 image-channel 均已从发布提交2fde1d5公开发布；插件 v1.6.0 发布提交7dc5daa先行推送，固定 vendor 核心648e6a1可从远端获取。文字继续为 latest，两个图片 Release 均不抢占 latest。
+
+匿名公开下载验证：文字三附件、图片 ZIP/版本清单/固定入口清单与本地审核产物逐字节一致，版本和 SHA-256 如准备记录；插件附件也一致。引用实际发布 DLL 的更新客户端从公开默认入口完成下载、校验和二次 no-op 检查，读回文字71,892条与图片41 Sprite/16 Spine/31标题。没有现场替换正在运行的游戏配置。
+
+对应发布提交 CI 均 success：插件 Publish Release 38580959059、翻译仓 Verify workbench 38580946343。后续纯文档闭环提交与这些已验收的发布标签分开；发布标签和附件不移动。
