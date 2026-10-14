@@ -1,6 +1,6 @@
 # 独立图片资源包
 
-资源源目录：`translations/images/ui_images/`，包含最终 PNG 和运行时源匹配 manifest.json。当前已有图片版本 `2026.10.14.3`；本轮不发布。
+资源源目录：`translations/images/ui_images/`，包含最终 PNG 和运行时源匹配 manifest.json。图片版本 `2026.10.14.3`，独立标签 `images-2026.10.14.3`，最低插件版本 1.6.0。
 
 调试桥及 CLI 在 [tools/UiInspector](../tools/UiInspector/README.md)，仅维护时独立安装。插件无需调试桥；安装与替换图片的细节见 [插件图片说明](https://github.com/Azure-Sora/TSKHook-Plus/blob/master/Extensions/docs/ui-image-localization.md)。
 
@@ -17,7 +17,7 @@ BuildImagePackage 复用 vendor/TSKHook 的纯托管协议，只构建和校验�
 
 输出 `.local/image-packages/<图片版本>/ui_images.zip`、`image-manifest.json`。外层清单包含 resourceType=ui-images、独立版本、minimumPluginVersion=1.6.0、ZIP 大小及 SHA-256、唯一版本附件 URL。ZIP 内 manifest.json 仍是 Sprite/Spine 的运行时规则，版本必须与外层相同。
 
-未来确认发布后再显式运行 `./scripts/Publish-Images.ps1 -Version <图片版本>`；它要求 main 已提交所有更改，将图片作为 `images-<版本>` 发布，完成版本附件上传后更新固定 `image-channel/image-manifest.json`。所有图片 Release 使用 latest=false，因此不抢占文字更新的 latest 通道。上传结果不明时先查 GitHub 状态，不盲目重试。
+确认发布时显式运行 `./scripts/Publish-Images.ps1 -Version <图片版本>`；它要求 main 已提交所有更改，将图片作为 `images-<版本>` 发布，完成版本附件上传后更新固定 `image-channel/image-manifest.json`。所有图片 Release 使用 latest=false，因此不抢占文字更新的 latest 通道。上传结果不明时先查 GitHub 状态，不盲目重试。
 
 文字仍按 `translations-<版本>` 单独发布，保留 manifest.json、ui_translations.jsonl、validation.json 与工作台既有流程；工作台预览继续为 prerelease/latest=false。不要把图片加入文字包，版本号无需同步。
 

@@ -28,3 +28,12 @@ TSKHook 的文字、图片翻译资源、Windows 翻译工作台及可选调试�
 - 默认数据已迁移，日常关注新增和需要核对的条目即可。
 
 插件只下载正式翻译包，玩家不需要模型 API Key 或安装工作台。
+
+
+## 当前资源版本
+
+- [文字 2026.10.14.2](https://github.com/Azure-Sora/TSKHook-UITranslations/releases/tag/translations-2026.10.14.2)：71,892 条运行时记录，最低插件 1.4.6；合并静态 UI、系统目录和有界模板，保留剧情曲名原文及“持有数”短标签。
+- [图片 2026.10.14.3](https://github.com/Azure-Sora/TSKHook-UITranslations/releases/tag/images-2026.10.14.3)：41 个 Sprite、16 张 Spine 卡片的 31 个标题区域，最低插件 1.6.0；ui_images.zip 与 image-manifest.json 分别作为资源和更新清单。
+- 推荐 [插件 v1.6.0](https://github.com/Azure-Sora/TSKHook-Plus/releases/tag/v1.6.0)。图片与工作台 Release 不占用文字 latest，图片更新入口为固定 image-channel。
+
+玩家启用自动更新并关闭本地预览模式后即可检查公共包；本地预览是维护者功能。图片文字按资源包字形显示，不随逐字简繁配置改变。
