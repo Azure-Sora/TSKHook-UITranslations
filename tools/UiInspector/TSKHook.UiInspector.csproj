@@ -4,7 +4,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>latest</LangVersion>
     <AssemblyName>TSKHook.UiInspector</AssemblyName>
-    <Version>0.1.6</Version>
+    <Version>0.1.7</Version>
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <ItemGroup>

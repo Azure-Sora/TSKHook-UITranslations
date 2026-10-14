@@ -6,7 +6,7 @@ using Il2CppInterop.Runtime.Attributes;
 
 namespace TSKHook.UiInspector;
 
-[BepInPlugin("local.tskhook.uiinspector", "TSKHook UI Inspector", "0.1.6")]
+[BepInPlugin("local.tskhook.uiinspector", "TSKHook UI Inspector", "0.1.7")]
 public sealed class InspectorPlugin : BasePlugin
 {
     internal static InspectorPlugin Instance;

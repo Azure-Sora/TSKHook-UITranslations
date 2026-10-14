@@ -65,6 +65,15 @@ public sealed partial class InspectorBehaviour
                 break;
             case "ui": result = UiScanner.Scan(InspectorPlugin.Instance, out _, options); break;
             case "catalog": result = ReadGameTextCatalog(); break;
+            case "reload-tskhook-config":
+                if (!BepInEx.Unity.IL2CPP.IL2CPPChainloader.Instance.Plugins.TryGetValue("TSKHook", out var translationPlugin))
+                    throw new InvalidOperationException("TSKHook is not loaded.");
+                var read = translationPlugin.Instance.GetType().Assembly.GetType("TSKHook.TSKConfig")?.GetMethod("Read",
+                    System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static)
+                    ?? throw new InvalidOperationException("TSKHook config reload is unavailable.");
+                read.Invoke(null, null);
+                result = new { reloaded = true };
+                break;
             case "dump": result = Dump(UiScanner.Scan(InspectorPlugin.Instance, out _, options)); break;
             case "apply":
                 result = ApplyPreview(args.ValueKind == JsonValueKind.Object && args.TryGetProperty("rules", out var rules) ? rules.GetRawText() : null, options);

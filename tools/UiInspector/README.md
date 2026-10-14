@@ -47,7 +47,7 @@ python $inspectorCli spine-export --scene Main --path '/Canvas[0]/Card[0]/Card_s
 
 `spine-export` 要求精确场景、路径、实例 ID、页号和原始图集纹理名，将对应图集页 GPU 读回为 RGBA PNG。只读原图集，不替换贴图、不改 slot、骨骼或动画；主线程操作及 PNG 清理方式同图片导出。当前没有 Spine 替换命令。
 
-2026-10-14 实机读取任务 6、星骑士 3、故事 3、商店 2 个大按钮，共 14 个，零错误；14 张图集导出通过，按 atlas 坐标、旋转和裁剪偏移提取 27 份独立标题素材。TeamBtn 悬停实测动画由 `cut_01` 切换到 `cut_02`。构建通过、8 项 CLI 检查通过。详细方案和替换尚未实测的边界见 [Spine 图片汉化研究](../../docs/spine-ui-localization-research.md)。
+2026-10-14 实机读取任务 6、星骑士 3、故事 3、商店 2 个大按钮，共 14 个，零错误；14 张图集导出通过，按 atlas 坐标、旋转和裁剪偏移提取 27 份独立标题素材。TeamBtn 悬停实测动画由 `cut_01` 切换到 `cut_02`。构建通过、8 项 CLI 检查通过。详细方案和替换尚未实测的边界见 [Spine 图片汉化研究](https://github.com/Azure-Sora/TSKHook-Plus/blob/master/Extensions/docs/spine-ui-localization-research.md)。
 
 ### 同尺寸图集替换预览（0.1.6）
 
@@ -173,3 +173,10 @@ python tests/UiInspectorSmokeTest/test_cli.py
 之后的版本加入只读系统目录和独立悬停命令，实机已加载 0.1.3。目录返回 169 个非空文本，零读取错误；任务 6、星骑士 3、故事 3、商店 2 个选项逐一仅发送 hover，14 处气泡均读回预期中文并保存截图。文字由正式插件 1.4.6 自动应用合并翻译包，本轮没有使用工具 apply 规则。个人资料、恢复体力说明和抽卡确认等补漏也已入包；完整范围与限制见 [正式插件验证记录](https://github.com/Azure-Sora/TSKHook-Plus/blob/master/Extensions/docs/verification.md)。
 
 工具构建、5 项 CLI 检查与上述实际悬停通过。切换页面时 UI 树可能早于加载遮罩出现；前置拒绝代表没有派发输入，仍需重新读树和截图再操作。原始树和命令令牌仅留在本机忽略目录，不提交到翻译仓。
+
+
+### 0.1.7：翻译配置重读
+
+`python $inspectorCli reload-tskhook-config` 在 Unity 主线程调用已加载 TSKHook 的公开配置重读入口；不接受任意路径、设置或代码，也不硬依赖插件程序集。不存在 TSKHook 或旧版本未暴露入口时返回错误。维护者先备份并编辑 TSKHook.cfg 后，可借此应用配置及已选择的 Maintenance 操作；一般玩家仍使用 F1。
+
+本机游戏 1.6.0 / Inspector 0.1.7 实测配置重读、菜单 15 处简繁切换与原样显示、独立图片回退及热下载通过。CLI 检查增至 11 项。实时业务操作只包含开始游戏、菜单开关与主页/招募页导航，没有购买、招募、领奖或战斗。详情见 [插件验收记录](https://github.com/Azure-Sora/TSKHook-Plus/blob/master/Extensions/docs/verification.md)。原配置与资源状态已恢复，临时本机 HTTPS 服务、证书与私钥已清理；本轮未发布。

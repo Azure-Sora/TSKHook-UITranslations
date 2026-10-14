@@ -15,6 +15,10 @@ spec.loader.exec_module(cli)
 
 
 class CliTest(unittest.TestCase):
+    def test_config_reload_has_no_arbitrary_path_or_code(self):
+        p = cli.parser()
+        self.assertEqual(cli.make_arguments(p.parse_args(["reload-tskhook-config"]), p), {})
+
     def test_utf8_authenticated_command_and_binary_screenshot(self):
         received = []
 

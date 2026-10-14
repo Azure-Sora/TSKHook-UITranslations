@@ -15,6 +15,7 @@ def parser():
     p.add_argument("--discovery", type=Path, help="Explicit path to ui_inspector/bridge.json")
     commands = p.add_subparsers(dest="command", required=True)
     commands.add_parser("ping")
+    commands.add_parser("reload-tskhook-config", help="Reload the installed TSKHook config on Unity's thread; no arbitrary path or code")
     ui = commands.add_parser("ui", help="Read the current UI tree without writing inside the game directory")
     ui.add_argument("--output", type=Path)
     catalog = commands.add_parser("catalog", help="Read the game's static TextType catalog; does not open pages or perform actions")
