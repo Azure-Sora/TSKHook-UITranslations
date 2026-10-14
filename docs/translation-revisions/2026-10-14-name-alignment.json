@@ -1,0 +1,3549 @@
+[
+  {
+    "ja": "ルリエル",
+    "old": [
+      "琉璃艾尔"
+    ],
+    "new": "瑠璃艾尔",
+    "type": "角色名/名称映射",
+    "source_evidence": {
+      "url": "https://translation.lolida.best/projects/tsk/tsk_name/zh_Hant/",
+      "key": "ルリエル",
+      "traditional": "瑠璃艾爾"
+    }
+  },
+  {
+    "ja": "ロロット＆ルリエル",
+    "old": [
+      "萝露缇＆琉璃艾尔"
+    ],
+    "new": "萝露缇＆瑠璃艾尔",
+    "type": "角色名/名称映射",
+    "source_evidence": {
+      "url": "https://translation.lolida.best/projects/tsk/tsk_name/zh_Hant/",
+      "key": "ロロット＆ルリエル",
+      "traditional": "蘿露緹＆瑠璃艾爾"
+    }
+  },
+  {
+    "ja": "ルリエル？",
+    "old": [
+      "琉璃艾尔？"
+    ],
+    "new": "瑠璃艾尔？",
+    "type": "角色名/名称映射",
+    "source_evidence": {
+      "url": "https://translation.lolida.best/projects/tsk/tsk_name/zh_Hant/",
+      "key": "ルリエル？",
+      "traditional": "瑠璃艾爾？"
+    }
+  },
+  {
+    "ja": "ドッペルリエル",
+    "old": [
+      "琉璃艾尔分身"
+    ],
+    "new": "瑠璃艾尔分身",
+    "type": "角色名/名称映射",
+    "source_evidence": {
+      "url": "https://translation.lolida.best/projects/tsk/tsk_name/zh_Hant/",
+      "key": "ドッペルリエル",
+      "traditional": "瑠璃艾爾分身"
+    }
+  },
+  {
+    "ja": "ラクシャ",
+    "old": [
+      "拉克夏"
+    ],
+    "new": "兰可莎",
+    "type": "角色名/名称映射",
+    "source_evidence": {
+      "url": "https://translation.lolida.best/projects/tsk/tsk_name/zh_Hant/",
+      "key": "ラクシャ",
+      "traditional": "蘭可莎"
+    }
+  },
+  {
+    "ja": "オオヒメ（幼少）",
+    "old": [],
+    "new": "大日女（幼少）",
+    "type": "角色名/名称映射",
+    "source_evidence": {
+      "url": "https://translation.lolida.best/projects/tsk/tsk_name/zh_Hant/",
+      "key": "オオヒメ（幼少）",
+      "traditional": "大日女（幼少）"
+    }
+  },
+  {
+    "ja": "ルーシィ",
+    "old": [],
+    "new": "露西",
+    "type": "角色名/名称映射",
+    "source_evidence": {
+      "url": "https://translation.lolida.best/projects/tsk/tsk_name/zh_Hant/",
+      "key": "ルーシィ",
+      "traditional": "露西"
+    }
+  },
+  {
+    "ja": "ヨミ＆狛里",
+    "old": [],
+    "new": "优咪＆狛里",
+    "type": "角色名/名称映射",
+    "source_evidence": {
+      "url": "https://translation.lolida.best/projects/tsk/tsk_name/zh_Hant/",
+      "key": "ヨミ＆狛里",
+      "traditional": "優咪＆狛里"
+    }
+  },
+  {
+    "ja": "ダブルヘレナ",
+    "old": [],
+    "new": "双海伦娜",
+    "type": "角色名/名称映射",
+    "source_evidence": {
+      "url": "https://translation.lolida.best/projects/tsk/tsk_name/zh_Hant/",
+      "key": "ダブルヘレナ",
+      "traditional": "雙海倫娜"
+    }
+  },
+  {
+    "ja": "ガーディアン・オルサレクス",
+    "old": [
+      "守护者・奥尔萨莱克斯"
+    ],
+    "new": "守护者·奥塔莱克斯",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "ガーディアン・オルサレクス",
+        "zh_Hant": "守護者・奧塔萊克斯"
+      }
+    ]
+  },
+  {
+    "ja": "赤ちゃんクマロボ",
+    "old": [
+      "婴儿熊机器人",
+      "小熊机器人宝宝"
+    ],
+    "new": "小熊机器人",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "赤ちゃんクマロボ",
+        "zh_Hant": "小熊機器人"
+      }
+    ]
+  },
+  {
+    "ja": "フレイムフォーム",
+    "old": [
+      "烈焰形态"
+    ],
+    "new": "火焰形态",
+    "type": "角色称号/形态",
+    "source_evidence": [
+      {
+        "component": "ch10040051",
+        "ja": "フレイムフォーム",
+        "zh_Hant": "火焰形態",
+        "zh_Hans": "火焰形态",
+        "source_url": "https://translation.lolida.best/projects/tsk/ch10040051/zh_Hant/"
+      },
+      {
+        "component": "ch10040051",
+        "ja": "「──ででーん！　どうだ魔王、改めてこいつが……アポロちゃんフレイムフォームだぜ！」",
+        "zh_Hant": "「——噔噔！　怎麼樣魔王，這就是我的火焰形態……阿波羅醬FlameForm！」",
+        "zh_Hans": "「——噔噔！　怎么样魔王，这就是我的火焰形态……阿波罗酱FlameForm！」",
+        "source_url": "https://translation.lolida.best/projects/tsk/ch10040051/zh_Hant/"
+      }
+    ]
+  },
+  {
+    "ja": "ドールズマスター",
+    "old": [
+      "人偶大师"
+    ],
+    "new": "玩偶大师",
+    "type": "角色称号/形态",
+    "source_evidence": [
+      {
+        "component": "subjugation000505",
+        "ja": "「通称『ドールズマスター』」",
+        "zh_Hant": "「通稱『玩偶大師』。」",
+        "zh_Hans": "「通称『玩偶大师』。」",
+        "source_url": "https://translation.lolida.best/projects/tsk/subjugation000505/zh_Hant/"
+      },
+      {
+        "component": "subjugation001104",
+        "ja": "そして当時、トワと共に流星星徒会に所属し、『ドールズマスター』と二つ名で最強無敗を誇った、元星徒会長の肩書きを持つ人物でもある。",
+        "zh_Hant": "當時她和朵瓦同屬流星學園星徒會，擁有「玩偶大師」的稱號，號稱最強無敗，也是前星徒會會長。",
+        "zh_Hans": "当时她和朵瓦同属流星学园星徒会，拥有「玩偶大师」的称号，号称最强无败，也是前星徒会会长。",
+        "source_url": "https://translation.lolida.best/projects/tsk/subjugation001104/zh_Hant/"
+      }
+    ]
+  },
+  {
+    "ja": "煌竜ヴィライア",
+    "old": [
+      "煌龙维莱亚"
+    ],
+    "new": "煌龙维拉亚",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "煌竜ヴィライア",
+        "zh_Hant": "煌龍維拉亞"
+      }
+    ]
+  },
+  {
+    "ja": "エントロフィー",
+    "old": [
+      "熵"
+    ],
+    "new": "恩特洛菲",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "エントロフィー",
+        "zh_Hant": "恩特洛菲"
+      },
+      {
+        "component": "story003601",
+        "ja": "「ふふっ、初めましてっす！　魔法少女のアネさんたち～♪　ウチは『エントロフィー』って言いま～っす♪」",
+        "zh_Hant": "「呵呵，初次見面！　魔法少女的各位～♪　我叫「恩特洛菲」～♪」",
+        "zh_Hans": "「呵呵，初次见面！　魔法少女的各位～♪　我叫「恩特洛菲」～♪」",
+        "source_url": "https://translation.lolida.best/projects/tsk/story003601/zh_Hant/"
+      }
+    ]
+  },
+  {
+    "ja": "サマーアイギス",
+    "old": [
+      "夏日艾吉斯"
+    ],
+    "new": "夏日羽翼",
+    "type": "角色称号/形态",
+    "source_evidence": [
+      {
+        "component": "ch10560023",
+        "ja": "「決まりました──『サマーアイギス』。これが白楯さんの新しいあだ名です」",
+        "zh_Hant": "「決定了——『夏日羽翼』。這就是白盾同學的新綽號。」",
+        "zh_Hans": "「决定了——『夏日羽翼』。这就是白盾同学的新绰号。」",
+        "source_url": "https://translation.lolida.best/projects/tsk/ch10560023/zh_Hant/"
+      }
+    ]
+  },
+  {
+    "ja": "メルクリウス",
+    "old": [
+      "墨丘利乌斯"
+    ],
+    "new": "墨丘利",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "メルクリウス",
+        "zh_Hant": "墨丘利"
+      }
+    ]
+  },
+  {
+    "ja": "流星ライダー",
+    "old": [
+      "流星骑手"
+    ],
+    "new": "流星骑士",
+    "type": "角色称号/形态",
+    "source_evidence": [
+      {
+        "component": "main00305",
+        "ja": "流星ライダー",
+        "zh_Hant": "流星騎士",
+        "zh_Hans": "流星骑士",
+        "source_url": "https://translation.lolida.best/projects/tsk/main00305/zh_Hant/"
+      },
+      {
+        "component": "ch10040052",
+        "ja": "「この戦闘服はもう十分に披露してやったし、元の『流星ライダー』フォームもあたしにとっちゃ大事なもんだからな──そろそろ元に戻らないと」",
+        "zh_Hant": "「這身戰鬥服已經展示得夠多了，而且原本的「流星騎士」形態對我來說也很重要——差不多該恢復原狀了」",
+        "zh_Hans": "「这身战斗服已经展示得够多了，而且原本的「流星骑士」形态对我来说也很重要——差不多该恢复原状了」",
+        "source_url": "https://translation.lolida.best/projects/tsk/ch10040052/zh_Hant/"
+      }
+    ]
+  },
+  {
+    "ja": "ゆーちゃん",
+    "old": [
+      "优酱"
+    ],
+    "new": "小优",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "ゆーちゃん",
+        "zh_Hant": "小優"
+      }
+    ]
+  },
+  {
+    "ja": "ミーちゃん",
+    "old": [
+      "小美"
+    ],
+    "new": "小米",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "ミーちゃん",
+        "zh_Hant": "小米"
+      },
+      {
+        "component": "ch10400011",
+        "ja": "「こっちは使い魔のミーちゃん！　ほんとはミネルバっていうんだけど、かわいいからいつもミーちゃんって呼んでるんだ」",
+        "zh_Hant": "「它是我的使魔小米！它其實叫米涅露瓦，不過因為它很可愛，所以我都叫它小米。」",
+        "zh_Hans": "「它是我的使魔小米！它其实叫米涅露瓦，不过因为它很可爱，所以我都叫它小米。」",
+        "source_url": "https://translation.lolida.best/projects/tsk/ch10400011/zh_Hant/"
+      }
+    ]
+  },
+  {
+    "ja": "ヴィライア",
+    "old": [
+      "维莱亚"
+    ],
+    "new": "维拉亚",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "ヴィライア",
+        "zh_Hant": "維拉亞"
+      }
+    ]
+  },
+  {
+    "ja": "敗残の亡霊",
+    "old": [
+      "败亡者的亡灵"
+    ],
+    "new": "战败的亡灵",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "敗残の亡霊",
+        "zh_Hant": "戰敗的亡靈"
+      }
+    ]
+  },
+  {
+    "ja": "厄災の右腕",
+    "old": [
+      "灾厄右臂",
+      "灾厄右腕"
+    ],
+    "new": "灾厄之右手",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "厄災の右腕",
+        "zh_Hant": "災厄之右手"
+      }
+    ]
+  },
+  {
+    "ja": "ザタナーン",
+    "old": [
+      "撒旦之翼"
+    ],
+    "new": "札塔南",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "ザタナーン",
+        "zh_Hant": "札塔南"
+      }
+    ]
+  },
+  {
+    "ja": "ミネルバ",
+    "old": [
+      "密涅瓦"
+    ],
+    "new": "米涅露瓦",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "ミネルバ",
+        "zh_Hant": "米涅露瓦"
+      },
+      {
+        "component": "ch10400011",
+        "ja": "「こっちは使い魔のミーちゃん！　ほんとはミネルバっていうんだけど、かわいいからいつもミーちゃんって呼んでるんだ」",
+        "zh_Hant": "「它是我的使魔小米！它其實叫米涅露瓦，不過因為它很可愛，所以我都叫它小米。」",
+        "zh_Hans": "「它是我的使魔小米！它其实叫米涅露瓦，不过因为它很可爱，所以我都叫它小米。」",
+        "source_url": "https://translation.lolida.best/projects/tsk/ch10400011/zh_Hant/"
+      }
+    ]
+  },
+  {
+    "ja": "ディアナ",
+    "old": [
+      "蒂安娜"
+    ],
+    "new": "戴安娜",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "ディアナ",
+        "zh_Hant": "戴安娜"
+      }
+    ]
+  },
+  {
+    "ja": "黒ベア子",
+    "old": [
+      "黑熊子",
+      "小黑熊"
+    ],
+    "new": "黑贝亚子",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "黒ベア子",
+        "zh_Hant": "黑貝亞子"
+      },
+      {
+        "component": "ch10040051",
+        "ja": "黒ベア子の出現から一夜明けて……",
+        "zh_Hant": "黑貝亞子出現後的第二天……",
+        "zh_Hans": "黑贝亚子出现后的第二天……",
+        "source_url": "https://translation.lolida.best/projects/tsk/ch10040051/zh_Hant/"
+      }
+    ]
+  },
+  {
+    "ja": "スミカ",
+    "old": [
+      "苏美香"
+    ],
+    "new": "斯米卡",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "スミカ",
+        "zh_Hant": "斯米卡"
+      },
+      {
+        "component": "ch10500012",
+        "ja": "「名前は……スミカってことにしとけ。どうでもいいが、呼び名がないと地味に不便だからな」",
+        "zh_Hant": "「名字……就叫斯米卡吧。雖然無關緊要，但沒有稱呼的話會很不方便。」",
+        "zh_Hans": "「名字……就叫斯米卡吧。虽然无关紧要，但没有称呼的话会很不方便。」",
+        "source_url": "https://translation.lolida.best/projects/tsk/ch10500012/zh_Hant/"
+      }
+    ]
+  },
+  {
+    "ja": "テルル",
+    "old": [
+      "忒卢尔"
+    ],
+    "new": "堤露露",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "テルル",
+        "zh_Hant": "堤露露"
+      }
+    ]
+  },
+  {
+    "ja": "アルテ",
+    "old": [
+      "阿尔特"
+    ],
+    "new": "阿尔蒂",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "アルテ",
+        "zh_Hant": "阿爾蒂"
+      }
+    ]
+  },
+  {
+    "ja": "プトラ",
+    "old": [
+      "普特拉"
+    ],
+    "new": "布特拉",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "プトラ",
+        "zh_Hant": "布特拉"
+      }
+    ]
+  },
+  {
+    "ja": "ベア子",
+    "old": [
+      "熊子"
+    ],
+    "new": "贝亚子",
+    "type": "NPC/署名专名",
+    "source_evidence": [
+      {
+        "source_url": "https://translation.lolida.best/download/tsk/tsk_subname/zh_Hant/",
+        "component": "tsk_subname",
+        "ja": "ベア子",
+        "zh_Hant": "貝亞子"
+      }
+    ]
+  },
+  {
+    "ja": "トロピカルミエル",
+    "old": [
+      "热带露米艾尔",
+      "热带米艾尔"
+    ],
+    "new": "热带缪尔",
+    "type": "角色称号/形态",
+    "source_evidence": [
+      {
+        "component": "story003804",
+        "ja": "「――主に付き従い、楽園に降臨せよ燦然たる陽光の天使、トロピカルミエル！」",
+        "zh_Hant": "「――隨侍主側，降臨於樂園的燦然陽光之天使，熱帶繆爾！」",
+        "zh_Hans": "「――随侍主侧，降临于乐园的灿然阳光之天使，热带缪尔！」",
+        "source_url": "https://translation.lolida.best/projects/tsk/story003804/zh_Hant/"
+      }
+    ]
+  },
+  {
+    "ja": "ヴィーナスエクスカリバー・ノヴァ",
+    "old": [
+      "维纳斯誓约胜利之剑·新星"
+    ],
+    "new": "维纳斯斩铁剑·新星",
+    "zh_Hant": "維納斯斬鐵劍・新星",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10030053/zh_Hant/",
+        "ja": "「ヴィーナスエクスカリバー・ノヴァ！！」",
+        "zh_Hant": "「維納斯斬鐵劍・新星！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "サン・アビソル・リグレッション",
+    "old": [
+      "太阳深渊·回归"
+    ],
+    "new": "圣·阿比索尔·里格雷西昂",
+    "zh_Hant": "聖・阿比索爾・里格雷西昂",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21510/zh_Hant/",
+        "ja": "「──サン・アビソル・リグレッション！！！」",
+        "zh_Hant": "「——聖・阿比索爾・里格雷西昂！！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "シャルラハロート・フリューゲル",
+    "old": [
+      "绯红之翼"
+    ],
+    "new": "夏拉哈罗德·飞翼",
+    "zh_Hant": "夏拉哈羅德・飛翼",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21110/zh_Hant/",
+        "ja": "「焼き尽くせ──シャルラハロート・フリューゲル！」",
+        "zh_Hant": "「燒盡一切吧——夏拉哈羅德・飛翼！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ディメンション・エクスウェーブ",
+    "old": [
+      "次元外波"
+    ],
+    "new": "次元浪潮",
+    "zh_Hant": "次元浪潮",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21501/zh_Hant/",
+        "ja": "「誰一人として死なせるものか──ディメンション・エクスウェーブッ！！」",
+        "zh_Hant": "「我不會讓你們任何一個人死掉——次元浪潮！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ベルフェゴールディプラヴィティ",
+    "old": [
+      "贝尔芬格之堕落"
+    ],
+    "new": "贝尔费戈尔迪普拉维提",
+    "zh_Hant": "貝爾費戈爾迪普拉維提",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story002810/zh_Hant/",
+        "ja": "「ベルフェゴールディプラヴィティ！」",
+        "zh_Hant": "「貝爾費戈爾迪普拉維提！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "マグニフィセント・ティターニア",
+    "old": [
+      "华丽提泰妮娅"
+    ],
+    "new": "辉煌·泰坦妮亚",
+    "zh_Hant": "輝煌・泰坦妮亞",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21009/zh_Hant/",
+        "ja": "「マグニフィセント・ティターニア！！」",
+        "zh_Hant": "「輝煌・泰坦妮亞！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "アンリーシュド・ラディアンス",
+    "old": [
+      "解放光辉"
+    ],
+    "new": "解放之光",
+    "zh_Hant": "解放之光",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story003408/zh_Hant/",
+        "ja": "「アンリーシュド・ラディアンスっ！」",
+        "zh_Hant": "「解放之光！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "アロガントスレッジハンマー",
+    "old": [
+      "傲慢重锤"
+    ],
+    "new": "傲慢斯雷吉锤",
+    "zh_Hant": "傲慢斯雷吉錘",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10220033/zh_Hant/",
+        "ja": "「イングリットさん。私は、あなたに勝ちたい！　──叩き潰せ、アロガントスレッジハンマー！！」",
+        "zh_Hant": "「英格麗德小姐。我想贏過你！　——擊潰吧，傲慢斯雷吉錘！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "シャイニングゴッデスビーム",
+    "old": [
+      "光辉女神射线"
+    ],
+    "new": "闪亮女神光束",
+    "zh_Hant": "閃亮女神光束",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20605/zh_Hant/",
+        "ja": "「シャイニングゴッデスビームッ！！！」",
+        "zh_Hant": "「閃亮女神光束！！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "パッションサマーストリーム",
+    "old": [
+      "热情盛夏洪流"
+    ],
+    "new": "热情夏日奔流",
+    "zh_Hant": "熱情夏日奔流",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation903807/zh_Hant/",
+        "ja": "「――パッションサマーストリーム！！！」",
+        "zh_Hant": "「――熱情夏日奔流！！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "アドミン・オーバーライド",
+    "old": [
+      "管理权限覆写"
+    ],
+    "new": "管理员权限覆写",
+    "zh_Hant": "管理員權限覆寫",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21413/zh_Hant/",
+        "ja": "「アドミン・オーバーライド──！！！」",
+        "zh_Hant": "「管理員權限覆寫——！！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "アンブラルヴァナルガンド",
+    "old": [
+      "暗影毒龙"
+    ],
+    "new": "安布拉瓦·纳尔·格兰德",
+    "zh_Hant": "安布拉瓦・納爾・格蘭德",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001312/zh_Hant/",
+        "ja": "「引き裂け──アンブラルヴァナルガンド」",
+        "zh_Hant": "「撕裂吧——安布拉瓦・納爾・格蘭德」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ソルフレア・スプラッシュ",
+    "old": [
+      "烈阳飞溅"
+    ],
+    "new": "索尔弗雷亚·喷射",
+    "zh_Hant": "索爾弗雷亞・噴射",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story002010/zh_Hant/",
+        "ja": "「いっくよ～……ソルフレア・スプラッシュ！」",
+        "zh_Hant": "「要上了～……索爾弗雷亞・噴射！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story102010/zh_Hant/",
+        "ja": "「いっくよ～……ソルフレア・スプラッシュ！」",
+        "zh_Hant": "「要上了～……索爾弗雷亞・噴射！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ディヴォーテッド・ワルツ",
+    "old": [
+      "虔诚圆舞曲"
+    ],
+    "new": "献身之舞",
+    "zh_Hant": "獻身之舞",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21009/zh_Hant/",
+        "ja": "「ディヴォーテッド・ワルツ！」",
+        "zh_Hant": "「獻身之舞！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ナイトホークマスカレード",
+    "old": [
+      "夜鹰假面舞"
+    ],
+    "new": "夜鹰面具",
+    "zh_Hant": "夜鷹面具",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20808/zh_Hant/",
+        "ja": "「ナイトホークマスカレード！」",
+        "zh_Hant": "「夜鷹面具！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ノックアップスプラッシュ",
+    "old": [
+      "击飞水花"
+    ],
+    "new": "飞溅击",
+    "zh_Hant": "飛濺擊",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation002406/zh_Hant/",
+        "ja": "「はああぁっ！　ノックアップスプラッシュ！」",
+        "zh_Hant": "「哈啊啊啊！　飛濺擊！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ノヴァセイクリッドアロー",
+    "old": [
+      "新星圣箭"
+    ],
+    "new": "神圣新星箭",
+    "zh_Hant": "神聖新星箭",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。站内“神聖新星之箭”仅助词差异，采用保留三部分词素且较紧凑的“神聖新星箭”，不涉及含义竞争。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20606/zh_Hant/",
+        "ja": "「ノヴァセイクリッドアロー！」",
+        "zh_Hant": "「神聖新星箭！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21009/zh_Hant/",
+        "ja": "「ノヴァセイクリッドアロー！」",
+        "zh_Hant": "「神聖新星箭！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation002513/zh_Hant/",
+        "ja": "「ノヴァセイクリッドアロー！！」",
+        "zh_Hant": "「神聖新星箭！！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21403/zh_Hant/",
+        "ja": "「木っ端ミジンコにしてあげるわ！！　──ノヴァセイクリッドアロー！」",
+        "zh_Hant": "「我要把你碾成渣！！　——神聖新星之箭！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "フォビドゥンインデックス",
+    "old": [
+      "禁断索引"
+    ],
+    "new": "禁忌索引",
+    "zh_Hant": "禁忌索引",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11330011/zh_Hant/",
+        "ja": "「書架４０番起動、フォビドゥンインデックス」",
+        "zh_Hant": "「書架40號啟動，禁忌索引」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ボルカニック・イプシロン",
+    "old": [
+      "火山Epsilon"
+    ],
+    "new": "火山喷发·伊普西龙",
+    "zh_Hant": "火山噴發・伊普西龍",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20505/zh_Hant/",
+        "ja": "「ボルカニック・イプシロン──！」",
+        "zh_Hant": "「火山噴發・伊普西龍——！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "マリシャスシャークバイト",
+    "old": [
+      "恶意鲨咬"
+    ],
+    "new": "鲨鱼杀手",
+    "zh_Hant": "鯊魚殺手",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10320024/zh_Hant/",
+        "ja": "「サメにはサメよ、マリシャスシャークバイト！」",
+        "zh_Hant": "「鯊魚就用鯊魚來對付，鯊魚殺手！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ミラージュペネトレイター",
+    "old": [
+      "幻影穿透者"
+    ],
+    "new": "幻象穿孔者",
+    "zh_Hant": "幻象穿孔者",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation002907/zh_Hant/",
+        "ja": "「――全て打ち砕きますわ！！　ミラージュペネトレイターッ！！！」",
+        "zh_Hant": "「——全部粉碎！！　幻象穿孔者！！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ルクス・リプロダクション",
+    "old": [
+      "光之再现"
+    ],
+    "new": "路克斯·再生产",
+    "zh_Hant": "路克斯・再生產",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10780011/zh_Hant/",
+        "ja": "「む……っ！　再生の魔女の奇蹟を今ここにっ……ルクス・リプロダクション！」",
+        "zh_Hant": "「呣……！再生魔女的奇蹟在此現形……路克斯・再生產！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "アビスシャークパレード",
+    "old": [
+      "深渊鲨群游行"
+    ],
+    "new": "深渊鲨鱼游行",
+    "zh_Hant": "深淵鯊魚遊行",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story003308/zh_Hant/",
+        "ja": "「いけーっ、フカヒレー！　アビスシャークパレード！」",
+        "zh_Hant": "「上吧，深海！　深淵鯊魚遊行！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "アポカリプスリアクター",
+    "old": [
+      "天启反应堆"
+    ],
+    "new": "末日反应",
+    "zh_Hant": "末日反應",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10320031/zh_Hant/",
+        "ja": "「アポカリプスリアクター！」",
+        "zh_Hant": "「末日反應！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "キャッスル・ブレイカー",
+    "old": [
+      "碎城者"
+    ],
+    "new": "城堡破坏者",
+    "zh_Hant": "城堡破壞者",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story002508/zh_Hant/",
+        "ja": "「キャッスル・ブレイカーっ！！！」",
+        "zh_Hant": "「城堡破壞者！！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "クリムゾンスティンガー",
+    "old": [
+      "深红针刺"
+    ],
+    "new": "深红之刺",
+    "zh_Hant": "深紅之刺",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001504/zh_Hant/",
+        "ja": "「この距離なら届くわね──クリムゾンスティンガー！」",
+        "zh_Hant": "「這個距離應該搆得著——深紅之刺！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "グラビトンプレッシャー",
+    "old": [
+      "重力压迫"
+    ],
+    "new": "重力操作压力",
+    "zh_Hant": "重力操作壓力",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10480013/zh_Hant/",
+        "ja": "「畏怖をもって跪きなさい。グラビトンプレッシャー」",
+        "zh_Hant": "「心懷畏懼地跪下吧。重力操作壓力」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "コスモブレイクカリバー",
+    "old": [
+      "宇宙断裂圣剑"
+    ],
+    "new": "宇宙破灭之剑",
+    "zh_Hant": "宇宙破滅之劍",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10960023/zh_Hant/",
+        "ja": "「はあぁぁ……必殺奥義！　コスモブレイクカリバー！！」",
+        "zh_Hant": "「哈啊啊啊……必殺奧義！　宇宙破滅之劍！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "サンバーストセレモニー",
+    "old": [
+      "日光庆典"
+    ],
+    "new": "阳光仪式",
+    "zh_Hant": "陽光儀式",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10010032/zh_Hant/",
+        "ja": "「行きますよ──サンバーストセレモニー！」",
+        "zh_Hant": "「要上了——陽光儀式！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ストリーミングキャロル",
+    "old": [
+      "流动颂歌"
+    ],
+    "new": "流歌",
+    "zh_Hant": "流歌",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10260031/zh_Hant/",
+        "ja": "「あたしは歌でリーリアちゃんを強化するね！　――ストリーミングキャロル！」",
+        "zh_Hant": "「我用歌來強化莉莉雅醬！　——流歌！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "スーパーノヴァホワイト",
+    "old": [
+      "白色超新星"
+    ],
+    "new": "超新星之白",
+    "zh_Hant": "超新星之白",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation002508/zh_Hant/",
+        "ja": "「絆を繋ぐ新たなる純白！　新星の魔弾、スーパーノヴァホワイト！」",
+        "zh_Hant": "「連接羈絆的嶄新純白！　新星的魔彈，超新星之白！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ドゥームローズガーデン",
+    "old": [
+      "末日玫瑰园"
+    ],
+    "new": "毁灭玫瑰园",
+    "zh_Hant": "毀滅玫瑰園",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001508/zh_Hant/",
+        "ja": "「磔にしてあげる──ドゥームローズガーデン！」",
+        "zh_Hant": "「十字架——毀滅玫瑰園！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ハートブレイクショット",
+    "old": [
+      "碎心射击"
+    ],
+    "new": "心碎射击",
+    "zh_Hant": "心碎射擊",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation003708/zh_Hant/",
+        "ja": "「おっけーアポロちゃん！　ハートブレイクショット！！」",
+        "zh_Hant": "「ＯＫ小阿波羅！　心碎射擊！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ブリザード・リーヴァー",
+    "old": [
+      "暴风雪剥离者"
+    ],
+    "new": "暴风雪·利维坦",
+    "zh_Hant": "暴風雪・利維坦",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20503/zh_Hant/",
+        "ja": "「ええ、ありがとう。ブリザード・リーヴァー！」",
+        "zh_Hant": "「嗯，謝謝。暴風雪・利維坦！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ブリリアンスパヒューム",
+    "old": [
+      "辉煌香氛"
+    ],
+    "new": "光辉星雾",
+    "zh_Hant": "光輝星霧",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001307/zh_Hant/",
+        "ja": "「それならこういうのはどうでしょう？　ブリリアンスパヒューム！」",
+        "zh_Hant": "「那這樣如何？光輝星霧！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ヘブンリー・レクイエム",
+    "old": [
+      "天堂安魂曲"
+    ],
+    "new": "天国·镇魂曲",
+    "zh_Hant": "天國・鎮魂曲",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story003408/zh_Hant/",
+        "ja": "「ぼくも負けていられないな……ヘブンリー・レクイエムっ！」",
+        "zh_Hant": "「我也不能輸啊……天國・鎮魂曲！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ボルテクス・オラージュ",
+    "old": [
+      "漩涡风暴"
+    ],
+    "new": "涡流雷击",
+    "zh_Hant": "渦流雷擊",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation000701/zh_Hant/",
+        "ja": "「ボルテクス・オラージュ！」",
+        "zh_Hant": "「渦流雷擊！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ミーティアスマッシャー",
+    "old": [
+      "流星粉碎者"
+    ],
+    "new": "流星锤",
+    "zh_Hant": "流星錘",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation002907/zh_Hant/",
+        "ja": "「今ですわ！　ミーティアスマッシャーッ！！」",
+        "zh_Hant": "「就是現在！　流星錘！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ライトニングテンペスト",
+    "old": [
+      "闪电风暴"
+    ],
+    "new": "雷霆风暴",
+    "zh_Hant": "雷霆風暴",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20111/zh_Hant/",
+        "ja": "「ライトニングテンペスト！！」",
+        "zh_Hant": "「雷霆風暴！！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20201/zh_Hant/",
+        "ja": "「ライトニングテンペスト！！」",
+        "zh_Hant": "「雷霆風暴！！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20312/zh_Hant/",
+        "ja": "「ライトニングテンペスト！」",
+        "zh_Hant": "「雷霆風暴！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21004/zh_Hant/",
+        "ja": "「吹き飛ばせ──ライトニングテンペスト！」",
+        "zh_Hant": "「打飛它們——雷霆風暴！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21106/zh_Hant/",
+        "ja": "「ライトニングテンペスト！！」",
+        "zh_Hant": "「雷霆風暴！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ラヴァーレッド・シグマ",
+    "old": [
+      "熔岩红Sigma"
+    ],
+    "new": "拉瓦烈德·西格玛",
+    "zh_Hant": "拉瓦烈德・西格瑪",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21405/zh_Hant/",
+        "ja": "「了解──ラヴァーレッド・シグマ！！」",
+        "zh_Hant": "「明白——拉瓦烈德・西格瑪！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "エレキハイドランジア",
+    "old": [
+      "电击绣球"
+    ],
+    "new": "电离子加农炮",
+    "zh_Hant": "電離子加農炮",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001308/zh_Hant/",
+        "ja": "「エレキハイドランジア！」",
+        "zh_Hant": "「電離子加農炮！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ガトリングパーティー",
+    "old": [
+      "加特林派对"
+    ],
+    "new": "加特林宴会",
+    "zh_Hant": "加特林宴會",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001606/zh_Hant/",
+        "ja": "「あなたたちを統べる者の力、とくと見るがいいですわ！　ガトリングパーティー！」",
+        "zh_Hant": "「好好見識一下我統治你們的力量吧！加特林宴會！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "クラウンデスパレード",
+    "old": [
+      "暗冠葬礼"
+    ],
+    "new": "王冠死像游行",
+    "zh_Hant": "王冠死像遊行",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001105/zh_Hant/",
+        "ja": "「クラウンデスパレードッ！！」",
+        "zh_Hant": "「王冠死像遊行！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "クリムゾンカーニバル",
+    "old": [
+      "深红嘉年华"
+    ],
+    "new": "深红狂欢",
+    "zh_Hant": "深紅狂歡",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20811/zh_Hant/",
+        "ja": "「クリムゾンカーニバル！」",
+        "zh_Hant": "「深紅狂歡！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ゴッドブレスシャワー",
+    "old": [
+      "神之恩赐沐浴"
+    ],
+    "new": "神之祝福之雨",
+    "zh_Hant": "神之祝福之雨",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation003704/zh_Hant/",
+        "ja": "「これで終わりです──ゴッドブレスシャワー！！」",
+        "zh_Hant": "「這樣就結束了——神之祝福之雨！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "サンシェードブリッツ",
+    "old": [
+      "遮光闪击"
+    ],
+    "new": "阳光射击",
+    "zh_Hant": "陽光射擊",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation003306/zh_Hant/",
+        "ja": "「サンシェードブリッツっ！！」",
+        "zh_Hant": "「陽光射擊！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "スプラッシュザッパー",
+    "old": [
+      "水花电击炮"
+    ],
+    "new": "飞溅水炮",
+    "zh_Hant": "飛濺水炮",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story003707/zh_Hant/",
+        "ja": "「これで終わりだ！　スプラッシュザッパー！」",
+        "zh_Hant": "「這樣就結束了！　飛濺水炮！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ハッピーライディング",
+    "old": [
+      "快乐骑行"
+    ],
+    "new": "快乐骑乘",
+    "zh_Hant": "快樂騎乘",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story003307/zh_Hant/",
+        "ja": "「リゾート結界を荒らすサメは許しまセンよー！　ハッピーライディング！」",
+        "zh_Hant": "「我可不允許你們破壞度假結界！　快樂騎乘！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation003807/zh_Hant/",
+        "ja": "「リョーカイ！　ハッピーライディング！」",
+        "zh_Hant": "「明白！　快樂騎乘！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ブリッツシュナイデン",
+    "old": [
+      "闪电斩"
+    ],
+    "new": "电光斩",
+    "zh_Hant": "電光斬",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10540011/zh_Hant/",
+        "ja": "「極光よ、剣に宿れ──ブリッツシュナイデン！」",
+        "zh_Hant": "「極光啊，寄宿於劍上吧——電光斬！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ボルテージリレイザー",
+    "old": [
+      "电压提升者"
+    ],
+    "new": "电压重设",
+    "zh_Hant": "電壓重設",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10440031/zh_Hant/",
+        "ja": "「放出供給！　ボルテージリレイザー！！」",
+        "zh_Hant": "「放出供給！　電壓重設！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "リベリオンハウリング",
+    "old": [
+      "反叛嚎叫"
+    ],
+    "new": "叛乱咆哮",
+    "zh_Hant": "叛亂咆哮",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10710021/zh_Hant/",
+        "ja": "「うおおおおおっ！　リベリオンハウリングッ！！」",
+        "zh_Hant": "「嗚哦哦哦哦哦！　叛亂咆哮！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ジェネシスブラック",
+    "old": [
+      "黑色创世"
+    ],
+    "new": "创世之黑",
+    "zh_Hant": "創世之黑",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation002508/zh_Hant/",
+        "ja": "「始まりは大いなる漆黒！　原点の魔弾、ジェネシスブラック！」",
+        "zh_Hant": "「起始為無盡的漆黑！　原點的魔彈，創世之黑！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "スカーレットシータ",
+    "old": [
+      "绯红西塔"
+    ],
+    "new": "绯红之海",
+    "zh_Hant": "緋紅之海",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001701/zh_Hant/",
+        "ja": "「赤き惑星の力、ここに──スカーレットシータ！」",
+        "zh_Hant": "「紅色行星之力，於此顯現——緋紅之海！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001707/zh_Hant/",
+        "ja": "「スカーレットシータ──！」",
+        "zh_Hant": "「緋紅之海——！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "スパイラルブレイク",
+    "old": [
+      "螺旋突破"
+    ],
+    "new": "螺旋破坏",
+    "zh_Hant": "螺旋破壞",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20303/zh_Hant/",
+        "ja": "「スパイラルブレイク！」",
+        "zh_Hant": "「螺旋破壞！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "スロウスナイトメア",
+    "old": [
+      "怠惰噩梦"
+    ],
+    "new": "慢速噩梦",
+    "zh_Hant": "慢速噩夢",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story002809/zh_Hant/",
+        "ja": "「さぁ、さっき寝ていた分、キリキリ働きなさい！　スロウスナイトメア！」",
+        "zh_Hant": "「好了，把剛才睡著的份好好地工作吧！　慢速噩夢！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "セラフィックレイン",
+    "old": [
+      "天使之雨"
+    ],
+    "new": "纯洁之雨",
+    "zh_Hant": "純潔之雨",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10230013/zh_Hant/",
+        "ja": "「セラフィックレイン！」",
+        "zh_Hant": "「純潔之雨！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "タイダルストライク",
+    "old": [
+      "潮汐打击"
+    ],
+    "new": "海啸冲击",
+    "zh_Hant": "海嘯衝擊",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation003302/zh_Hant/",
+        "ja": "「なら、あたしが引っ張っていってやるぜっ！　タイダルストライクっ！」",
+        "zh_Hant": "「那就讓我來拉你們一把吧！　海嘯衝擊！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "バックフロウマイン",
+    "old": [
+      "逆流地雷"
+    ],
+    "new": "后流",
+    "zh_Hant": "後流",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001707/zh_Hant/",
+        "ja": "「バックフロウマイン──！！」",
+        "zh_Hant": "「後流——！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "フェニックスバーン",
+    "old": [
+      "凤凰燃烧"
+    ],
+    "new": "凤凰烈焰",
+    "zh_Hant": "鳳凰烈焰",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21402/zh_Hant/",
+        "ja": "『任されました──！　フェニックスバーンッ！！』",
+        "zh_Hant": "『交給我吧——！　鳳凰烈焰！！』"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "星見流羽根突術・曙",
+    "old": [
+      "星见流羽击术·曙"
+    ],
+    "new": "观星流羽根突术·曙",
+    "zh_Hant": "觀星流羽根突術・曙",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10010043/zh_Hant/",
+        "ja": "「星見流羽根突術・曙！」",
+        "zh_Hant": "「觀星流羽根突術・曙！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001909/zh_Hant/",
+        "ja": "「星見流羽根突術・曙！」",
+        "zh_Hant": "「觀星流羽根突術・曙！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "グラトニーバイト",
+    "old": [
+      "暴食噬咬"
+    ],
+    "new": "暴食啮咬",
+    "zh_Hant": "暴食嚙咬",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001307/zh_Hant/",
+        "ja": "「邪魔するなら押して通るまでじゃ！　グラトニーバイト！」",
+        "zh_Hant": "「要擋路的話就強行突破！暴食嚙咬！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ケルベロス百裂拳",
+    "old": [
+      "Cerberus百裂拳"
+    ],
+    "new": "地狱犬百裂拳",
+    "zh_Hant": "地獄犬百裂拳",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001508/zh_Hant/",
+        "ja": "「目にものを見せてやるワン──ケルベロス百裂拳！」",
+        "zh_Hant": "「讓你見識一下我的厲害汪——地獄犬百裂拳！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "断雲の剛撃",
+    "old": [
+      "断云刚击"
+    ],
+    "new": "断云的刚击",
+    "zh_Hant": "斷雲的剛擊",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21803/zh_Hant/",
+        "ja": "「爆ぜなさい！　断雲の剛撃ッ──！！！」",
+        "zh_Hant": "「爆炸吧！　斷雲的剛擊——！！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "破砕の乱撃",
+    "old": [
+      "粉碎乱击"
+    ],
+    "new": "破碎乱击",
+    "zh_Hant": "破碎亂擊",
+    "reason": "原汉化剧情明确喊招句对应；仅抽取招式名称，繁转简并统一间隔号，不移植整句或技能机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21804/zh_Hant/",
+        "ja": "「ええ、任されました──破砕の乱撃ッッッ！！！」",
+        "zh_Hant": "「嗯，交給我吧——破碎亂擊！！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ディヴォーテッド・ラプソディー",
+    "old": [
+      "虔诚狂想曲"
+    ],
+    "new": "Divotd Rhapsody",
+    "zh_Hant": "Divotd Rhapsody",
+    "reason": "原站明确喊招句采用英文专名；按用户网站优先要求保留原站拼写，不另行反译。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001305/zh_Hant/",
+        "ja": "「邪魔はさせないよ──ディヴォーテッド・ラプソディー！」",
+        "zh_Hant": "「休想妨礙我們——Divotd Rhapsody！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "テリトリーオブオーサー",
+    "old": [
+      "作者领域"
+    ],
+    "new": "Territory of Author",
+    "zh_Hant": "Territory of Author",
+    "reason": "原站明确喊招句采用英文专名；按用户网站优先要求保留原站拼写，不另行反译。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story002809/zh_Hant/",
+        "ja": "「テリトリーオブオーサー！」",
+        "zh_Hant": "「Territory of Author！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ハッピー・ニュースター",
+    "old": [
+      "快乐新星"
+    ],
+    "new": "Happy·News Star",
+    "zh_Hant": "Happy・News Star",
+    "reason": "原站明确喊招句采用英文专名；按用户网站优先要求保留原站拼写，不另行反译。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001904/zh_Hant/",
+        "ja": "「ホント？　木っ端ミジンコになりなさい！　ハッピー・ニュースター！」",
+        "zh_Hant": "「真的嗎？　給我變成碎屑吧！　Happy・News Star！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001909/zh_Hant/",
+        "ja": "「盛り上がったところで、そろそろ〆ましょ！　ハッピー・ニュースターッ！！」",
+        "zh_Hant": "「氣氛這麼熱烈，差不多該結束了！　Happy・News Star！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ライジングマーキュリー",
+    "old": [
+      "上升水星"
+    ],
+    "new": "Rising Mercury",
+    "zh_Hant": "Rising Mercury",
+    "reason": "原站明确喊招句采用英文专名；按用户网站优先要求保留原站拼写，不另行反译。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001106/zh_Hant/",
+        "ja": "「ライジングマーキュリー！」",
+        "zh_Hant": "「Rising Mercury！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "プリズム・ブラスター",
+    "old": [
+      "棱镜爆破"
+    ],
+    "new": "Prism Burst",
+    "zh_Hant": "Prism Burst",
+    "reason": "原站明确喊招句采用英文专名；按用户网站优先要求保留原站拼写，不另行反译。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10440021/zh_Hant/",
+        "ja": "「モンスターよ、これでジ・エンドじゃ！　プリズム・ブラスター！！」",
+        "zh_Hant": "「怪物啊，這下就The End了！Prism Burst！！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "イノセントノヴァ",
+    "old": [
+      "纯真新星"
+    ],
+    "new": "Innocent Nova",
+    "zh_Hant": "Innocent Nova",
+    "reason": "原站明确喊招句采用英文专名；按用户网站优先要求保留原站拼写，不另行反译。两处仅Nova/nova大小写差异，采用专名首字母大写Innocent Nova。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001313/zh_Hant/",
+        "ja": "「これで決める！　イノセントノヴァ！」",
+        "zh_Hant": "「用這一招決勝負！Innocent Nova！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story002906/zh_Hant/",
+        "ja": "「絶対に決めるっ！　カゴに狙いを定めて──イノセントノヴァ！」",
+        "zh_Hant": "「我一定會中的！瞄準籃子——Innocent nova！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "グロリアスサマー",
+    "old": [
+      "荣光盛夏"
+    ],
+    "new": "Glorious summer",
+    "zh_Hant": "Glorious summer",
+    "reason": "原站明确喊招句采用英文专名；按用户网站优先要求保留原站拼写，不另行反译。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10320023/zh_Hant/",
+        "ja": "「グロリアスサマー！」",
+        "zh_Hant": "「Glorious summer！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ホルン",
+    "old": [
+      "霍恩"
+    ],
+    "new": "霍伦",
+    "zh_Hant": "霍倫",
+    "reason": "原站main21102明确“极星从骑霍伦”的召唤句，与怪物单位同实体；避免把一般乐器horn或エールホルン的词尾视作该单位。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21102/zh_Hant/",
+        "ja": "「そういうことなら──行け、極星従騎ホルン！」",
+        "zh_Hant": "「既然如此——去吧，極星從騎霍倫！」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "チョコカヌレ",
+    "old": [
+      "巧克力可丽露"
+    ],
+    "new": "巧克力卡纳蕾",
+    "zh_Hant": "巧克力卡納蕾",
+    "reason": "原站story003201连续两句指向同一情人节巧克力甜点，均译巧克力卡納蕾；沿用站点定名，不以通用法式点心译名重译。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story003201/zh_Hant/",
+        "ja": "「はいっ！　バレンタイン用にチョコカヌレを作ってみたんですっ」",
+        "zh_Hant": "「是的！　我試著做了情人節用的巧克力卡納蕾」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story003201/zh_Hant/",
+        "ja": "「ふーん、なるほどねぇ……。で？　このチョコカヌレ、どうしたのよ？　どっかで配るの？」",
+        "zh_Hant": "「嗯，原來如此……所以呢？　這個巧克力卡納蕾，是要做什麼用的？　要分發給誰嗎？」"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "フィーニスの塔",
+    "old": [
+      "菲尼斯之塔",
+      "菲尼斯塔"
+    ],
+    "new": "菲妮斯之塔",
+    "zh_Hant": "菲妮斯之塔",
+    "reason": "原站main00207独立完整名称键明确译菲妮斯之塔，且剧情为同一游戏地标；将名称按原文限域传播至任务名、里层名称及票券说明，保留所有层数和机制。",
+    "source_evidence": [
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00207/zh_Hant/",
+        "ja": "フィーニスの塔",
+        "zh_Hant": "菲妮斯之塔"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/bossrush000302/zh_Hant/",
+        "ja": "そして俺たちは、彼女を追いかけて潜入したフィーニスの塔で──",
+        "zh_Hant": "然後我們追著她潛入了菲妮斯之塔——"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10070013/zh_Hant/",
+        "ja": "「天界と人間界の柱……でも天界と人間界を繋いでいるのってフィーニスの塔ですよね？」",
+        "zh_Hant": "「天界與人界的支柱……但連接天界和人界的應該是菲妮斯之塔吧？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10070013/zh_Hant/",
+        "ja": "「フィーニスの塔みたいに大きくなればいいんでしょうか？　でも天界に届くくらい背が高くなるなんて無理ですよぅ……」",
+        "zh_Hant": "「只要像菲妮斯之塔一樣巨大就可以了嗎？但我沒辦法長得高到能碰到天界啊……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10080043/zh_Hant/",
+        "ja": "「他にも、フィーニスの塔をたどることで、天界や魔界に移動する方法もある。当然、こちらは星騎士でない人に耐えられる移動方法ではありませんが……」",
+        "zh_Hant": "「其他還有，通過菲妮斯之塔，也有移動到天界和魔界的方法。當然，這不是星騎士以外的人能承受的移動方法……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10080043/zh_Hant/",
+        "ja": "「そうですね。でも、世界樹の存在も、フィーニスの塔の内部も、私たちの想像の外にありましたが……今はもう、そうではありません」",
+        "zh_Hant": "「是啊。不過，世界樹的存在，還有菲妮斯之塔的內部，都超出了我們的想像……但現在，已經不是這樣了」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10100011/zh_Hant/",
+        "ja": "「そうそう。フィーニスの塔で会ったんだけど話の途中で消えちゃって……本体は遠くにいるって言ってなかったっけ？」",
+        "zh_Hant": "「對了，我們在菲妮斯之塔見面時，話才說到一半你就消失了……你不是說本體在很遠的地方嗎？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10100011/zh_Hant/",
+        "ja": "「フィーニスの塔ではいろいろありがとうね」",
+        "zh_Hant": "「謝謝你幫我們在菲妮斯之塔做了那麼多事。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10100012/zh_Hant/",
+        "ja": "「ですから申し訳ありません。今この体の私が持っている情報は完全ではなく、あの時フィーニスの塔で話した以上のことはわからないのです」",
+        "zh_Hant": "「所以非常抱歉，現在這個身體所擁有的資訊並不完整，除了當時在菲妮斯之塔說過的以外，其他事情我都不清楚。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10100014/zh_Hant/",
+        "ja": "「フィーニスの塔を除いて、三界という領域は混じり合うことはなく、この世界がある限り不変です」",
+        "zh_Hant": "「除了菲妮斯之塔，三界的領域不會混合在一起，只要這個世界存在就不會改變。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10130014/zh_Hant/",
+        "ja": "『こんなところで何してたんだ？　フィーニスの塔は立ち入り禁止だろ。入口が開いてないから入ろうと思っても入れないけどな』",
+        "zh_Hant": "『你在這種地方做什麼？菲妮斯之塔禁止進入吧。入口沒有打開，就算想進去也進不去就是了。』"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10230012/zh_Hant/",
+        "ja": "「ところで……先日、フィーニスの塔に近づかれる会長さまとヴィーナスさま、それに流星学園のフィオナさまをお見かけしたのですが」",
+        "zh_Hant": "「話說回來……前幾天我看到會長大人和維納斯大人靠近菲妮斯之塔，還有流星學園的菲歐娜大人也在場呢。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10230012/zh_Hant/",
+        "ja": "「フィーニスの塔は、生徒はもちろん、何人も立ち入ることのできない聖地。シスターとして狼藉は見過ごせません」",
+        "zh_Hant": "「菲妮斯之塔是聖地，別說學生了，任何人都不得進入。身為修女，我不能坐視這種不法行為。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10230012/zh_Hant/",
+        "ja": "「ではフィーニスの塔では何をされていたのでしょう？　フィオナさまといえど、塔には簡単に踏み入れられないはずですが」",
+        "zh_Hant": "「那麼，您在菲妮斯之塔做了什麼呢？就算是菲歐娜大人，應該也無法輕易進入那座塔才對。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10320023/zh_Hant/",
+        "ja": "「私たちがフィーニスの塔で遭遇した煌竜ヴィライアです。両星徒会のメンバーが総力をかけて倒したのですが……」",
+        "zh_Hant": "「這是我們之前在菲妮斯之塔遇到的煌龍維拉亞。雖然我們兩星徒會成員總動員把它打倒了……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10330021/zh_Hant/",
+        "ja": "魔界で黒騎士……セイファート学園長を斃し、フィーニスの塔を経由して人間界へと戻ってきた俺たち。",
+        "zh_Hant": "在魔界擊敗黑騎士……錫菲德學園長後，我們經由菲妮斯之塔回到了人界。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10780011/zh_Hant/",
+        "ja": "侵入厳禁であるため誰も寄りつかないフィーニスの塔。そのすぐ下に、三角座りをして泣いている女の子がいた──",
+        "zh_Hant": "由於嚴禁侵入，因此沒有任何人靠近菲妮斯之塔。而在它的正下方，有個女孩抱膝坐著哭泣——"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10840011/zh_Hant/",
+        "ja": "「フィーニスの塔の中で永きを過ごしていて、男性に触れる機会がなかっからな、照れているのだろう」",
+        "zh_Hant": "「畢竟在菲妮斯之塔裡生活了那麼久，沒什麼接觸男性的機會，所以害羞了吧」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11140014/zh_Hant/",
+        "ja": "その日の夜──俺は禁域となっているフィーニスの塔のふもとで、ルヴィネと落ち合った。",
+        "zh_Hant": "那天晚上——我在被劃為禁區的菲妮斯之塔的山腳下，和露維妮碰頭了。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11240011/zh_Hant/",
+        "ja": "「会長たちの１回目のデネブ来訪の際──彼らを逃がすために、ボクはフィーニスの塔に残した半身と同化したでしょ？」",
+        "zh_Hant": "「會長你們第一次來天津四的時候——為了讓他們逃走，我不是和留在菲妮斯之塔的半身同化了嗎？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11240011/zh_Hant/",
+        "ja": "「その後すぐボクは、フィーニスの塔の第零層に封印された」",
+        "zh_Hant": "「之後我立刻就被封印在了菲妮斯之塔的第零層」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11240018/zh_Hant/",
+        "ja": "「おち○ちんの勃起、すごくない？　フィーニスの塔は禁域だから～、とか言ってた割にヤる気満々じゃん……<emoji=heart04>」",
+        "zh_Hant": "「小弟弟勃起得好厲害啊？　明明說菲妮斯之塔是禁域～，結果卻這麼有幹勁……<emoji=heart04>」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11240018/zh_Hant/",
+        "ja": "しっとり汗ばんで、フィーニスの塔の光でキラキラと輝く恋人の胸──今さらだけど本当にいけないことをしている気がしてきた……",
+        "zh_Hant": "戀人那被汗水浸濕，在菲妮斯之塔的光芒下閃閃發光的胸部——雖然現在才意識到，但感覺真的在做不該做的事……"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11330011/zh_Hant/",
+        "ja": "「察しの通り、この角は煌竜ヴィライアのもので間違いないわ。あなたたちがフィーニスの塔で倒した煌竜ヴィライアの因子と魔力から私は生まれた」",
+        "zh_Hant": "「正如你所想的，這個角毫無疑問是煌龍維拉亞的。你們在菲妮斯之塔打倒的煌龍維拉亞的因子和魔力，就是我的誕生來源」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11330011/zh_Hant/",
+        "ja": "煌竜ヴィライア。かつて新星・流星の両星徒会がフィーニスの塔の中で遭遇し、全滅しかけた破滅の化身だ。",
+        "zh_Hant": "煌龍維拉亞。過去新星，流星兩星徒會在菲妮斯之塔中遭遇，差點全滅的破滅的化身。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11350011/zh_Hant/",
+        "ja": "「ここは、フィーニスの塔ね……なんだか少し、懐かしく感じてしまうわ」",
+        "zh_Hant": "「這裡是菲妮斯之塔……總感覺有點懷念呢」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11350011/zh_Hant/",
+        "ja": "「フィーニスの塔はルネアさんにとって、思い入れがある場所なんですか……？」",
+        "zh_Hant": "「菲妮斯之塔對露妮亞來說，是很有感情的地方嗎……？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11350011/zh_Hant/",
+        "ja": "「そういえば、私たちがリアさんたちの世界に行った時、あっちにもあったものね、フィーニスの塔！」",
+        "zh_Hant": "「說起來，我們去莉亞她們的世界的時候，那邊也有菲妮斯之塔呢！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11350011/zh_Hant/",
+        "ja": "「私たちの世界と繋がり、異世界間の移動も、フィーニスの塔を通じてでしたよね……」",
+        "zh_Hant": "「和我們的世界相連，異世界之間的移動也是通過菲妮斯之塔……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11350011/zh_Hant/",
+        "ja": "「フィーニスの塔を見ていたら、シンに会いたくなってしまったから」",
+        "zh_Hant": "「因為看到菲妮斯之塔，我就想見慎了」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11450011/zh_Hant/",
+        "ja": "「今更気付いたか？　挙げれば数え切れぬではないか。まずフィーニスの塔では登場する機会すら与えられず魔王のビームで消し飛ばされ──」",
+        "zh_Hant": "「你現在才發現嗎？　真要列舉的話，可是數都數不完啊。首先在菲妮斯之塔，你連出場的機會都沒得到，就被魔王的光束轟飛了──」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11540011/zh_Hant/",
+        "ja": "「いい質問ね！　向こうの世界での九浄家は、古くから『フィーニスの塔』の管理を任されてきた一族なの」",
+        "zh_Hant": "「真是個好問題！　在那邊的世界裡，九浄家是自古以來就被委以管理『菲妮斯之塔』重任的一族的哦」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch11580012/zh_Hant/",
+        "ja": "「ここが、あの大きなフィーニスの塔の頂上……！」",
+        "zh_Hant": "「這裡就是那個巨大的菲妮斯之塔的頂端……！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/home000101/zh_Hant/",
+        "ja": "「ええ、負けないわよ！　フィーニスの塔のようにお椀を積み上げてやるわ！」",
+        "zh_Hant": "「好，我不會輸的！　我要像菲妮斯之塔一樣堆起碗來！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00207/zh_Hant/",
+        "ja": "「フィーニスの塔──なんて、言わなくても知ってるわよね」",
+        "zh_Hant": "「菲妮斯之塔——不用我說你們也知道吧。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00207/zh_Hant/",
+        "ja": "「正確に言えば──フィーニスの塔は、太古の昔に女神が築いたと言われる天界と人間界との連絡塔です」",
+        "zh_Hant": "「正確來說——菲妮斯之塔據說是太古以前由女神所建，用來連結天界與人界的聯絡塔。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00207/zh_Hant/",
+        "ja": "「それに関しても──元々、フィーニスの塔を中心に２つの学園が建てられた、と言ったほうが正しいでしょう」",
+        "zh_Hant": "「關於這點——應該說，兩座學園原本就是以菲妮斯之塔為中心建造的。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00207/zh_Hant/",
+        "ja": "「ですが……フィーニスの塔は生徒の立ち入りが禁じられています。星徒会も例外ではありません」",
+        "zh_Hant": "「可是……菲妮斯之塔禁止學生進入，星徒會也不例外。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00207/zh_Hant/",
+        "ja": "フィーニスの塔とは、それほどまでに聖なる領域のようだった。",
+        "zh_Hant": "菲妮斯之塔似乎就是如此神聖不可侵犯。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00207/zh_Hant/",
+        "ja": "フィーニスの塔はそれこそ学園のシンボルとして堂々と鎮座している。",
+        "zh_Hant": "菲妮斯之塔正是以學園象徵的威嚴姿態坐鎮於此。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00209/zh_Hant/",
+        "ja": "「そうニャ。フィーニスの塔は女神が建てた巨塔──内部にはその秩序を守るガーディアンがひしめくと、歴史書にも記されているニャン」",
+        "zh_Hant": "「沒錯喵。根據史書記載，菲妮斯之塔是女神建造的巨塔——內部有眾多守護者負責維持秩序喵。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00211/zh_Hant/",
+        "ja": "俺たちは、順調にフィーニスの塔を昇り続けた。",
+        "zh_Hant": "我們順利地在菲妮斯之塔中往上爬。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00211/zh_Hant/",
+        "ja": "「フィーニスの塔は目算されているだけでも４０００階以上の層構造──果ては成層圏まで続いていると聞きます」",
+        "zh_Hant": "「光是目測，菲妮斯之塔就有四千層以上的樓層構造——聽說它甚至延伸到平流層。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00212/zh_Hant/",
+        "ja": "「ここはフィーニスの塔の第一階層──その終着点にあたります。塔に生じている異常から、辿り着くのも容易ではなかったでしょう」",
+        "zh_Hant": "「這裡是菲妮斯之塔的第一層——算是終點。由於塔內發生異常，你們要抵達這裡想必並不容易吧。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00212/zh_Hant/",
+        "ja": "「私は守護天使。元来、フィーニスの塔を守る者。しかし……今、その本体はここから遠く離れた地に縛められています」",
+        "zh_Hant": "「我是守護天使，原本負責守護菲妮斯之塔。然而……如今我的本體被束縛在距離這裡很遠的地方。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00212/zh_Hant/",
+        "ja": "「……守護天使の消滅を確認。ガーディアンは一機残らず再起不能。フィーニスの塔第一階層は事実上の陥落を呈しています」",
+        "zh_Hant": "「……確認守護天使已消滅，守衛兵全數無法再戰。菲妮斯之塔第一階層實質上已經淪陷了。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00301/zh_Hant/",
+        "ja": "「──確かに、先月、前会長たちが『フィーニスの塔』に踏み込んだ出来事を指しているように思えます」",
+        "zh_Hant": "「——的確，我想這應該是指上個月前會長他們闖進『菲妮斯之塔』的事。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00303/zh_Hant/",
+        "ja": "フィーニスの塔で出会った“守護天使”マグダレナさん──",
+        "zh_Hant": "在菲妮斯之塔遇見的“守護天使”瑪格達莉娜小姐——"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00304/zh_Hant/",
+        "ja": "俺とヴィーナスが《フィーニスの塔》第一階層を攻略したあの日──",
+        "zh_Hant": "我和維納斯攻略《菲妮斯之塔》第一層的那一天——"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00304/zh_Hant/",
+        "ja": "「それと、フィーニスの塔のガーディアンといえば古い書物にデータが残っていて……」",
+        "zh_Hant": "「還有，說到菲妮斯之塔的守護者，在古書上留有相關資料……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00304/zh_Hant/",
+        "ja": "「フィーニスの塔を汚染している瘴気は、存在の根幹を組み替える作用を持っています」",
+        "zh_Hant": "「汙染菲妮斯之塔的瘴氣，具有重組存在根基的作用。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00304/zh_Hant/",
+        "ja": "「じゃあ、あまりフィーニスの塔には近寄らないほうがいいのか……？」",
+        "zh_Hant": "「那麼，我們是不是不要靠近菲妮斯之塔比較好啊……？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00305/zh_Hant/",
+        "ja": "「フィーニスの塔一階層、よくぞ攻略したな！　中々の手前だったと思うぞ！」",
+        "zh_Hant": "「真虧你們能攻略菲妮斯之塔第一層呢！我覺得你們還挺有本事的哦！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00305/zh_Hant/",
+        "ja": "フィーニスの塔は依然として立ち入り厳禁だし、外から内部の様子も見えないはずなのに。",
+        "zh_Hant": "畢竟菲妮斯之塔依舊禁止進入，從外面也看不見內部的樣子。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00402/zh_Hant/",
+        "ja": "「フィーニスの塔であれば魔王の真実にも……近づけそうですし」",
+        "zh_Hant": "「而且如果是菲妮斯之塔的話……應該能揭開魔王的真相。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00402/zh_Hant/",
+        "ja": "フィーニスの塔──",
+        "zh_Hant": "菲妮斯之塔——"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00402/zh_Hant/",
+        "ja": "そうして俺たちは一時解散し、次なる『フィーニスの塔・攻略』が可能な日を待つことにした。",
+        "zh_Hant": "於是我們暫時解散，等待下次能夠『攻略菲妮斯之塔』的日子。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00402/zh_Hant/",
+        "ja": "フィーニスの塔へ到着した俺たち。",
+        "zh_Hant": "我們抵達了菲妮斯之塔。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00403/zh_Hant/",
+        "ja": "「ニャ。フィーニスの塔の様子を見てくるって言ってたニャン」",
+        "zh_Hant": "「喵，她說要去看看菲妮斯之塔的狀況喵。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00404/zh_Hant/",
+        "ja": "全員の視線がそびえ立つフィーニスの塔へ向かう。",
+        "zh_Hant": "所有人的視線都轉向聳立的菲妮斯之塔。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00410/zh_Hant/",
+        "ja": "フィーニスの塔──",
+        "zh_Hant": "菲妮斯之塔——"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00411/zh_Hant/",
+        "ja": "「<ruby=しか>然</ruby>り。察しの通り、我はフィーニスの塔を護りし守護天使が一柱──《命脈》のアルモタヘル」",
+        "zh_Hant": "「誠然。一如你們所察覺，吾乃守護菲妮斯之塔的守護天使之一——《命脈》的雅爾莫塔赫爾。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00411/zh_Hant/",
+        "ja": "「守護天使様って、普段はフィーニスの塔にいるんでしょうか……？」",
+        "zh_Hant": "「守護天使大人平常都待在菲妮斯之塔嗎……？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00411/zh_Hant/",
+        "ja": "守護天使らが集うフィーニスの塔はいわば摂理の大黒柱。",
+        "zh_Hant": "守護天使聚集的菲妮斯之塔，可說是天理的大支柱。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00501/zh_Hant/",
+        "ja": "フィーニスの塔・第二階層",
+        "zh_Hant": "菲妮斯之塔・第二階層"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00501/zh_Hant/",
+        "ja": "「フィーニスの塔──の、中か」",
+        "zh_Hant": "「是菲妮斯之塔——裡面嗎？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00501/zh_Hant/",
+        "ja": "ここがフィーニスの塔であることは状況からしても明らかだが……",
+        "zh_Hant": "從狀況來看，這裡是菲妮斯之塔一事顯而易見……"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00504/zh_Hant/",
+        "ja": "（マグダレナさんたち守護天使はフィーニスの塔を守るもの──彼女たちの主は流星教皇庁も崇める女神テルル……）",
+        "zh_Hant": "（瑪格達莉娜等守護天使是守護菲妮斯之塔的存在——她們的主人是流星教皇廳也崇敬的女神堤露露……）"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00504/zh_Hant/",
+        "ja": "俺たちは招かれた時と同様に、フィーニスの塔から一方的に追放された。",
+        "zh_Hant": "我們和被邀請時一樣，單方面地從菲妮斯之塔被放逐出去。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00507/zh_Hant/",
+        "ja": "「フィーニスの塔二階層を突破したよーだな。それでこそ我が最大の宿敵・魔王にふさわしい！」",
+        "zh_Hant": "「看來你們突破菲妮斯之塔第二層了呢。這樣才配得上我最大的宿敵・魔王！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00608/zh_Hant/",
+        "ja": "それは、俺たちがフィーニスの塔で学んだ歴史外の歴史だった。",
+        "zh_Hant": "那是我們在菲妮斯之塔學到的，歷史之外的歷史。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00608/zh_Hant/",
+        "ja": "俺たちでさえ、フィーニスの塔に登ってようやく得た事実をズバズバと告げられる。",
+        "zh_Hant": "就連我們也是登上菲妮斯之塔才終於得到的事實，她卻能毫不遲疑地告訴我們。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00609/zh_Hant/",
+        "ja": "確かに、フィーニスの塔で見て回った壁画の中には……",
+        "zh_Hant": "的確，在菲妮斯之塔到處參觀的壁畫中……"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00705/zh_Hant/",
+        "ja": "俺たちがフィーニスの塔で得た知識──魔王候補──リクリエのサイクル──なども合わせ……",
+        "zh_Hant": "我們從菲妮斯之塔得到的知識——魔王候補——利克里耶的週期——等等……"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00706/zh_Hant/",
+        "ja": "「魔王の系譜は三界に散り散りになっている──フィーニスの塔でも、そう聞いたな」",
+        "zh_Hant": "「魔王的系譜分散在三界之中——我們在菲妮斯之塔也是這麼聽說的。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00710/zh_Hant/",
+        "ja": "「ああ。フィーニスの塔に登ってみる──ってのはどうだ」",
+        "zh_Hant": "「嗯，試著登上菲妮斯之塔看看——你覺得如何？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00803/zh_Hant/",
+        "ja": "「無窮の塔──という表現は以前にもありましたね。フィーニスの塔のことでしたか」",
+        "zh_Hant": "「無窮之塔——以前也有過這樣的表現方式呢。是菲妮斯之塔嗎？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00803/zh_Hant/",
+        "ja": "『フィーニスの塔』が気にかかるというのは俺も先日、ヴィーナスに伝えていた話。",
+        "zh_Hant": "我前幾天也跟維納斯說過，我很在意『菲妮斯之塔』。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00803/zh_Hant/",
+        "ja": "「フィーニスの塔──絶対入っちゃダメって言われてるのに」",
+        "zh_Hant": "「菲妮斯之塔——明明被交代絕對不可以進去的說。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00803/zh_Hant/",
+        "ja": "「ああ。フィーニスの塔、だろう」",
+        "zh_Hant": "「嗯。是菲妮斯之塔吧。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00803/zh_Hant/",
+        "ja": "「フィーニスの塔といえば流星市国のシンボル──しかしその面はあくまで表の顔」",
+        "zh_Hant": "「說到菲妮斯之塔，就是流星市國的象徵——不過這只是表面上的面貌。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00803/zh_Hant/",
+        "ja": "俺たちは初のフルメンバーで、フィーニスの塔へ突入した。",
+        "zh_Hant": "我們第一次全員到齊，闖入菲妮斯之塔。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00804/zh_Hant/",
+        "ja": "フィーニスの塔・第三階層",
+        "zh_Hant": "菲妮斯之塔・第三階層"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00804/zh_Hant/",
+        "ja": "それでも──ここがフィーニスの塔の上層である以上、俺たちのすべきことはひとつだ。",
+        "zh_Hant": "即使如此——既然這裡是菲妮斯之塔的上層，我們該做的事就只有一件。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00806/zh_Hant/",
+        "ja": "「フィーニスの塔第三階層を解放。全護衛の出力をオフ。空間は環境維持モードへ移行されました」",
+        "zh_Hant": "「菲妮斯之塔第三階層解放，關閉所有護衛的輸出功率。空間已切換至環境維持模式。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00807/zh_Hant/",
+        "ja": "「フィーニスの塔が気にかかってるのは俺もそうだった。日誌のナビゲートがなくたって、前に進むことは可能だ」",
+        "zh_Hant": "「我之前也很在意菲妮斯之塔，就算沒有日誌的指引，我們還是可以繼續前進。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00809/zh_Hant/",
+        "ja": "『外』から撃ち込まれた攻撃が──この、フィーニスの塔内部にまで貫通している！！",
+        "zh_Hant": "從『外頭』射進來的攻擊——甚至貫穿了這座菲妮斯之塔！！"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00901/zh_Hant/",
+        "ja": "俺たちはなすすべなく光に包まれ、フィーニスの塔を追い出された。",
+        "zh_Hant": "我們束手無策地被光芒包圍，逐出了菲妮斯之塔。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00901/zh_Hant/",
+        "ja": "「本来、フィーニスの塔は立ち入りが禁止されている──が。今、その是非を問うている場合ではないな」",
+        "zh_Hant": "「原本菲妮斯之塔是禁止進入的——不過現在不是追究對錯的時候。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00902/zh_Hant/",
+        "ja": "俺は当て所もなくフィーニスの塔へやってきていた。",
+        "zh_Hant": "我漫無目的地來到菲妮斯之塔。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00903/zh_Hant/",
+        "ja": "「守護天使の皆さんは──元々、フィーニスの塔を守る存在なんですよね」",
+        "zh_Hant": "「守護天使各位——原本就是守護菲妮斯之塔的存在吧？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00903/zh_Hant/",
+        "ja": "「フィーニスの塔で聴こえた声……ということは、ふむ」",
+        "zh_Hant": "「在菲妮斯之塔聽見的聲音……也就是說，嗯。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00904/zh_Hant/",
+        "ja": "「それって……フィーニスの塔が特殊な空間だから、ってこと？」",
+        "zh_Hant": "「意思是說……因為菲妮斯之塔是特殊的空間嗎？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01101/zh_Hant/",
+        "ja": "「フィーニスの塔──よりもひどい状態、ってわけか……」",
+        "zh_Hant": "「比菲妮斯之塔——還要糟糕的狀態，是嗎……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01203/zh_Hant/",
+        "ja": "フィーニスの塔には女神と、その配下である守護天使たちが住まう。",
+        "zh_Hant": "菲妮斯之塔住著女神，以及祂麾下的守護天使們。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01203/zh_Hant/",
+        "ja": "妻に会いたい。ただそれだけの願望に突き動かされて、私はフィーニスの塔を昇りつめた。",
+        "zh_Hant": "我想見妻子一面。在如此單純的心願驅使下，我登上了菲妮斯之塔。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01203/zh_Hant/",
+        "ja": "私は執念でフィーニスの塔を昇り続け、やがて……その頂点へと至った。",
+        "zh_Hant": "我憑著執念持續登上菲妮斯之塔，最後……終於抵達了頂點。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01203/zh_Hant/",
+        "ja": "『ようこそ。フィーニスの塔──その終点へ』",
+        "zh_Hant": "『歡迎來到菲妮斯之塔的終點。』"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01203/zh_Hant/",
+        "ja": "「ここはフィーニスの塔の頂上──そのはずだな」",
+        "zh_Hant": "「這裡是菲妮斯之塔的頂端——應該是吧。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01203/zh_Hant/",
+        "ja": "『フィーニスの塔。その頂点。それは──分かたれし<ruby=すべ>総</ruby>ての世界線を望むことのできる、唯一の<ruby=しざ>視座</ruby>なのですから』",
+        "zh_Hant": "『菲妮斯之塔。其頂點。因為那是唯一能夠眺望分裂的總世界線的視角。』"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01203/zh_Hant/",
+        "ja": "『ですがジェラルド・セイファート。あなたにはフィーニスの塔の“制覇者”として……この理を知る権利があります』",
+        "zh_Hant": "“不過謝拉特・錫菲德，你身為菲妮斯之塔的「稱霸者」……有權利知道這個道理。”"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01203/zh_Hant/",
+        "ja": "「<ruby=・・・・・・・・・・・・>あなたの姿が見えないこと</ruby>だ。フィーニスの塔は女神の住まう場所であると聞いたが」",
+        "zh_Hant": "「就是『看不見你的身影』這件事。我聽說菲妮斯之塔是女神居住的地方。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01203/zh_Hant/",
+        "ja": "「平行世界という裏の<ruby=ことわり>理</ruby>に、旧世界の力……か。フィーニスの塔を昇りきったとはいえ、あまりに厚い待遇だな」",
+        "zh_Hant": "「平行世界的法則，加上舊世界的力量……嗎？雖說你已經登上菲妮斯之塔，這樣的待遇也太優渥了。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01204/zh_Hant/",
+        "ja": "フィーニスの塔を脱した私はそれから<ruby=しふく>雌伏</ruby>の期間を過ごした。",
+        "zh_Hant": "脫離菲妮斯之塔後，我度過了一段雌伏的時期。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01204/zh_Hant/",
+        "ja": "フィーニスの塔に何名かの生徒が導かれていた。",
+        "zh_Hant": "有幾名學生被引導至菲妮斯之塔。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01206/zh_Hant/",
+        "ja": "「フィーニスの塔を制したあの日から、私は女神殺しの<ruby=とが>咎</ruby>を背負って生きてきた」",
+        "zh_Hant": "「自從征服菲妮斯之塔的那天起，我就背負著弒殺女神的罪孽活到現在。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01303/zh_Hant/",
+        "ja": "「ニャからこそ──大賢者を呼び寄せたフィオナ嬢こそ真の魔王の血統というわけニャン。フィーニスの塔でもそう言われてたニャン」",
+        "zh_Hant": "「正因為如此——召喚出大賢者的菲歐娜大小姐才是真正的魔王血統喵。在菲妮斯之塔也是這麼說的喵。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01306/zh_Hant/",
+        "ja": "「フィーニスの塔──あれを通れば魔界から人間界、いえ……天界にすら至ることができるでしょう」",
+        "zh_Hant": "「菲妮斯之塔——只要通過那裡，就能從魔界前往人界，不對……甚至能抵達天界吧。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01306/zh_Hant/",
+        "ja": "「はい。フィーニスの塔で森羅歴以前の歴史を知った後……私は、改めて星見家の古文書を読み漁りました」",
+        "zh_Hant": "「是的，在我透過菲妮斯之塔得知森羅歷以前的歷史後……重新翻閱了星見家的古文書。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01306/zh_Hant/",
+        "ja": "「この世界で唯一、三界にまたがって存在する建造物──それが女神のましますフィーニスの塔なのだと。この記述を信じるなら……」",
+        "zh_Hant": "「這個世界唯一橫跨三界的建築物——就是女神所在的菲妮斯之塔。如果相信這段記述的話……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01306/zh_Hant/",
+        "ja": "「確かに魔界にも──フィーニスの塔はあるわ。語られる伝説も人間界とおおよそ変わらない」",
+        "zh_Hant": "「的確，魔界也有——菲妮斯之塔。傳說也和人界差不多。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01306/zh_Hant/",
+        "ja": "「魔界のフィーニスの塔は──シャリオン地方にあります。ここズヴィエダからすると、完全に別世界のお話です」",
+        "zh_Hant": "「魔界的菲妮斯之塔——位於夏利翁地區。從茲維耶達出發的話，完全是另一個世界的事。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01307/zh_Hant/",
+        "ja": "フィーニスの塔・第零階層",
+        "zh_Hant": "菲妮斯之塔・第零階層"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01307/zh_Hant/",
+        "ja": "シャリオン地方にそびえるフィーニスの塔は、外観から流星市国のそれと大きく異なっていた。",
+        "zh_Hant": "聳立於夏利翁地區的菲妮斯之塔，外觀與流星市國的那座塔大相徑庭。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01307/zh_Hant/",
+        "ja": "「これが……フィーニスの塔……なのですか？」",
+        "zh_Hant": "「這就是……菲妮斯之塔嗎？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01307/zh_Hant/",
+        "ja": "フィーニスの塔内部といえば、各層はどれも『ヒトの文明』を感じさせる様相だったにもかかわらず、ここはどこまでも無機質で寒々しい。",
+        "zh_Hant": "說到菲妮斯之塔的內部，每一層都讓人感受到『人類文明』的氣息，這裡卻冰冷又死氣沉沉。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01307/zh_Hant/",
+        "ja": "「はい。魔界、人間界、天界と──どこにあってもフィーニスの塔だけは同じ軸を貫きます」",
+        "zh_Hant": "「是的，魔界、人界、天界——無論身在何處，唯獨菲妮斯之塔會貫穿相同的軸線。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01307/zh_Hant/",
+        "ja": "「そうニャね。あれがいるニャら、ここがフィーニスの塔の中ってわかるニャン」",
+        "zh_Hant": "「就是說呀。有那個在的話，就知道這裡是菲妮斯之塔裡面了喵。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01308/zh_Hant/",
+        "ja": "俺たちがフィーニスの塔に入った１回目と２回目の時──",
+        "zh_Hant": "我們第一次和第二次進入菲妮斯之塔時——"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01308/zh_Hant/",
+        "ja": "これまでも、世界の裏側を教えてくれたフィーニスの塔。",
+        "zh_Hant": "菲妮斯之塔至今為止，都已將世界的另一面告訴了我。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01309/zh_Hant/",
+        "ja": "今回、フィーニスの塔が語りかけてきたのはヴィーナスじゃない──緋宮クロトに対してなんだと。",
+        "zh_Hant": "這次菲妮斯之塔向緋宮克洛托說話——而不是維納斯。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01402/zh_Hant/",
+        "ja": "フィーニスの塔が見せてくれたのは恐らく実際に起きた旧森羅暦の過去。",
+        "zh_Hant": "菲妮斯之塔所展現的，恐怕是實際發生過的舊森羅歷過去。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01403/zh_Hant/",
+        "ja": "俺たちはそれからもひたすらフィーニスの塔・第零層を駆け上がっていった。",
+        "zh_Hant": "我們繼續在菲妮斯之塔・第零層往上衝。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01403/zh_Hant/",
+        "ja": "「もしかすると、フィーニスの塔は──これらを幽閉する役割をも担っていたのかもしれませんね」",
+        "zh_Hant": "「搞不好菲妮斯之塔——也肩負著幽禁這些傢伙的任務。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01404/zh_Hant/",
+        "ja": "そうして、俺たちはフィーニスの塔・第零層を踏破する──",
+        "zh_Hant": "於是我們突破了菲妮斯之塔・第零層——"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01407/zh_Hant/",
+        "ja": "フィーニスの塔を出ると、そこは見慣れた学園の敷地内だった。",
+        "zh_Hant": "走出菲妮斯之塔後，眼前就是熟悉的學園校地。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01407/zh_Hant/",
+        "ja": "俺は、通ってきた『うろ』が封鎖されたことやフィーニスの塔を利用したことを手短に話した。",
+        "zh_Hant": "我簡短說明了我們通過的『迷陣』遭到封鎖，以及利用菲妮斯之塔的事情。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01502/zh_Hant/",
+        "ja": "それは、この超高空にたった一本だけそびえる、フィーニスの塔の頂上だった。",
+        "zh_Hant": "正是這座聳立於超高空中的菲妮斯之塔頂端。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01502/zh_Hant/",
+        "ja": "「フィーニスの塔の、頂──そんなところ、行けるものなのですか……！？」",
+        "zh_Hant": "「菲妮斯之塔的、塔頂——那種地方，真的去得了嗎……！？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01503/zh_Hant/",
+        "ja": "「フィーニスの塔……か」",
+        "zh_Hant": "「菲妮斯之塔……嗎？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01503/zh_Hant/",
+        "ja": "フィーニスの塔の頂上──アポロはあそこから、人間界を見下ろしてる。",
+        "zh_Hant": "菲妮斯之塔的頂端——阿波羅就是從那裡俯瞰人界。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01503/zh_Hant/",
+        "ja": "全員で──そびえ立つフィーニスの塔に向き直る。",
+        "zh_Hant": "全員一起——重新面向聳立在眼前的菲妮斯之塔。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01505/zh_Hant/",
+        "ja": "「さらに言えば、今──アポロはフィーニスの塔のてっぺんにいる。でもって、フィーニスの塔ってやつは、この地球上と<ruby=・・・>地続き</ruby>だ」",
+        "zh_Hant": "「進一步來說，現在——阿波羅在菲妮斯之塔的頂端。然後，所謂的菲妮斯之塔和這個地球是連在一起的。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01508/zh_Hant/",
+        "ja": "「フィーニスの塔のてっぺんまで……よ、よし！　頑張るよ！」",
+        "zh_Hant": "「爬到菲妮斯之塔的頂端……好、好吧！我會加油！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01601/zh_Hant/",
+        "ja": "フィオナの固い誓いを共有し、俺たちはフィーニスの塔の頂上に座すアポロのもとへ向かった……。",
+        "zh_Hant": "菲歐娜也和我們共同立下堅定的誓言，於是我們便前往位於菲妮斯之塔頂端的阿波羅所在之處……"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01601/zh_Hant/",
+        "ja": "「ルリエルの知っているフィーニスの塔の内部とは、全然違う趣でありますね！」",
+        "zh_Hant": "「和琉璃艾爾所知道的菲妮斯之塔內部截然不同呢！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01601/zh_Hant/",
+        "ja": "「フィーニスの塔は──階層によって全く装いが変わりますから」",
+        "zh_Hant": "「因為菲妮斯之塔——每層樓的裝潢都會完全改變。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01601/zh_Hant/",
+        "ja": "どうにかして早急にこのフィーニスの塔を駆け上がらなくてはならない。",
+        "zh_Hant": "必須盡快衝上菲妮斯之塔才行。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01601/zh_Hant/",
+        "ja": "「フィーニスの塔では何度か……誰とも知れぬ『声』が響きました。特に、ヴィーナスさんへ語りかけていましたね」",
+        "zh_Hant": "「在菲妮斯之塔裡，有好幾次……響起不知是誰的『聲音』。特別是對維納斯小姐說話。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01602/zh_Hant/",
+        "ja": "フィーニスの塔を駆け上がっていった。",
+        "zh_Hant": "就這樣一路衝上菲妮斯之塔。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01602/zh_Hant/",
+        "ja": "「フィーニスの塔の──頂上……」",
+        "zh_Hant": "「菲妮斯之塔的——頂端……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01609/zh_Hant/",
+        "ja": "それから俺たちはフィーニスの塔の頂上に散らばった破片を慎重に回収していった。",
+        "zh_Hant": "之後，我們慎重地回收散落在菲妮斯之塔頂端的碎片。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01702/zh_Hant/",
+        "ja": "フィーニスの塔の頂上で生じた異変──",
+        "zh_Hant": "菲妮斯之塔的頂上發生了異變——"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01702/zh_Hant/",
+        "ja": "ぽつりとこの世に落ちたひと粒の影が、フィーニスの塔へ向けて飛び立った。",
+        "zh_Hant": "一滴影子落在了這個世界上，向著菲妮斯之塔飛去。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main01704/zh_Hant/",
+        "ja": "「はい。人間界へ戻ってくる際、フィーニスの塔の内部で──」",
+        "zh_Hant": "「是的。在回到人界的時候，我們在菲妮斯之塔的內部——」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main10201/zh_Hant/",
+        "ja": "新星、流星両学園の星徒会メンバーによるフィーニスの塔攻略。",
+        "zh_Hant": "新星、流星兩所學園的星徒會成員們前去攻略菲妮斯之塔。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main10201/zh_Hant/",
+        "ja": "「向かう場所がフィーニスの塔でさえなければ……！　私の予測の星眼がお嬢様の危機を見逃しはしなかったのに……！」",
+        "zh_Hant": "「如果目的地不是菲妮斯之塔的話……！我的預測星眼就不會錯過大小姐的危機了……！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main10209/zh_Hant/",
+        "ja": "「ヴィーナス、並びに緋宮クロトたちは、アポロ打倒のため、フィーニスの塔へと向かった」",
+        "zh_Hant": "「維納斯和克洛托一起，為了打倒阿波羅，前往菲妮斯之塔了」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main10305/zh_Hant/",
+        "ja": "「そして、会長くん、ヴィーナスちゃん、流星学園のフィオナちゃんを中心に私たちはフィーニスの塔を昇り、世界の真実を知ったわ」",
+        "zh_Hant": "「然後，以會長，維納斯，流星學園的菲歐娜為中心，我們登上了菲妮斯之塔，知曉了世界的真相」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main10305/zh_Hant/",
+        "ja": "「ちょっと待って！　フィーニスの塔って入っちゃいけないんじゃなかった！？　めっちゃ怒られるやつ！」",
+        "zh_Hant": "「等一下！　菲妮斯之塔不是不能進去的嗎！？　會惹大麻煩的！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main10507/zh_Hant/",
+        "ja": "「これってフィーニスの塔にいた、あのガーディアン！？」",
+        "zh_Hant": "「這是菲妮斯之塔裡的那個守護者！？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20101/zh_Hant/",
+        "ja": "フィーニスの塔の頂上で繰り広げられたギエルとの決戦。",
+        "zh_Hant": "在菲妮斯之塔的頂端，我和基爾展開了決戰。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20102/zh_Hant/",
+        "ja": "「……そうだな。そのためにフィーニスの塔に登って……守護天使に出会って、リクリエの真相もそこで知った。きっとどこかに手がかりがあるはずだ」",
+        "zh_Hant": "「……是啊。為此我們才登上了菲妮斯之塔……在那裡遇見了守護天使，也知道了利克里耶的真相。肯定在某個地方有線索」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20104/zh_Hant/",
+        "ja": "「確か、フィーニスの塔のガーディアンもこんな感じだったわよね。倒したらスクラップになったし」",
+        "zh_Hant": "「菲妮斯之塔的守護者也是這樣，打倒之後就變成廢鐵了」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20104/zh_Hant/",
+        "ja": "フィーニスの塔の中で戦ったガーディアンは、リクリエの瘴気の影響で変化し、半ばモンスター化していた。",
+        "zh_Hant": "在菲妮斯之塔中戰鬥過的守護者，因為受到利克里耶的瘴氣影響而發生了變化，有一半已經變成了怪物。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20104/zh_Hant/",
+        "ja": "それがフィーニスの塔外でも起きうる、しかも強力なモンスターに変ずるとなれば、大きな脅威だ。",
+        "zh_Hant": "如果同樣的事情在菲妮斯之塔之外也能發生，而且還會變成強大的怪物，那可就非常危險了。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20211/zh_Hant/",
+        "ja": "「ガーディアン……？　本来ならフィーニスの塔の内部にしかいないはずじゃ？」",
+        "zh_Hant": "「守護者……？　本來不是只存在於菲妮斯之塔內部嗎？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20211/zh_Hant/",
+        "ja": "女神の領域たるフィーニスの塔。その内部を守る使徒がガーティアンだ。",
+        "zh_Hant": "菲妮斯之塔是女神的領域。守護其內部的使徒就是守護者。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20212/zh_Hant/",
+        "ja": "今までフィーニスの塔で戦ってきたガーディアンとは、スピード、パワー、耐久力、どれも段違いだ。",
+        "zh_Hant": "與至今為止在菲妮斯之塔戰鬥過的守護者相比，速度、力量、耐力都截然不同。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20308/zh_Hant/",
+        "ja": "「常識……というか、色々あって前提になってる。物証を見せることは難しいが、フィーニスの塔で見聞きしたことや、女神テルルらしき存在の説明からも、ほぼ間違いない」",
+        "zh_Hant": "「常識……應該說，因為發生了很多事，所以這是前提。雖然很難展示物證，但從在菲妮斯之塔的所見所聞，以及疑似女神堤露露的存在說明來看，幾乎不會有錯」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20311/zh_Hant/",
+        "ja": "「フィーニスの塔に行こう」",
+        "zh_Hant": "「去菲妮斯之塔吧」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20311/zh_Hant/",
+        "ja": "フィーニスの塔の頂はアルタイル・デネブ・ベガの３の世界を見通す視座となる。",
+        "zh_Hant": "菲妮斯之塔的頂端，是能夠俯瞰牛郎星，天津四，織女星三個世界的視角。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20311/zh_Hant/",
+        "ja": "「守護天使の本体が帰還してから、フィーニスの塔内部がどうなっているかも気になります」",
+        "zh_Hant": "「我也很在意守護天使的本體回歸後，菲妮斯之塔內部的情況」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20311/zh_Hant/",
+        "ja": "そうして星徒会でフィーニスの塔に向かったのだが……",
+        "zh_Hant": "就這樣，我們星徒會成員前往了菲妮斯之塔……"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20311/zh_Hant/",
+        "ja": "「今更だけど……フィーニスの塔って本当は入っちゃいけないんだよね？」",
+        "zh_Hant": "「雖然現在說有點晚了……菲妮斯之塔本來是不能進去的吧？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20311/zh_Hant/",
+        "ja": "フィーニスの塔の中に入るのは、アポロとギエルとの戦い以来。",
+        "zh_Hant": "上次進入菲妮斯之塔，是和阿波羅與基爾戰鬥的時候。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20311/zh_Hant/",
+        "ja": "「以前マグダレナさんに聞いたところによると、今はフィーニスの塔内部の整理中なので、ガーディアンの機能も不完全だそうです」",
+        "zh_Hant": "「根據我以前從瑪格達莉娜小姐那裡聽到的，現在菲妮斯之塔內部正在整理，守護者的功能也不完全」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20312/zh_Hant/",
+        "ja": "フィーニスの塔は天高くそびえ、その頂上は天界すらも超える。物理的には繋がっていないはずの三界を貫く塔だ。",
+        "zh_Hant": "菲妮斯之塔高聳入雲，其塔頂甚至超越了天界。這座塔貫穿了在物理上應該沒有聯繫的三界。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20312/zh_Hant/",
+        "ja": "「フィーニスの塔の中って普段は見られないから、私は楽しかったわ～」",
+        "zh_Hant": "「菲妮斯之塔裡面平時看不到，我玩得很開心～」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20312/zh_Hant/",
+        "ja": "元々知的好奇心の強い２人にとっては、世界の深奥ともいえるフィーニスの塔内部は、興味をそそられるようだ。",
+        "zh_Hant": "對於原本就好奇心旺盛的兩人來說，堪稱世界奧秘的菲妮斯之塔內部似乎勾起了她們的興趣。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20313/zh_Hant/",
+        "ja": "命からがら頂上を脱出した俺たちは、フィーニスの塔を降り、大聖堂まで来ていた。",
+        "zh_Hant": "我們九死一生地逃出了塔頂，從菲妮斯之塔下來，來到了大聖堂。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20313/zh_Hant/",
+        "ja": "「今のところフィーニスの塔から出る気はないらしい。不幸中の幸いだ」",
+        "zh_Hant": "「現在似乎沒有離開菲妮斯之塔的打算。真是不幸中的萬幸」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20313/zh_Hant/",
+        "ja": "「でもどうして梨緒さんがフィーニスの塔に？」",
+        "zh_Hant": "「但是為什麼梨緒小姐會在菲妮斯之塔？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20313/zh_Hant/",
+        "ja": "フィーニスの塔を登っている時、ヴィーナスはしばしば声が聞こえると言っていたが、それと似たようなものだろうか……？",
+        "zh_Hant": "在攀登菲妮斯之塔的時候，維納斯說她經常聽到聲音，這和那個是一樣的嗎……？"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20313/zh_Hant/",
+        "ja": "「フィーニスの塔に入ったのは、初めてのはずなんだが……」",
+        "zh_Hant": "「我應該是第一次進入菲妮斯之塔才對……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20401/zh_Hant/",
+        "ja": "「おそらくあれは常にフィーニスの塔の頂上にいるわけではない。現れたのには何かきっかけがあったんじゃないのか？」",
+        "zh_Hant": "「恐怕它並不是一直都在菲妮斯之塔的頂端。它出現的時候，應該有什麼契機吧？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20401/zh_Hant/",
+        "ja": "俺たちがフィーニスの塔を、三界を見渡す視座として利用しようとしたこと。",
+        "zh_Hant": "我們打算利用菲妮斯之塔，作為俯瞰三界的位置。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20401/zh_Hant/",
+        "ja": "「そうですね。情報を得るためにフィーニスの塔を登るのは諦めた方がいいでしょう」",
+        "zh_Hant": "「是啊。為了得到情報，還是放棄攀登菲妮斯之塔吧」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20402/zh_Hant/",
+        "ja": "「フィオナたちがフィーニスの塔の第零層を通った時、大昔の亡霊に出会ったらしい」",
+        "zh_Hant": "「菲歐娜她們在通過菲妮斯之塔第零層的時候，好像遇到了很久以前的亡靈」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20403/zh_Hant/",
+        "ja": "俺は新星学園の星徒会長として、この前フィーニスの塔で起こったことについて、学園各所や流星星徒会に報告した。",
+        "zh_Hant": "我作為新星學園的星徒會長，將之前在菲妮斯之塔發生的事情向學園各處和流星星徒會進行了報告。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20403/zh_Hant/",
+        "ja": "窓からフィーニスの塔を眺めながら、マトイが心配そうに呟く。",
+        "zh_Hant": "從窗戶眺望著菲妮斯之塔，纏擔心地低語道。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20406/zh_Hant/",
+        "ja": "「ほら、母さんが星骸布をもらってきてくれただろ。フィーニスの塔でマグダレナさんも言ってた」",
+        "zh_Hant": "「你看，媽媽不是拿到了星骸布嗎？瑪格達莉娜在菲妮斯之塔也說過」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20409/zh_Hant/",
+        "ja": "ガーディアンはフィーニスの塔を守護する存在のはず。",
+        "zh_Hant": "守護者應該是守護菲妮斯之塔的存在。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20411/zh_Hant/",
+        "ja": "「フィーニスの塔で出会った亡霊が、チャカパラ神は『女神を超越する存在』と言っていた……。確かに関係がありそうだ」",
+        "zh_Hant": "「在菲妮斯之塔遇到的亡靈，說查卡帕拉神是「超越女神的存在」……看來確實有關係」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20414/zh_Hant/",
+        "ja": "「この映像は先日、新星星徒会がフィーニスの塔に登った際、ＤＩＳＣの自動撮影機能で録画したものです」",
+        "zh_Hant": "「這是前幾天，新星星徒會攀登菲妮斯之塔時，用ＤＩＳＣ的自動攝影功能錄下的影片」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20501/zh_Hant/",
+        "ja": "街へと押し寄せているのは、女神のしもべであるはずのガーディアン。フィーニスの塔の守護者であるはずの彼らが、再び街を破壊しようと迫っていた。",
+        "zh_Hant": "湧向街道的，是本應是女神僕從的守護者。本應是菲妮斯之塔守護者的它們，再次逼近街道，試圖破壞。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20601/zh_Hant/",
+        "ja": "向こうにフィーニスの塔が見えるから、流星市国には違いないだろう。",
+        "zh_Hant": "對面能看到菲妮斯之塔，所以這裡應該是流星市國吧。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20602/zh_Hant/",
+        "ja": "（見慣れない景色……だが遠くにフィーニスの塔が見えた。ここは流星市国だ）",
+        "zh_Hant": "（陌生的景色……但遠處能看到菲妮斯之塔。這裡是流星市國）"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20602/zh_Hant/",
+        "ja": "そして学園の敷地内には、流星教の中心である大聖堂と、三界を繋ぐフィーニスの塔がある。目印としてはこれ以上のものはない。",
+        "zh_Hant": "而學園的領地內，有流星教的中心大聖堂，以及連接三界的菲妮斯之塔。沒有比這更好的標記了。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20602/zh_Hant/",
+        "ja": "ある程度の危険を承知で、人目のある道を避けながらフィーニスの塔を目指すと──",
+        "zh_Hant": "梨緒知道會有一定的危險，但還是避開有人的路，朝著菲妮斯之塔前進——"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20603/zh_Hant/",
+        "ja": "かつてフィーニスの塔を制覇したセイファート元学園長は、女神から力を与えられた。",
+        "zh_Hant": "曾經稱霸菲妮斯之塔的錫菲德前校長，也從女神那裡得到了力量。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20607/zh_Hant/",
+        "ja": "ギエルと決着をつけた、フィーニスの塔の頂上での戦いの最後。",
+        "zh_Hant": "在菲妮斯之塔的頂端，與基爾決出勝負的最後。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20805/zh_Hant/",
+        "ja": "フィーニスの塔へ",
+        "zh_Hant": "前往菲妮斯之塔"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20805/zh_Hant/",
+        "ja": "「ルヴィネは昼過ぎになると、毎日のようにフィーニスの塔の中へ姿を消す」",
+        "zh_Hant": "「露維妮每天一過中午，就會消失在菲妮斯之塔裡」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20805/zh_Hant/",
+        "ja": "「だが戻ってくる時間はまちまちで、すぐに戻ってきて再びバイトに精を出すこともあれば、深夜を回ってからフィーニスの塔から出てくることもある」",
+        "zh_Hant": "「但是回來的時間不固定，有時很快就回來繼續努力打工，有時會到深夜才從菲妮斯之塔出來」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20805/zh_Hant/",
+        "ja": "「ううん。ルヴィがフィーニスの塔に行ってるのは知ってたけど、そんな毎日だとは思わなかった」",
+        "zh_Hant": "「不知道。雖然我知道露維會去菲妮斯之塔，但沒想到是每天」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20805/zh_Hant/",
+        "ja": "「みんなも知っての通り、フィーニスの塔は女神の聖域だ」",
+        "zh_Hant": "「如大家所知，菲妮斯之塔是女神的聖域」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20805/zh_Hant/",
+        "ja": "「そしてルヴィネは女神の声が聞こえると言っていた。ルヴィネの言葉の真偽は不明だが、おそらくフィーニスの塔で何かしているんだろう」",
+        "zh_Hant": "「然後露維妮說她能聽到女神的聲音。雖然不知道露維妮的話是真是假，但她可能在菲妮斯之塔裡做著什麼」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20805/zh_Hant/",
+        "ja": "「よーし！　じゃあ私たちもフィーニスの塔に入って、現場を押さえるわよ！」",
+        "zh_Hant": "「好！　那我們也進入菲妮斯之塔，抓住現場吧！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20805/zh_Hant/",
+        "ja": "「待て、ヴィーナス。フィーニスの塔にはディザスターハンドがいるかもしれない」",
+        "zh_Hant": "「等等，維納斯。菲妮斯之塔裡可能有災厄之手」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20805/zh_Hant/",
+        "ja": "アルタイルでフィーニスの塔に登った時、ディザスターハンドに襲われ、命からがら逃げ出した。",
+        "zh_Hant": "在牛郎星攀登菲妮斯之塔的時候，我們被災厄之手襲擊，好不容易才逃了出來。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20805/zh_Hant/",
+        "ja": "「よし、行こう。フィーニスの塔へ」",
+        "zh_Hant": "「好，去吧。去菲妮斯之塔」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20805/zh_Hant/",
+        "ja": "「じゃあボクはフィーニスの塔の中に入ったら、別行動させてもらうよ」",
+        "zh_Hant": "「那我進入菲妮斯之塔後，就分頭行動吧」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "いつもの時間になり、フィーニスの塔に向かうルヴィネ。",
+        "zh_Hant": "到了平時的時間，露維妮前往菲妮斯之塔。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "（ルヴィネを追跡し、フィーニスの塔に入ったのを確認して、俺たちも塔に入る。それで間違いないな？）",
+        "zh_Hant": "（跟蹤露維妮，確認她進入菲妮斯之塔後，我們也進入塔內。這樣沒錯吧？）"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "フィーニスの塔に入るため、極星学園に直接侵入するという危険を冒しているが、それもやむを得ないだろう。",
+        "zh_Hant": "為了進入菲妮斯之塔，我們冒著直接入侵極星學園的危險，但這也是不得已的。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "俺たちもフィーニスの塔に入ろうと後を追うが──",
+        "zh_Hant": "我們也追在她後面，準備進入菲妮斯之塔——"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "「そのためにルヴィネと話したい。だからフィーニスの塔に行きたいんだ」",
+        "zh_Hant": "「為此我想和露維妮談談。所以我想去菲妮斯之塔」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "「わかりました。フィーニスの塔へ行くなら、念のためあちらをお通りください。あの道が一番人目を避けられると思います」",
+        "zh_Hant": "「我明白了。如果要去菲妮斯之塔的話，為了以防萬一，請走那邊。那條路最不容易被人看到」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "すると誰ともすれ違うことなく、フィーニスの塔の前に辿り着くことができた。",
+        "zh_Hant": "然後我們沒有遇到任何人，就到達了菲妮斯之塔的前面。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "「デネブでも、フィーニスの塔とその周りはあまり変わらないようですね」",
+        "zh_Hant": "「在天津四，菲妮斯之塔和周圍也沒什麼變化呢」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "一度見失ってしまったが、いつもならルヴィネはフィーニスの塔に入っている時間帯だ。",
+        "zh_Hant": "雖然剛才跟丟了，但按平時的時間來看，現在應該是露維妮進入菲妮斯之塔的時候。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "「でもデネブのフィーニスの塔に入るのは初めてね。どうやって入ればいいのかしら？」",
+        "zh_Hant": "「不過我還是第一次進入天津四的菲妮斯之塔。要怎麼進去呢？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "「フィーニスの塔は女神テルルの神域。女神の娘であるキミが念じれば、塔に入れるはずだよ」",
+        "zh_Hant": "「菲妮斯之塔是女神堤露露的神域。只要你這個女神的女兒默念，應該就能進去了」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "次の瞬間には、フィーニスの塔内部へ転移していた。",
+        "zh_Hant": "下一瞬間，我們轉移到了菲妮斯之塔內部。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "「中は私たちの知っているフィーニスの塔と変わりませんね。入ると変身するのも同じです」",
+        "zh_Hant": "「裡面和我們所知的菲妮斯之塔沒有區別。進入後變身也一樣」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20806/zh_Hant/",
+        "ja": "「これがフィーニスの塔の中……」",
+        "zh_Hant": "「這就是菲妮斯之塔內部……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20807/zh_Hant/",
+        "ja": "フィーニスの塔の頂上、その上空に<ruby=そび>聳</ruby>えるディザスターハンド──の真下。",
+        "zh_Hant": "在菲妮斯之塔的頂端，聳立於其上空的災厄之手——的正下方。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20807/zh_Hant/",
+        "ja": "「じゃあ私たちがアルタイルのフィーニスの塔に登ってきた時、あの手が襲ってきたのはあんたの仕業なの？」",
+        "zh_Hant": "「那我們登上牛郎星的菲妮斯之塔時，那隻手襲擊我們也是你做的好事嗎？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20808/zh_Hant/",
+        "ja": "『ええ、私ももっと早く呼びかけたかったのですが……神域たるフィーニスの塔の頂上に、女神の力を持つ者が２人揃うことで、ようやく声を届けられました』",
+        "zh_Hant": "『嗯，我也想早點呼喚你……但是神域菲妮斯之塔的頂端，有兩位擁有女神之力的人，終於能聽到我的聲音了』"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20809/zh_Hant/",
+        "ja": "「ここは……？　さっきまでフィーニスの塔の頂上にいたはず……」",
+        "zh_Hant": "「這裡是……？　剛才我們還在菲妮斯之塔的頂端……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20809/zh_Hant/",
+        "ja": "「そう、ボクさ。守護天使の力で一瞬だけフィーニスの塔のコントロールを奪わせてもらった。ルヴィネは女神としては若輩だからギリギリなんとかなったよ」",
+        "zh_Hant": "「對，是我。我用守護天使的力量一瞬間奪取了菲妮斯之塔的控制權。露維妮作為女神還很年輕，所以勉強可以」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20809/zh_Hant/",
+        "ja": "「今はフィーニスの塔からキミたちを<ruby=イジェクト>排出</ruby>しているところ。塔の外に出すから少し待っててね」",
+        "zh_Hant": "「現在我正在把你們從菲妮斯之塔排出。要到塔外了，稍微等一下」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20809/zh_Hant/",
+        "ja": "『残念ながら、フィーニスの塔にいる守護天使はみんなルヴィネに封印されていた』",
+        "zh_Hant": "『很遺憾，菲妮斯之塔的守護天使都被露維妮封印了』"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20809/zh_Hant/",
+        "ja": "『ボクはフィーニスの塔のコントロールを奪うために、半身と同化した。ボクも間もなく封印されて動けなくなる』",
+        "zh_Hant": "『為了奪取菲妮斯之塔的控制權，我與半身同化了。我很快也會被封印，無法動彈』"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20809/zh_Hant/",
+        "ja": "『じゃあフィーニスの塔の前に出すよ。行ってらっしゃい！』",
+        "zh_Hant": "『那我就把你們送到菲妮斯之塔前吧。一路順風！』"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20810/zh_Hant/",
+        "ja": "「ふぅ、フィーニスの塔を脱出できたわね。ラクシャのおかげで降りるのは早かったわ」",
+        "zh_Hant": "「呼，成功逃出菲妮斯之塔了。多虧了蘭可莎，降落得很快」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20810/zh_Hant/",
+        "ja": "「フィーニスの塔で何が起こるかはわからないわ。だからいつでもアルタイルに帰れるように準備しておくわね」",
+        "zh_Hant": "「不知道菲妮斯之塔會發生什麼事。所以要準備好隨時都能回到牛郎星」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20903/zh_Hant/",
+        "ja": "「本当はフィーニスの塔も使いたかったのですが、ディザスターハンドの件もあって、それは見合わせました」",
+        "zh_Hant": "「其實本來也想用菲妮斯之塔的，但因為災厄之手的事情，就暫時擱置了」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20904/zh_Hant/",
+        "ja": "「だけど市倉さんは、デネブのフィーニスの塔に残ったんだよね……」",
+        "zh_Hant": "「但是市倉小姐，留在了天津四的菲妮斯之塔……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20904/zh_Hant/",
+        "ja": "フィーニスの塔ではルヴィネの正体に迫ることができた。",
+        "zh_Hant": "在菲妮斯之塔，我們已經接近了露維妮的真實身份。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main20905/zh_Hant/",
+        "ja": "「本当はフィーニスの塔を通りたかったんだけど、またディザスターハンドに遭遇するかもしれないから、世界樹を使わせてもらってる」",
+        "zh_Hant": "「本來是想走菲妮斯之塔的，但怕又遇到災厄之手，所以就用了世界樹」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21005/zh_Hant/",
+        "ja": "「あら、フィーニスの塔でも見たガーディアンじゃない。もはや懐かしさすら感じるわ」",
+        "zh_Hant": "「哎呀，這不是在菲妮斯之塔見過的守護者嗎。甚至都有點懷念了」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21009/zh_Hant/",
+        "ja": "「嘘じゃない！　俺たちはフィーニスの塔で、女神テルルから聞いたんだ」",
+        "zh_Hant": "「不是謊言！　我們在菲妮斯之塔，從女神堤露露那裡聽說的」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21009/zh_Hant/",
+        "ja": "だが俺たちもフィーニスの塔で真実に触れた以上、譲ることはできない。",
+        "zh_Hant": "但是我們既然已經在菲妮斯之塔接觸到了真相，就不能退讓。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21113/zh_Hant/",
+        "ja": "ルヴィネは極星学園の星徒会室を出て、フィーニスの塔へと向かう。",
+        "zh_Hant": "露維妮離開極星學園的星徒會室，前往菲妮斯之塔。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21113/zh_Hant/",
+        "ja": "そのまま通い慣れた道をたどり、ルヴィネはフィーニスの塔の頂上へとやってきた──",
+        "zh_Hant": "露維妮就這樣沿著熟悉的道路，來到了菲妮斯之塔的塔頂——"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21204/zh_Hant/",
+        "ja": "「でも、デネブのフィーニスの塔で、ルヴィは怪しい動きをしていた。それをベアトも見たって言ってるし……」",
+        "zh_Hant": "「但是，露比在天津四的菲妮斯之塔裡做出了可疑的舉動。碧翠絲也說她看到了……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21301/zh_Hant/",
+        "ja": "平行世界デネブのフィーニスの塔、その頂上。",
+        "zh_Hant": "平行世界的天津四，菲妮斯之塔的頂端。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21402/zh_Hant/",
+        "ja": "「一番大きいアステラは学園の上空だけど……東京駅や渋谷、浅草……フィーニスの塔を中心に範囲は今も拡大してるみたい！」",
+        "zh_Hant": "「最大的阿斯特拉在學園上空……東京站，澀谷，淺草……以菲妮斯之塔為中心的範圍似乎還在擴大！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21402/zh_Hant/",
+        "ja": "「多分フィーニスの塔……だと思う。内部や頂上はモニタリングできないんだけど、それ以外の場所は考えづらいかな」",
+        "zh_Hant": "「大概在菲妮斯之塔……吧。雖然無法監控內部和頂端，但很難想像她會在其他地方」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21402/zh_Hant/",
+        "ja": "地上の防衛をしながら、フィーニスの塔を同時攻略する──この非常時に戦力を分散しなくてはいけないのは厳しい。",
+        "zh_Hant": "一邊保衛地面，一邊同時攻略菲妮斯之塔——在這種緊急情況下不得不分散戰力，情況很嚴峻。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21402/zh_Hant/",
+        "ja": "「……フィーニスの塔。恐らくその最上階だ」",
+        "zh_Hant": "「……在菲妮斯之塔。恐怕是在最頂層。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21403/zh_Hant/",
+        "ja": "フィーニスの塔・攻略",
+        "zh_Hant": "攻略菲妮斯之塔"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21403/zh_Hant/",
+        "ja": "「フィーニスの塔……中はこんな風になってるんだな」",
+        "zh_Hant": "「菲妮斯之塔……裡面是這樣的啊」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21403/zh_Hant/",
+        "ja": "「フィーニスの塔ってすっごく高いのよ！　緊急事態はこれ一択なんだから！」",
+        "zh_Hant": "「菲妮斯之塔可是很高的！　緊急情況只能用這個了！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21403/zh_Hant/",
+        "ja": "ヴィーナスはそう言うや否や、フィーニスの塔の天井に向かって高出力の星術をぶっ放した。",
+        "zh_Hant": "維納斯話音剛落，就朝著菲妮斯之塔的天花板釋放了高輸出的星術。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21403/zh_Hant/",
+        "ja": "ヴィーナスは以前の俺がやったように、フィーニスの塔の天井をぶち抜いて、頂上に向かってそのまま飛翔できるルートを作り上げた。",
+        "zh_Hant": "維納斯就像我以前做過的那樣，打穿了菲妮斯之塔的天花板，開闢了一條直達塔頂的路線。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21413/zh_Hant/",
+        "ja": "フィーニスの塔の入口に腰を下ろした梨緒は、空を見上げる。",
+        "zh_Hant": "梨緒坐在菲妮斯之塔的入口處，抬頭仰望天空。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21501/zh_Hant/",
+        "ja": "刻は稼いだ。フィーニスの塔攻略の時から、ずっと傍にいた彼女を、あえていないものとしてふるまい続けた──それももう終わりだ！",
+        "zh_Hant": "我爭取到了時間。從攻略菲妮斯之塔開始，我就一直刻意裝作她不在身邊——但那也已經結束了！"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21507/zh_Hant/",
+        "ja": "「フィーニスの塔に入る前より、今の方がずっと強い……！」",
+        "zh_Hant": "「比起進入菲妮斯之塔之前，現在要強得多……！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21509/zh_Hant/",
+        "ja": "ショートカットの大穴が空いているとはいえ、フィーニスの塔は途方もない階層を連ねている──地上の様子を早く確認しなくては。",
+        "zh_Hant": "雖然有捷徑的大洞，但菲妮斯之塔的樓層多得數不清——必須盡快確認地面的情況。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21512/zh_Hant/",
+        "ja": "「そして私たち選管は、フィーニスの塔に向かう。目的は……」",
+        "zh_Hant": "「然後我們選舉管理委員會將前往菲妮斯之塔。目的是……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21601/zh_Hant/",
+        "ja": "しかし今は非常事態──ゆえに私たち討伐隊は、人間界のフィーニスの塔を下りることで、強引に魔界への来訪を果たしていた。",
+        "zh_Hant": "但現在是緊急情況——因此我們討伐隊從人界的菲妮斯之塔下來，強行來到了魔界。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21601/zh_Hant/",
+        "ja": "フィーニスの塔が<ruby=そび>聳</ruby>えるシャリオン地方から、道中で必ずこのレゾフを経由することになるのだ。これは私とアニュラスにとって、都合が良かった。",
+        "zh_Hant": "從聳立著菲妮斯之塔的夏利翁地區前往基里昂斯，途中必定會經過雷佐夫。這對我和安妮菈絲來說正好。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21602/zh_Hant/",
+        "ja": "そうしてシャリオン地方にある、魔界のフィーニスの塔内部へ、再び足を踏み入れた。",
+        "zh_Hant": "然後我們再次踏入了位於夏利翁地區的魔界菲妮斯之塔內部。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21602/zh_Hant/",
+        "ja": "フィーニスの塔と人間界を繋ぐ境い目に、不可思議な時空のねじれがあった。",
+        "zh_Hant": "在菲妮斯之塔與人界相連的交界處，出現了不可思議的時空扭曲。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21602/zh_Hant/",
+        "ja": "私たち一家は、フィーニスの塔の上層を目指した。",
+        "zh_Hant": "我們一家人朝著菲妮斯之塔的上層前進。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21602/zh_Hant/",
+        "ja": "『間接的に情報を伝えることができているのも、この場が私の領域であるフィーニスの塔であるが故。本当に、申し訳なく思います』",
+        "zh_Hant": "『之所以能間接傳達資訊，也是因為這裡是屬於我的領域——菲妮斯之塔。真的非常抱歉』"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21608/zh_Hant/",
+        "ja": "アルタイルのフィーニスの塔で、一時的な対処をするしかなかったあの右腕が、再び俺たちの前に現れてしまった──",
+        "zh_Hant": "在牛郎星的菲妮斯之塔，我們只能暫時應付那隻右臂，如今它再次出現在我們面前——"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main21900/zh_Hant/",
+        "ja": "かつてのフィヴォス流星群の折、魔界から人間界へと戻る時、フィーニスの塔の道中で、俺たちはそのことを知った。",
+        "zh_Hant": "在過去的福玻斯流星雨中，從魔界返回人間界的時候，我們在菲妮斯之塔的途中得知了這件事。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main30101/zh_Hant/",
+        "ja": "ちなみに、現在の『デネブの守護天使』たちは消耗が激しく、現在もコアの状態のまま、デネブのフィーニスの塔で療養している。",
+        "zh_Hant": "順帶一提，如今的『天津四守護天使』們消耗劇烈，至今仍維持著核心的狀態，在天津四的菲妮斯之塔療養中。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main30101/zh_Hant/",
+        "ja": "「そうだね。彼女もまだ消耗していたから、他のデネブの守護天使と同じように、フィーニスの塔で療養してもらってるよ」",
+        "zh_Hant": "「是啊。她也還很虛弱，所以和其他天津四的守護天使一樣，讓她留在菲妮斯之塔療養喔」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main30102/zh_Hant/",
+        "ja": "「それに私たちは、こうしてヒトの形を得て生活を送っていますが、実際の私たちの本体はフィーニスの塔の内部に存在しています」",
+        "zh_Hant": "「而且我們雖然像這樣獲得人類的形體生活著，但實際上我們的本體存在於菲妮斯之塔的內部」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story000501/zh_Hant/",
+        "ja": "「とにかくフィーニスの塔へ行ってみましょ。何かわかるかもしれないわ」",
+        "zh_Hant": "「總之先去菲妮斯之塔看看吧，或許能知道些什麼。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story000501/zh_Hant/",
+        "ja": "「フィーニスの塔も光り輝いています……！」",
+        "zh_Hant": "「菲妮斯之塔也閃閃發亮……！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story000501/zh_Hant/",
+        "ja": "「これは……日誌とフィーニスの塔が共鳴している……？　光が──」",
+        "zh_Hant": "「這是……日誌和菲妮斯之塔產生共鳴了嗎……？光芒——」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story000501/zh_Hant/",
+        "ja": "「ここ、は……？　フィーニスの塔の中じゃないわよね」",
+        "zh_Hant": "「這裡是……？不是菲妮斯之塔裡面吧。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story000502/zh_Hant/",
+        "ja": "「ところどころ共通点はあるもんね。ヴィーナスちゃんたちもフィーニスの塔については知っているみたいだし」",
+        "zh_Hant": "「到處都有共通點呢。維納斯她們好像也知道菲妮斯之塔。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story000502/zh_Hant/",
+        "ja": "「思うに、こちらの世界でも近頃フィーニスの塔に何か異変が起こっていたのではありませんか？」",
+        "zh_Hant": "「我想，菲妮斯之塔最近在這個世界也發生了什麼異變吧？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story000502/zh_Hant/",
+        "ja": "「恐らく、こちらの世界でも私たちの世界と同じく境界の乱れが発生していたのでしょう。そして偶然にも異なる世界でフィーニスの塔同士がリンクしてしまった」",
+        "zh_Hant": "「恐怕這個世界也和我們的世界一樣，發生了次元的混亂。然後菲妮斯之塔偶然在不同的世界連結在一起了。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story000502/zh_Hant/",
+        "ja": "「その結果、フィーニスの塔の近くにいた我々が次元の層を飛び越えて、こちらの世界に転移してしまったのです」",
+        "zh_Hant": "「結果就是，在菲妮斯之塔附近的我們飛越次元層，轉移到了這邊的世界。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story000502/zh_Hant/",
+        "ja": "「でも私はなんともなかったよ？　昨日もフィーニスの塔に様子を見に行ったけれど」",
+        "zh_Hant": "「可是我什麼事都沒有啊？昨天我也去菲妮斯之塔看過情況了。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story000502/zh_Hant/",
+        "ja": "「フィーニスの塔に行けばすんなり元の世界に戻れるってわけでもないわけね」",
+        "zh_Hant": "「所以並不是只要去菲妮斯之塔回來就能回到原本的世界呢。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story000504/zh_Hant/",
+        "ja": "「となると中心街の方にいるのかな。てっきりフィーニスの塔の近くにいるかと思ったんだけど」",
+        "zh_Hant": "「既然如此，她應該在市中心那邊。我還以為她一定就在菲妮斯之塔附近。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001001/zh_Hant/",
+        "ja": "数日前、俺とヴィーナス、フィオナでフィーニスの塔を探索していた時のこと。",
+        "zh_Hant": "幾天前，我和維納斯、菲歐娜一起探索菲妮斯之塔。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001007/zh_Hant/",
+        "ja": "「フィーニスの塔を出た堕天使パテルは逃げるために分裂してー、そのうち１体が正気を取り戻しちゃってー、それがあたしってわけ。霊体だからできることだね」",
+        "zh_Hant": "「離開菲妮斯之塔的墮天使・帕提露為了逃走而分裂——其中一隻恢復理智，那就是我。因為我是靈體才能辦到這點。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001007/zh_Hant/",
+        "ja": "「だけどフィーニスの塔の戦闘で傷ついた堕天使パテルは、リクリエに従うことすらなくなり、本能のままに動くだけのものになった」",
+        "zh_Hant": "「可是，在菲妮斯之塔戰鬥中受傷的墮天使・帕提露甚至不再服從於利克里耶，變成只憑本能行動的存在。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001009/zh_Hant/",
+        "ja": "「やっほー魔王！　フィーニスの塔ではお世話になったね！」",
+        "zh_Hant": "「呀呵～魔王！在菲妮斯之塔受你照顧了！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001010/zh_Hant/",
+        "ja": "「ところで、堕天使はどうやってフィーニスの塔から出てきたのかしら？」",
+        "zh_Hant": "「話說回來，墮天使是怎麼從菲妮斯之塔出來的？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001010/zh_Hant/",
+        "ja": "「ダメージを負った堕天使は身を隠し、会長たちがフィーニスの塔から帰還するのに乗じて抜け出した……そう考えれば辻褄は合います」",
+        "zh_Hant": "「受到傷害的墮天使躲藏起來，趁會長他們離開菲妮斯之塔時逃出來……這麼想的話就說得通了。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001108/zh_Hant/",
+        "ja": "「そして奥にそびえるのがフィーニスの塔……本当に頂上が見えませんね。噂に違わぬ無窮の塔というわけですか」",
+        "zh_Hant": "「然後聳立在後方的是菲妮斯之塔……真的看不見頂端呢。看來傳聞是真的，這真的是座無窮之塔啊。」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001903/zh_Hant/",
+        "ja": "「オオヒメ。<ruby=ふる>旧</ruby>き神殿に囚われるのも今日までです。フィーニスの塔に戻り、その責務を果たしなさい」",
+        "zh_Hant": "「大日女。被囚禁在舊神殿的日子也到今天為止了。回到菲妮斯之塔，完成你的職責吧」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001904/zh_Hant/",
+        "ja": "「おや……？　オオヒメの本体は、まだフィーニスの塔には戻っていないようです。これでは世界の滅びは回避できません」",
+        "zh_Hant": "「哎呀……？　大日女的本體還沒有回到菲妮斯之塔。這樣下去世界會毀滅的」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001904/zh_Hant/",
+        "ja": "「つまり、オオヒメをフィーニスの塔へと連れ戻すには、力ずくではなく、彼女の心の扉を開かせなければいけません」",
+        "zh_Hant": "「也就是說，要把大日女帶回菲妮斯之塔，不能靠蠻力，必須打開她的心扉」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001905/zh_Hant/",
+        "ja": "堕天使になった彼女を撃破したものの、オオヒメはフィーニスの塔に戻ることなく、神殿に立てこもってしまった。",
+        "zh_Hant": "雖然擊破了墮落為墮天使的她，但大日女並沒有回到菲妮斯之塔，而是固守在神殿裡。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001908/zh_Hant/",
+        "ja": "「今度こそ、オオヒメさんの心の扉を開き……フィーニスの塔へと戻しましょう……！」",
+        "zh_Hant": "「這次一定要打開大日女小姐的心扉……讓她回到菲妮斯之塔……！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001909/zh_Hant/",
+        "ja": "「満足して、今度こそフィーニスの塔へと還ったようですね」",
+        "zh_Hant": "「她似乎滿足了，這次真的回到了菲妮斯之塔」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001909/zh_Hant/",
+        "ja": "こうして守護天使六柱はフィーニスの塔へと戻り、みんなの渾身の隠し芸によって、世界の崩壊は食い止められたのであった。",
+        "zh_Hant": "就這樣，六位守護天使回到了菲妮斯之塔，通過大家使出渾身解數的隱藏才藝，阻止了世界的崩壞。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001911/zh_Hant/",
+        "ja": "「あなたたちがフィーニスの塔の頂上に登った時があっただろう。以前の決戦の時だ」",
+        "zh_Hant": "「你們不是登上過菲妮斯之塔的頂端嗎。就是以前決戰的時候」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001911/zh_Hant/",
+        "ja": "「？　実はあの時フィーニスの塔のどこかにいらしたんですか？」",
+        "zh_Hant": "「？　其實那個時候您在菲妮斯之塔的某處嗎？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001911/zh_Hant/",
+        "ja": "「ああ……ええと……あなたたちはフィーニスの塔をどのようにして昇った？」",
+        "zh_Hant": "「啊啊……那個……你們是怎麼登上菲妮斯之塔的？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001911/zh_Hant/",
+        "ja": "「そうでしたね。切羽詰まっていたとはいえ、無茶な方法を取ったものです。光の柱がフィーニスの塔を貫いて……」",
+        "zh_Hant": "「是的。雖說當時情況緊急，但還是用了很亂來的方法。光柱貫穿了菲妮斯之塔……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story001911/zh_Hant/",
+        "ja": "「まさか神域たるフィーニスの塔を、あのような無茶苦茶な力技で登る者が現れるとは思わないだろう！？」",
+        "zh_Hant": "「沒想到竟然有人會用那種亂來的力量登上神域菲妮斯之塔！？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story002310/zh_Hant/",
+        "ja": "かつてフィーニスの塔の中で出会った亡霊と似ている。",
+        "zh_Hant": "和以前在菲妮斯之塔中遇到的亡靈很像。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story002602/zh_Hant/",
+        "ja": "「リコにはこれまでも影で随分と助けてもらったわ。前にフィーニスの塔で使った『シエルの<ruby=はこ>筐</ruby>』や『<ruby=せいがいふ>星骸布</ruby>』の情報は、リコが提供してくれたものなのよ」",
+        "zh_Hant": "「莉可之前也暗地裡幫了我不少忙。之前在菲妮斯之塔使用的「希耶爾之筐」和「星骸布」的情報，就是莉可提供的」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story002803/zh_Hant/",
+        "ja": "「ヴィライアは眠ったまま、リクリエで滅びた世界とともにフィーニスの塔に格納され、永い時間が流れた。そして、世界に文明が満ちたことで覚醒した」",
+        "zh_Hant": "「維拉亞在沉睡中，和利克里耶毀滅的世界一起被封印在了菲妮斯之塔中，經過了漫長的歲月。然後，當世界再次充滿文明時，它甦醒了」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story002803/zh_Hant/",
+        "ja": "「<ruby=私>書庫</ruby>はそれを察知し、ヴィライアを倒すべく、あなたをフィーニスの塔に送り込んだ」",
+        "zh_Hant": "「書庫察覺到了這一點，為了打倒維拉亞，把你送到了菲妮斯之塔」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story002803/zh_Hant/",
+        "ja": "「えぇっ！？　あれ、フィーニスの塔の中だったの！？」",
+        "zh_Hant": "「欸欸！？　咦，我是在菲妮斯之塔裡嗎！？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story003605/zh_Hant/",
+        "ja": "仮想結界システムで再現された『フィーニスの塔』の頂上――俺とシズハはそこで、戦闘訓練を行っていた。",
+        "zh_Hant": "在虛擬結界系統重現的『菲妮斯之塔』頂端——我和靜羽正在那裡進行戰鬥訓練。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story901904/zh_Hant/",
+        "ja": "「以前のように、リクリエやフィーニスの塔の影響もあるのかと思っていましたが……もしかしたら今回は、何か別の力も働いているのかもしれません」",
+        "zh_Hant": "「我本以為和以前一樣，是利克里耶和菲妮斯之塔的影響……但說不定這次還有別的力量在起作用」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story901908/zh_Hant/",
+        "ja": "「はい。時期がくれば、フィーニスの塔を通じて、こちらの世界に戻ることができるかと思います」",
+        "zh_Hant": "「有的。等時機成熟，各位應該可以通過菲妮斯之塔回到這邊的世界」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story901908/zh_Hant/",
+        "ja": "「そういえば、フィーニスの塔は、どちらの世界にもありますものね」",
+        "zh_Hant": "「說起來，菲妮斯之塔在兩個世界都有呢」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story901908/zh_Hant/",
+        "ja": "「フィーニスの塔を通じて、世界を越える……」",
+        "zh_Hant": "「通過菲妮斯之塔，穿越世界……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation000101/zh_Hant/",
+        "ja": "守護天使とは本来世界の摂理を司る者であり、フィーニスの塔の守護者でもある。",
+        "zh_Hant": "守護天使原本是掌管世界法則的存在，也是菲妮斯之塔的守護者。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation000106/zh_Hant/",
+        "ja": "「フィーニスの塔と世界の摂理を守護すること以外、私に何ができるのでしょうか」",
+        "zh_Hant": "「除了守護菲妮斯之塔和世界的法則以外，我還能做些什麼呢？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation000106/zh_Hant/",
+        "ja": "「いえ、今はそのフィーニスの塔さえ守れずに堕天使に身を堕としてしまいました。申し訳ありません、私はダメな守護天使です……」",
+        "zh_Hant": "「不，現在就連那個菲妮斯之塔都守不住，墮落成了墮天使。對不起，我是沒用的守護天使……」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001102/zh_Hant/",
+        "ja": "「それって、フィーニスの塔で聞いた名前だわ！」",
+        "zh_Hant": "「我在菲妮斯之塔聽過這個名字！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001304/zh_Hant/",
+        "ja": "「パテルを倒したのだ！　本来の居場所であるフィーニスの塔に戻ったのだ！」",
+        "zh_Hant": "「我們打倒帕提露了！回到了菲妮斯之塔原本的所在之處！」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001306/zh_Hant/",
+        "ja": "「アルモタヘルがフィーニスの塔へ戻ったわ。みんなお疲れ様」",
+        "zh_Hant": "「雅爾莫塔赫回到菲妮斯之塔了。大家都辛苦了」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation001308/zh_Hant/",
+        "ja": "「セシアがフィーニスの塔に還ったね。これで世界も正常化に近づいたはずだよ」",
+        "zh_Hant": "「賽西婭回到菲妮斯之塔了呢。這樣一來世界應該也會恢復正常了」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation002513/zh_Hant/",
+        "ja": "そこは、かつて俺たちがリクリエの使徒との決戦を繰り広げた場所――フィーニスの塔の頂上を再現した仮想空間だった。",
+        "zh_Hant": "那裡是曾經我們與利克里耶使徒展開決戰的場所——菲妮斯之塔的頂端，而這裡則是再現了那個場景的虛擬空間。"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/subjugation003701/zh_Hant/",
+        "ja": "「次代の女神、ルヴィネの協力があったからナ！　フィーニスの塔のコントロール権はすでに取り戻していル」",
+        "zh_Hant": "「這都是多虧了下一代女神露維妮的協助！　我們已經奪回了菲妮斯之塔的控制權」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/ch10780011/zh_Hant/",
+        "ja": "「フィーニスの塔・第零層の攻略の時も、その後もずっとですよ……！？」",
+        "zh_Hant": "「在攻略菲妮思之塔・第零層的時候，還有之後也是一直哦……！？」"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/main00908/zh_Hant/",
+        "ja": "（フィーニスの塔を汚染してたのと同じ……再構築の瘴気、だったかしら）",
+        "zh_Hant": "（跟汙染菲妮思之塔時一樣……是再構築的瘴氣嗎？）"
+      },
+      {
+        "url": "https://translation.lolida.best/projects/tsk/story002806/zh_Hant/",
+        "ja": "それはフィーニスの塔で戒められたヴィライアの再現だった。",
+        "zh_Hant": "這是在重現維拉亞在菲尼克斯之塔受到的束縛。"
+      }
+    ],
+    "overrides_material_finalization": false,
+    "type": "其他专名"
+  },
+  {
+    "ja": "ニュクス流星群",
+    "old": [
+      "倪克斯流星群"
+    ],
+    "new": "倪克斯流星雨",
+    "type": "世界观术语",
+    "source_evidence": {
+      "url": "https://translation.lolida.best/projects/tsk/slang/zh_Hant/"
+    }
+  }
+]
