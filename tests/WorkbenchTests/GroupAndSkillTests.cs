@@ -40,6 +40,21 @@ internal static class GroupAndSkillTests
         var protectedA = Row("p1", "ATKアップ", "", "new"); protectedA.Origins = ["BattleEnd:$.retry_data.cost_name"];
         var protectedB = Row("p2", "ATKアップ", "", "new"); protectedB.Origins = protectedA.Origins;
         Check(TranslationGroups.Create([protectedA, protectedB]).Count == 2, "protected game identifiers never share a translation task");
+        var nextCost = Row("next-cost", "スタミナ", "体力", "translated");
+        nextCost.Origins = ["BattleEnd:$.result.battle_result_data.next_data.cost_name"];
+        var challengeCount = Row("challenge-count", "挑戦回数", "挑战次数", "translated");
+        Check(nextCost.Protected && challengeCount.Protected, "next-stage cost and bare challenge identifier are protected");
+        Check(ValidationRules.Check(nextCost).Any(x => x.Fatal && x.Kind == "protected") &&
+            ValidationRules.Check(challengeCount).Any(x => x.Fatal && x.Kind == "protected"),
+            "publication rejects translated control identifiers");
+        var protectedWorkspace = Create(Path.Combine(root, "challenge-protection"), [nextCost, challengeCount]);
+        Check(protectedWorkspace.ApplyMachineResults(protectedWorkspace.Snapshot(), new Dictionary<string, string>
+            { [nextCost.Key] = "体力", [challengeCount.Key] = "挑战次数" }) == 0,
+            "machine results cannot overwrite control identifiers");
+        bool protectedEditRejected = false;
+        try { protectedWorkspace.Edit(challengeCount.Key, challengeCount.SourceHash, "挑战次数", "reviewed"); }
+        catch (InvalidOperationException) { protectedEditRejected = true; }
+        Check(protectedEditRejected, "manual editing also preserves bare control identifier");
 
         var colored = Row("skill:preview", "攻撃<color=#abc>120</color>%", "攻击<color=#abc>120</color>%", "translated", "skill", "skill_detail");
         var skills = Create(Path.Combine(root, "skills"), [colored]);

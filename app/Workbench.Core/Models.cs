@@ -23,7 +23,7 @@ public sealed class TranslationEntry
     public string? FirstSeenUtc { get; set; }
     [JsonExtensionData] public Dictionary<string, JsonElement>? Extra { get; set; }
     public TranslationEntry Copy() => (TranslationEntry)MemberwiseClone();
-    [JsonIgnore] public bool Protected => Origins.Any(origin =>
+    [JsonIgnore] public bool Protected => TranslationProtection.IsProtectedSource(Source) || Origins.Any(origin =>
     {
         var separator = origin.IndexOf(':');
         return separator > 0 && TranslationProtection.IsProtectedPath(origin[..separator], origin[(separator + 1)..]);
