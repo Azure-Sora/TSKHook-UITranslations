@@ -10,3 +10,5 @@ findings.md
 progress.md
 
 .codegraph/
+__pycache__/
+*.py[cod]

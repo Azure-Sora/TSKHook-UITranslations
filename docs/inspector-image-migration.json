@@ -1,0 +1,458 @@
+{
+  "date": "2026-10-14",
+  "sourceRepository": "Azure-Sora/TSKHook-Plus",
+  "sourceCommit": "b33cf7759b05b83e35407521903b4d3af77a57fc",
+  "includesUncommittedImageWork": true,
+  "files": [
+    {
+      "source": "Extensions/Tools/UiInspector/InspectorImages.cs",
+      "destination": "tools/UiInspector/InspectorImages.cs",
+      "sha256": "14477dd78c86ca5fd637649f651c7cfa78c3e05e8d8d3878fc472d1f795cdaf1"
+    },
+    {
+      "source": "Extensions/Tools/UiInspector/InspectorSpine.cs",
+      "destination": "tools/UiInspector/InspectorSpine.cs",
+      "sha256": "7f1778881f85161ed565ba8f80edea7dd94a60d1b1e4f42445288c65f5e02091"
+    },
+    {
+      "source": "Extensions/Tools/UiInspector/InspectorSpinePreview.cs",
+      "destination": "tools/UiInspector/InspectorSpinePreview.cs",
+      "sha256": "d682cddc70ea25d0ae006171d38b285ee623229628f6b9b0a6ab41068c79ed5e"
+    },
+    {
+      "source": "Extensions/Tools/UiInspector/.gitignore",
+      "destination": "tools/UiInspector/.gitignore",
+      "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b"
+    },
+    {
+      "source": "Extensions/Tools/UiInspector/BridgeServer.cs",
+      "destination": "tools/UiInspector/BridgeServer.cs",
+      "sha256": "d11c82f087c0b6903abf994cdffe8aa6662987385cbb6127b56f5d0ed90e5e14"
+    },
+    {
+      "source": "Extensions/Tools/UiInspector/CommandQueue.cs",
+      "destination": "tools/UiInspector/CommandQueue.cs",
+      "sha256": "2609e72aafb4bf5795c5f0ce1b9273ce59459ac1e3ca999b21954bc5d0971842"
+    },
+    {
+      "source": "Extensions/Tools/UiInspector/InspectionModel.cs",
+      "destination": "tools/UiInspector/InspectionModel.cs",
+      "sha256": "50f126463f3e83cf91187f2239e39c550bcdd22671c7f747ce6a0c9cd58770c0"
+    },
+    {
+      "source": "Extensions/Tools/UiInspector/InspectorCommands.cs",
+      "destination": "tools/UiInspector/InspectorCommands.cs",
+      "sha256": "82840a1a3c3b3a16cabdf62342ea121e55b20fb8b322722ee9dfae9fe36910b0"
+    },
+    {
+      "source": "Extensions/Tools/UiInspector/InspectorPlugin.cs",
+      "destination": "tools/UiInspector/InspectorPlugin.cs",
+      "sha256": "7f642542abe61f3d4359204d2c6256bf3fff45cca2e60b2fa0b293927c6e41e1"
+    },
+    {
+      "source": "Extensions/Tools/UiInspector/README.md",
+      "destination": "tools/UiInspector/README.md",
+      "sha256": "25fb32a0c2043b0ab41a8edae6fe6bd93403062c7a46c2a286b069b3276e95de"
+    },
+    {
+      "source": "Extensions/Tools/UiInspector/TSKHook.UiInspector.csproj",
+      "destination": "tools/UiInspector/TSKHook.UiInspector.csproj",
+      "sha256": "2595b9efed7d0144edbe732bf8e92c7a25debf41a9fc80c925f346065062059d"
+    },
+    {
+      "source": "Extensions/Tools/UiInspector/UiScanner.cs",
+      "destination": "tools/UiInspector/UiScanner.cs",
+      "sha256": "790a9a3a89e2531cba390eb90ce3f43994675771a07c38d43983525705b152d5"
+    },
+    {
+      "source": "Extensions/Tools/UiInspector/ui_inspector.py",
+      "destination": "tools/UiInspector/ui_inspector.py",
+      "sha256": "12f477238a88ed6fea34a6b3949fd0340d0cc6efd07b78d9882d0df3f320d326"
+    },
+    {
+      "source": "Extensions/Tests/UiInspectorSmokeTest/.gitignore",
+      "destination": "tests/UiInspectorSmokeTest/.gitignore",
+      "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b"
+    },
+    {
+      "source": "Extensions/Tests/UiInspectorSmokeTest/Program.cs",
+      "destination": "tests/UiInspectorSmokeTest/Program.cs",
+      "sha256": "2dbcf2dbba3ccdf92f9de76c9f7f16a610c2311cfa363f8a5f0a8063d0eb24f9"
+    },
+    {
+      "source": "Extensions/Tests/UiInspectorSmokeTest/UiInspectorSmokeTest.csproj",
+      "destination": "tests/UiInspectorSmokeTest/UiInspectorSmokeTest.csproj",
+      "sha256": "3b527ad01ddf2b62bd537276e5f25c6441dc492bdcf08fd8120801f94c7b4a36"
+    },
+    {
+      "source": "Extensions/Tests/UiInspectorSmokeTest/test_cli.py",
+      "destination": "tests/UiInspectorSmokeTest/test_cli.py",
+      "sha256": "79297b4823d79d1ddbcec0a2bb2b1ad3242325140d906349d683d8d9b65dfa32"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_beginner_mission.png",
+      "destination": "translations/images/ui_images/btn_beginner_mission.png",
+      "sha256": "03dcd53f34f40d01503e6f68f92b3eaf4db038783b1c8c7d36ab3fd49574459b"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_comeback_mission.png",
+      "destination": "translations/images/ui_images/btn_comeback_mission.png",
+      "sha256": "334324e915dd8d2bea6b1aba930cb1127564ef4e2fc36524c3e863f7a697a45b"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_enhance.png",
+      "destination": "translations/images/ui_images/btn_enhance.png",
+      "sha256": "23040b1163e721771b72f2b3fc9efc851cd9d902f4ba85c7a82c8666cfe163cf"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_enhance_on.png",
+      "destination": "translations/images/ui_images/btn_enhance_on.png",
+      "sha256": "6cb78b168a37b488c3618683371eb38e94e6250628f448c1c6cf7927d080dfb1"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_exchange.png",
+      "destination": "translations/images/ui_images/btn_exchange.png",
+      "sha256": "15b5b324c8f4972ca25aaccbebc5ce0f5e9c0183d42752e9248c953667f74826"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_exchange_event_0001.png",
+      "destination": "translations/images/ui_images/btn_exchange_event_0001.png",
+      "sha256": "535b0ecefa4565d7e55447146dfd880dc12582c06dffe30c98ec4003814a7667"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_exchange_gacha_0005.png",
+      "destination": "translations/images/ui_images/btn_exchange_gacha_0005.png",
+      "sha256": "a5826e9c4a84133c632d4df23ff7f234723d677610d39837363680971d69c8cb"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_exchange_shop_2004.png",
+      "destination": "translations/images/ui_images/btn_exchange_shop_2004.png",
+      "sha256": "4cbc026a53d6cfbaf6accb8622ef2e0a573b3092d6e1b05635d859e836a2b4c4"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_exchange_shop_2005.png",
+      "destination": "translations/images/ui_images/btn_exchange_shop_2005.png",
+      "sha256": "8497fb735aed5572ec6c1d02e841792db442b1102976a908ddaa2525eb4bbed4"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_exchange_shop_2006.png",
+      "destination": "translations/images/ui_images/btn_exchange_shop_2006.png",
+      "sha256": "f79dfb2e940f8388ec61ccd8c56dc1f4f1f60bb859928886826c61380d7b2982"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_exchange_shop_2008.png",
+      "destination": "translations/images/ui_images/btn_exchange_shop_2008.png",
+      "sha256": "45bd30ea554e2ba4484bf1a40204bfe63717946e430247312b1a08b4df7c0bc5"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_exchange_shop_2009.png",
+      "destination": "translations/images/ui_images/btn_exchange_shop_2009.png",
+      "sha256": "332c912abd31f4e8e060c8ff01e72361c50df46d860f7b52fef8320fbedf60c8"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_gacha.png",
+      "destination": "translations/images/ui_images/btn_gacha.png",
+      "sha256": "38cc34d7095936e6ade28a7292bcd5afe8f66cf99ad0cc15ce70bcfac1f56ee8"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_gacha_on.png",
+      "destination": "translations/images/ui_images/btn_gacha_on.png",
+      "sha256": "ff832d6efc47f13d1dc00b485647360b85c08813c7d530b621639c19f78d2f8b"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_home.png",
+      "destination": "translations/images/ui_images/btn_home.png",
+      "sha256": "35dde779214c781310da379daeb854adeda2ffe082d63c579b10ee3d13893603"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_home_on.png",
+      "destination": "translations/images/ui_images/btn_home_on.png",
+      "sha256": "41db4eb20b9ad7a09f49466988237ee54c8bc28762617737b314724fac949824"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_information.png",
+      "destination": "translations/images/ui_images/btn_information.png",
+      "sha256": "3257b4157a482b02e649c7286a20c810e5fb64da013c78bdbfb70ba9af41a3b3"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_mission.png",
+      "destination": "translations/images/ui_images/btn_mission.png",
+      "sha256": "a8bf8d204d8782714c819c7eea23103bc75d729224c3a0eff0516f18a60d9935"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_present.png",
+      "destination": "translations/images/ui_images/btn_present.png",
+      "sha256": "056a699d74b678471b0542e19cd5e34ed8e8302337b04e3922f5c24045b4a083"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_quest.png",
+      "destination": "translations/images/ui_images/btn_quest.png",
+      "sha256": "4976c16423a5e5a9b818514558ff695ff360873b65cb4a6df3e74a6ca0ade885"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_quest_on.png",
+      "destination": "translations/images/ui_images/btn_quest_on.png",
+      "sha256": "5e1f24b5f6fa75a42562325d112aefd0a017bf33e9f38f61c91d769392e60a54"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_quest_plate_enchantment.png",
+      "destination": "translations/images/ui_images/btn_quest_plate_enchantment.png",
+      "sha256": "73ce2dd82c8c631f744fa3ba78b79f5c8c205aa0c79f6ca572f12a2b69513cbf"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_quest_plate_equipment.png",
+      "destination": "translations/images/ui_images/btn_quest_plate_equipment.png",
+      "sha256": "864a57240accf7f3e4e36cb09384e55dbefaba4c1157d61c81ffde0cd420ae04"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_quest_plate_skill.png",
+      "destination": "translations/images/ui_images/btn_quest_plate_skill.png",
+      "sha256": "3452e7763d1c9b7f74a9757ecf15c19e1f50668574d3eb619b80530181cc4caf"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_quest_plate_skip_B.png",
+      "destination": "translations/images/ui_images/btn_quest_plate_skip_B.png",
+      "sha256": "4f829ba2a215712862472c61d08a68adefa07c4e96a2bc6cf5c2aa7bba75b8cd"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_quest_plate_upper limit.png",
+      "destination": "translations/images/ui_images/btn_quest_plate_upper limit.png",
+      "sha256": "e6193a4bd99d1bceb8e178a7cd0ed32b5b477e2a6438957cb053f987bea200d6"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_season_pass.png",
+      "destination": "translations/images/ui_images/btn_season_pass.png",
+      "sha256": "0874bcea86b2056dae3580cb47ff7978c07b73bb5b21de97ab0f15acaa707024"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_shop.png",
+      "destination": "translations/images/ui_images/btn_shop.png",
+      "sha256": "d2009858ce3da01b9f5358de0ed991a4859fa33d477e9d15620ffa6a6b716962"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_shop_on.png",
+      "destination": "translations/images/ui_images/btn_shop_on.png",
+      "sha256": "5eb3fb9a8ac7303d725871e24d971fe0c5cb69d219d82a94b421282da6f6d5aa"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_stampcard.png",
+      "destination": "translations/images/ui_images/btn_stampcard.png",
+      "sha256": "dcb7bb928c6fc678ceb0e7e11662868c1cc8134927e06ac10ae0400967924f25"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_story.png",
+      "destination": "translations/images/ui_images/btn_story.png",
+      "sha256": "13a1ac98bcc285497166ace5c47c667e082e0ce114a35199dfd67e24f1bb7a8e"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/btn_story_on.png",
+      "destination": "translations/images/ui_images/btn_story_on.png",
+      "sha256": "922db0d2c43f382b24d5829d922bb0c33a99ecc36998b888cbfeb42e605964d8"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/filter_off.png",
+      "destination": "translations/images/ui_images/filter_off.png",
+      "sha256": "d41c1e84d6860d6fe49001aad5f845affa18ff477c5b87550c1ee961a8b31870"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/filter_on.png",
+      "destination": "translations/images/ui_images/filter_on.png",
+      "sha256": "98b4d68963410b09f5df46456e5e11b3fa251a1628939ff3a8ac207718f7c442"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/free_gacha.png",
+      "destination": "translations/images/ui_images/free_gacha.png",
+      "sha256": "9ac216f7590dd89a2ea4628518238a25528e097a12dd9aa8b4c50442885b7695"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/free_gacha_btn2.png",
+      "destination": "translations/images/ui_images/free_gacha_btn2.png",
+      "sha256": "79dc9c0cee6532a5c4ba2014c49361ae972609deaf1d72bd227164481c1ebd53"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/icon_gacha.png",
+      "destination": "translations/images/ui_images/icon_gacha.png",
+      "sha256": "17c66afaadf84e5fd5692e092c5d5d67ec796f7019491bb73ac5cbdcd39b7df1"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/m_gacha_0002.png",
+      "destination": "translations/images/ui_images/m_gacha_0002.png",
+      "sha256": "86408bff42f72b679ff9ab7bf2ff749239a42acd594070c81410ee5c25c19838"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/m_gacha_0003.png",
+      "destination": "translations/images/ui_images/m_gacha_0003.png",
+      "sha256": "dec59e387eb52c10f0af8e58a5eb0fd44bf19540c9bee3350e49e4b6deb93f67"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/m_gacha_0005.png",
+      "destination": "translations/images/ui_images/m_gacha_0005.png",
+      "sha256": "222c2a4ed9467d6db2eaf2833b30bb41c23ff51ee262b6462dc13481e468a007"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/m_gacha_0059.png",
+      "destination": "translations/images/ui_images/m_gacha_0059.png",
+      "sha256": "69de77c9258da0c863f0b701cce04979eb9ab7597e9bc443067ea2f238066e31"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/manifest.json",
+      "destination": "translations/images/ui_images/manifest.json",
+      "sha256": "eb869be6c5ebd8e29ea7955a398b090f0b85c8c73ef2ae018230e9af27aa8f75"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_1st_story_s-title.png",
+      "destination": "translations/images/ui_images/spine-btn_1st_story_s-title.png",
+      "sha256": "e7eb963298a94a5202aa49eeaf8ce800268e72d1cd2e868c3aa9681b7942a6a1"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_1st_story_s-white.png",
+      "destination": "translations/images/ui_images/spine-btn_1st_story_s-white.png",
+      "sha256": "a78d36f2cf737c718486f42b0c8745bb6f70b37272ca39d0573921aed273bbd6"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_2nd_story_s-title.png",
+      "destination": "translations/images/ui_images/spine-btn_2nd_story_s-title.png",
+      "sha256": "c3f0a3becb2a87854de3fc3fee018f6363c4cafa4ed10259e1f3f226d55b0c30"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_2nd_story_s-white.png",
+      "destination": "translations/images/ui_images/spine-btn_2nd_story_s-white.png",
+      "sha256": "650642717003ec45c0debe322c269b6701f71f02acbbe1b2087fb25e2e824b93"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_belong-title.png",
+      "destination": "translations/images/ui_images/spine-btn_belong-title.png",
+      "sha256": "ae7324a30e015702160ce248efeb955a5b83a629a8e3765d167724711e4c44f4"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_belong-white.png",
+      "destination": "translations/images/ui_images/spine-btn_belong-white.png",
+      "sha256": "0c1655723dcf8f162da93a3c5a704ea348509b6fc6d625530fdcfff392176e3a"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_chara2-title.png",
+      "destination": "translations/images/ui_images/spine-btn_chara2-title.png",
+      "sha256": "6fc34183175821858f5e7bc7bd89fc7c6d12588bca6f0df9ede4c06326793932"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_charastory-title.png",
+      "destination": "translations/images/ui_images/spine-btn_charastory-title.png",
+      "sha256": "1b5f4079f02a1cf1ceaf16d4f2746dd9fa2ed4246c0d068905b3d345e6331a16"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_charastory-white.png",
+      "destination": "translations/images/ui_images/spine-btn_charastory-white.png",
+      "sha256": "5c8368d0d04e6e12421b009b2b928c3cb5a23437acda34bcda6135bf7495ee8c"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_equip-title.png",
+      "destination": "translations/images/ui_images/spine-btn_equip-title.png",
+      "sha256": "10388c58146ec8ba621d3941416052ec932612df2278948b05905de168a32d4b"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_equip-white.png",
+      "destination": "translations/images/ui_images/spine-btn_equip-white.png",
+      "sha256": "414d782e0c7b478ec09adb3c78ce486a71bda4e51d99a9d1c89531ef5c4c5787"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_eventstory-title.png",
+      "destination": "translations/images/ui_images/spine-btn_eventstory-title.png",
+      "sha256": "5d0a943484167fd79735c25e95334931ae9fd9237c16180b17d7fa089937e37a"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_eventstory-white.png",
+      "destination": "translations/images/ui_images/spine-btn_eventstory-white.png",
+      "sha256": "185d22b5a38277d4f16d1e16ca45768c15ad94461729b0a3fac3b7af3806f9e8"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_exchange-title.png",
+      "destination": "translations/images/ui_images/spine-btn_exchange-title.png",
+      "sha256": "11a94b647aab9704a526a243bf2fe368362a286cd548e3a790d48cb8e9bf8dbc"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_exchange-white.png",
+      "destination": "translations/images/ui_images/spine-btn_exchange-white.png",
+      "sha256": "2f02141b82ec5730b305a145fc546a0b068f4d2c6b36a3dcd7f5d57e47780c6d"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_finis-title.png",
+      "destination": "translations/images/ui_images/spine-btn_finis-title.png",
+      "sha256": "5f33f313ba740574d88bcc9b0185d3557f53d57c10776e07be83fd1547fc74eb"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_finis-white.png",
+      "destination": "translations/images/ui_images/spine-btn_finis-white.png",
+      "sha256": "8f0bef5e01fc4ea2d9fa39216b13e1528dce94c226fb52190ede682a372affe0"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_mainstory-title.png",
+      "destination": "translations/images/ui_images/spine-btn_mainstory-title.png",
+      "sha256": "fca0b32f3574bf32f5965bc898a0515a25adfc00b4aaef9a6e030d4bb4958de5"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_mainstory-white.png",
+      "destination": "translations/images/ui_images/spine-btn_mainstory-white.png",
+      "sha256": "b838f574fd6a83f4b2169fdae9236115319c5f8e3d8cbe8e99a3dcecaba2149c"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_maneuvers-title.png",
+      "destination": "translations/images/ui_images/spine-btn_maneuvers-title.png",
+      "sha256": "8a1eb344608762f7d4a36f761de61b1f47a8546f9140c7f3dd78b612026d15d6"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_maneuvers-white.png",
+      "destination": "translations/images/ui_images/spine-btn_maneuvers-white.png",
+      "sha256": "92c44a7336bd9be01278f1191e57b382978a91924bb0fa14e6f50e3016a12445"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_purchase-title.png",
+      "destination": "translations/images/ui_images/spine-btn_purchase-title.png",
+      "sha256": "3114fd344b2e723f9dc3e9f723dbd704b1445a9f0f6bac3ef1853c80c0c11188"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_purchase-white.png",
+      "destination": "translations/images/ui_images/spine-btn_purchase-white.png",
+      "sha256": "ebc08739367bde89033c1670e984ab90ed2ebc75043a2fe54022337ace579349"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_quest_event-title.png",
+      "destination": "translations/images/ui_images/spine-btn_quest_event-title.png",
+      "sha256": "2421fff196b9fd60d684f3e71b3cc6ad8319399e600cb3abe456f9062da1c188"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_quest_event-white.png",
+      "destination": "translations/images/ui_images/spine-btn_quest_event-white.png",
+      "sha256": "fcb3b135b98e35014c866ad5f302fc5fb1a30832eacfbd76cb348ecbc90745f3"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_quest_main-title.png",
+      "destination": "translations/images/ui_images/spine-btn_quest_main-title.png",
+      "sha256": "5fdb5530c0245557d75f2411036dbb7e81bfb4a224ecdf02e73cf9dcd9c492f6"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_quest_main-white.png",
+      "destination": "translations/images/ui_images/spine-btn_quest_main-white.png",
+      "sha256": "6fd525bd64ccb0be94cdbcede009903a26a11fe749370edaa1dde973c1871974"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_search-title.png",
+      "destination": "translations/images/ui_images/spine-btn_search-title.png",
+      "sha256": "e68de13ca78ac2c60ce40875b4f98fe801b9f877c39c9dbe7bf96b31468ad214"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_search-white.png",
+      "destination": "translations/images/ui_images/spine-btn_search-white.png",
+      "sha256": "6729a48a871727b140e841821eb59458e83a7a8867743d3fa06805fe5c4fdb91"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_team-title.png",
+      "destination": "translations/images/ui_images/spine-btn_team-title.png",
+      "sha256": "ea1152a161fbe3637b2165b3f9557dd3e9f3dd73a2ba5f1b4d057296272cf23e"
+    },
+    {
+      "source": "Extensions/Assets/UiImages/spine-btn_team-white.png",
+      "destination": "translations/images/ui_images/spine-btn_team-white.png",
+      "sha256": "2ef67b30836f1456a23074e1c91f864c1dc18543059d8d1f3a78ac88886f316b"
+    }
+  ]
+}

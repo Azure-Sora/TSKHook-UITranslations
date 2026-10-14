@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>TSKHook.UiInspector</AssemblyName>
+    <Version>0.1.6</Version>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="$(GamePath)/BepInEx/core/BepInEx.Core.dll" Private="false" />
+    <Reference Include="$(GamePath)/BepInEx/core/BepInEx.Unity.IL2CPP.dll" Private="false" />
+    <Reference Include="$(GamePath)/BepInEx/core/Il2CppInterop.Runtime.dll" Private="false" />
+    <Reference Include="$(GamePath)/BepInEx/interop/Il2Cpp*.dll" Private="false" />
+    <Reference Include="$(GamePath)/BepInEx/interop/Unity*.dll" Private="false" />
+    <Reference Include="$(GamePath)/BepInEx/interop/Assembly-CSharp.dll" Private="false" />
+    <Reference Include="$(GamePath)/BepInEx/interop/spine-unity.dll" Private="false" />
+  </ItemGroup>
+  <Target Name="RequireGamePath" BeforeTargets="ResolveReferences" Condition="!Exists('$(GamePath)/BepInEx/interop/UnityEngine.UI.dll')">
+    <Error Text="Set -p:GamePath to the game directory containing BepInEx/core and BepInEx/interop." />
+  </Target>
+</Project>

@@ -101,3 +101,12 @@ Regression:173fixture assertions pass including partial apply, out-of-order/miss
 - The released workbench 0.5.2 tag uses plugin shared-source commit `aea329a96041d12b5cd2cb9a257591a1a01aa5ff`, available on `codex/workbench-v0.5.2-dependency`. Current main follows the later plugin 1.4.4 consolidation on master, with the same authoritative library now under `Extensions/Core/`; the fixed submodule revision and project reference are updated together. Existing public tags are retained.
 - Workbench release tag `workbench-v0.5.2` is a prerelease; it must not become the latest formal translation release. Translation release tag `translations-2026.10.13.2` publishes manifest.json, ui_translations.jsonl and validation.json through ReleasePublisher. Minimum plugin version is 1.4.3; older plugins must reject the package. LocalPreview mode continues to use the local preview until the user switches it.
 - This release validation does not establish game-screen acceptance or real-provider acceptance of the new model-review prompt.
+
+
+## 2026-10-14 调试桥与图片资源迁移
+
+UiInspector、36 项托管检查与 10 项 Python CLI 检查迁入本仓；最终 73 文件常驻图片源目录为 translations/images/ui_images。迁移前 90 文件逐 SHA-256 核对，来源记录见 inspector-image-migration.json，修改仅涉及适配 README/测试路径。
+
+图片 ZIP 2026.10.14.3 本地打包验证通过：2,480,563 字节，SHA-256 5fcc06576b03bfdfe52624a462bc87ce6ce03ce00de1813f823e4784d6be2ddc。固定排序与时间重复构建结果一致。独立图片版本与渠道、未来显式发布流程见 image-resource-packages.md；本轮未执行 Publish-Images、推送或发布。
+
+vendor/TSKHook 固定到本轮插件源提交 4da4e17（本地），供默认 BuildImagePackage 和工作台共用协议；推送时必须先推送插件提交，再推送本仓，避免远端子模块引用不存在。此记录不代表远端 CI 或新插件游戏内验收；原图片实机验收保留在插件仓文档与忽略目录。

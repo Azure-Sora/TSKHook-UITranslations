@@ -163,3 +163,6 @@ dotnet run --project tests/WorkbenchTests -c Release -- .
 - 核对每批最多 8 项，并按请求内容长度进一步拆分；单项过长则本地报错，不发送。请求使用直接 Unicode，不再把中日文变为大量字面 Unicode 转义。模型、供应商和用户设置仍保留。
 
 已收到的核对文本、结束原因、用量和本批 id 映射保存在 `.local/model-review-responses/`；同名 `.validation.json` 记录逐条拒绝原因。记录不包含 API Key、请求头或供应商错误响应正文。它们是排障材料，不会自动恢复或覆盖译文；可用于之后的离线检查，避免重复付费。日志同时给出 numbers、newlines、tags、缺失 id 等具体原因。旧版未保存的失败响应无法追溯恢复。
+
+
+图片资源按独立 images-<版本> 和 image-channel 清单发布，图片与工作台版本必须 latest=false，文字包继续独占原 latest 更新入口。详见 [图片包说明](image-resource-packages.md)。调试桥已迁入 tools/UiInspector，不属于玩家的正式插件依赖。

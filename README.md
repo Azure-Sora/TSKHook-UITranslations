@@ -1,11 +1,13 @@
 # TSKHook-UITranslations
 
-TSKHook 的 UI 翻译数据与 Windows 翻译工作台。游戏插件位于 [TSKHook-Plus](https://github.com/Azure-Sora/TSKHook-Plus)。
+TSKHook 的文字、图片翻译资源、Windows 翻译工作台及可选调试桥。游戏插件位于 [TSKHook-Plus](https://github.com/Azure-Sora/TSKHook-Plus)。
 
 ## 目录
 
 - `app/`：翻译工作台；导入捕获、模型翻译、审校、编译、预览与发布。
 - `tools/`：独立编译与验证入口。
+- `tools/UiInspector/`：可选游戏调试桥与 CLI；不属于玩家插件依赖。
+- `translations/images/ui_images/`：独立版本的常驻 UI 图片资源。
 - `translations/ui/`：已有源文、分类译文、术语和翻译规则。
 - `vendor/TSKHook/`：固定版本的插件协议库，通过 Git submodule 引用。
 - `docs/migration-baseline.json`：迁移源提交与逐文件 SHA-256。
@@ -20,6 +22,7 @@ TSKHook 的 UI 翻译数据与 Windows 翻译工作台。游戏插件位于 [TSK
 
 - [工作台使用说明](docs/workbench-user-guide.md)
 - [迁移和验证记录](docs/verification.md)
+- [图片包构建、版本和更新渠道](docs/image-resource-packages.md)
 - 开发启动：`dotnet run --project app/Workbench`（.NET 10 SDK）。
 - 构建无需另装运行时的 Windows 程序：`./scripts/Build-Workbench.ps1`。
 - 默认数据已迁移，日常关注新增和需要核对的条目即可。

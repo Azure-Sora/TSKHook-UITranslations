@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../tools/UiInspector/InspectionModel.cs" Link="InspectionModel.cs" />
+    <Compile Include="../../tools/UiInspector/CommandQueue.cs" Link="CommandQueue.cs" />
+    <Compile Include="../../tools/UiInspector/BridgeServer.cs" Link="BridgeServer.cs" />
+  </ItemGroup>
+</Project>

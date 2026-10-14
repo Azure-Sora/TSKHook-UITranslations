@@ -1,0 +1,835 @@
+{
+  "schemaVersion": 1,
+  "version": "2026.10.14.3",
+  "sprites": [
+    {
+      "sprite": "btn_beginner_mission",
+      "file": "btn_beginner_mission.png",
+      "width": 88,
+      "height": 92,
+      "sha256": "03dcd53f34f40d01503e6f68f92b3eaf4db038783b1c8c7d36ab3fd49574459b",
+      "sourceRgbaSha256": "20a47dbf216cb9a36194500bab5a487dc1fb16aecf987c796cab92c7f089785b"
+    },
+    {
+      "sprite": "btn_comeback_mission",
+      "file": "btn_comeback_mission.png",
+      "width": 88,
+      "height": 92,
+      "sha256": "334324e915dd8d2bea6b1aba930cb1127564ef4e2fc36524c3e863f7a697a45b",
+      "sourceRgbaSha256": "20909193ce76c1112b3532027643b73464be1a4e9bad789b91715e4e6d68b4af"
+    },
+    {
+      "sprite": "btn_enhance",
+      "file": "btn_enhance.png",
+      "width": 196,
+      "height": 64,
+      "sha256": "23040b1163e721771b72f2b3fc9efc851cd9d902f4ba85c7a82c8666cfe163cf",
+      "sourceRgbaSha256": "22e906317daa43604fdac7bc7433a1b4e62a2020f37365a0cbe5e0073c7be148"
+    },
+    {
+      "sprite": "btn_enhance_on",
+      "file": "btn_enhance_on.png",
+      "width": 196,
+      "height": 64,
+      "sha256": "6cb78b168a37b488c3618683371eb38e94e6250628f448c1c6cf7927d080dfb1",
+      "sourceRgbaSha256": "04d52f4f7eb99b475c9e460156143337995d771623d84885c38c48ff3e90fd67"
+    },
+    {
+      "sprite": "btn_exchange",
+      "file": "btn_exchange.png",
+      "width": 48,
+      "height": 28,
+      "sha256": "15b5b324c8f4972ca25aaccbebc5ce0f5e9c0183d42752e9248c953667f74826",
+      "sourceRgbaSha256": "869f752205f6d4b42c1f46fc3e25c590995c6c74aac81a8b611898396635da3e"
+    },
+    {
+      "sprite": "btn_exchange_event_0001",
+      "file": "btn_exchange_event_0001.png",
+      "width": 240,
+      "height": 90,
+      "sha256": "535b0ecefa4565d7e55447146dfd880dc12582c06dffe30c98ec4003814a7667",
+      "sourceRgbaSha256": "4f554ec13c735a58983a00b8bb8e850ef623d9b6713a610bd49821e839431f66"
+    },
+    {
+      "sprite": "btn_exchange_gacha_0005",
+      "file": "btn_exchange_gacha_0005.png",
+      "width": 240,
+      "height": 90,
+      "sha256": "a5826e9c4a84133c632d4df23ff7f234723d677610d39837363680971d69c8cb",
+      "sourceRgbaSha256": "d1bd002e74817f57f7a7d246bbb55a5937b0568cd4eed73566ed7f767239073f"
+    },
+    {
+      "sprite": "btn_exchange_shop_2004",
+      "file": "btn_exchange_shop_2004.png",
+      "width": 240,
+      "height": 90,
+      "sha256": "4cbc026a53d6cfbaf6accb8622ef2e0a573b3092d6e1b05635d859e836a2b4c4",
+      "sourceRgbaSha256": "adf4a3235ceed05b2f88916c70c380fdf972c3acb9cf51f78004de860c1fbeb8"
+    },
+    {
+      "sprite": "btn_exchange_shop_2005",
+      "file": "btn_exchange_shop_2005.png",
+      "width": 240,
+      "height": 90,
+      "sha256": "8497fb735aed5572ec6c1d02e841792db442b1102976a908ddaa2525eb4bbed4",
+      "sourceRgbaSha256": "c93b7621f71685f8fb7ae7def1e44ca5092cc46f6b56263940fbe3fa56304055"
+    },
+    {
+      "sprite": "btn_exchange_shop_2006",
+      "file": "btn_exchange_shop_2006.png",
+      "width": 240,
+      "height": 90,
+      "sha256": "f79dfb2e940f8388ec61ccd8c56dc1f4f1f60bb859928886826c61380d7b2982",
+      "sourceRgbaSha256": "15b591f4576e0c71d705c3874c9307ad4a8fc6c538ed0ffdf2604f07ed3004fd"
+    },
+    {
+      "sprite": "btn_exchange_shop_2008",
+      "file": "btn_exchange_shop_2008.png",
+      "width": 240,
+      "height": 90,
+      "sha256": "45bd30ea554e2ba4484bf1a40204bfe63717946e430247312b1a08b4df7c0bc5",
+      "sourceRgbaSha256": "89b4656a59161311aa21e743a2b93390f4a7bdf500a5a5a48f1902737446b885"
+    },
+    {
+      "sprite": "btn_exchange_shop_2009",
+      "file": "btn_exchange_shop_2009.png",
+      "width": 240,
+      "height": 90,
+      "sha256": "332c912abd31f4e8e060c8ff01e72361c50df46d860f7b52fef8320fbedf60c8",
+      "sourceRgbaSha256": "9430f2d55eb513f11d3d8cccccebed4ff64216ebe23bd89e61d6b16ecd504d85"
+    },
+    {
+      "sprite": "btn_gacha",
+      "file": "btn_gacha.png",
+      "width": 196,
+      "height": 64,
+      "sha256": "38cc34d7095936e6ade28a7292bcd5afe8f66cf99ad0cc15ce70bcfac1f56ee8",
+      "sourceRgbaSha256": "911c1a49b715b0e67ad2dda530a9239cd6943fa7013b1e2af5323fba51a45fc9"
+    },
+    {
+      "sprite": "btn_gacha_on",
+      "file": "btn_gacha_on.png",
+      "width": 196,
+      "height": 64,
+      "sha256": "ff832d6efc47f13d1dc00b485647360b85c08813c7d530b621639c19f78d2f8b",
+      "sourceRgbaSha256": "687b67656afee40817b9212f4f09011eaf1283c476e14f4763089dc02346c9a6"
+    },
+    {
+      "sprite": "btn_home",
+      "file": "btn_home.png",
+      "width": 196,
+      "height": 64,
+      "sha256": "35dde779214c781310da379daeb854adeda2ffe082d63c579b10ee3d13893603",
+      "sourceRgbaSha256": "345d345deae37e7c86195139fd296baed74a1caa3c09b18a788143129601e3a5"
+    },
+    {
+      "sprite": "btn_home_on",
+      "file": "btn_home_on.png",
+      "width": 196,
+      "height": 64,
+      "sha256": "41db4eb20b9ad7a09f49466988237ee54c8bc28762617737b314724fac949824",
+      "sourceRgbaSha256": "08eb9994fa903cb1a772062203f87d348a49cd7ab948ca1a46b0ab972d09fddf"
+    },
+    {
+      "sprite": "btn_information",
+      "file": "btn_information.png",
+      "width": 88,
+      "height": 92,
+      "sha256": "3257b4157a482b02e649c7286a20c810e5fb64da013c78bdbfb70ba9af41a3b3",
+      "sourceRgbaSha256": "465be3e72522a2216d33b44ea6d9dbb3f6df069f52b0d438f84fa88f9f3920d3"
+    },
+    {
+      "sprite": "btn_mission",
+      "file": "btn_mission.png",
+      "width": 88,
+      "height": 92,
+      "sha256": "a8bf8d204d8782714c819c7eea23103bc75d729224c3a0eff0516f18a60d9935",
+      "sourceRgbaSha256": "9a2cd717035d83b7f7c52c9a51702d37bc266e4a17d32b13fedf70e9268a12a8"
+    },
+    {
+      "sprite": "btn_present",
+      "file": "btn_present.png",
+      "width": 88,
+      "height": 92,
+      "sha256": "056a699d74b678471b0542e19cd5e34ed8e8302337b04e3922f5c24045b4a083",
+      "sourceRgbaSha256": "ead500855e126128999b31e44ece36a1bf7d98fe6e8db60cb6669c4dfb07135e"
+    },
+    {
+      "sprite": "btn_quest",
+      "file": "btn_quest.png",
+      "width": 196,
+      "height": 64,
+      "sha256": "4976c16423a5e5a9b818514558ff695ff360873b65cb4a6df3e74a6ca0ade885",
+      "sourceRgbaSha256": "58404444b83862475507e96a8e58976ff982a30a38aec508663d13cac352c29d"
+    },
+    {
+      "sprite": "btn_quest_on",
+      "file": "btn_quest_on.png",
+      "width": 196,
+      "height": 64,
+      "sha256": "5e1f24b5f6fa75a42562325d112aefd0a017bf33e9f38f61c91d769392e60a54",
+      "sourceRgbaSha256": "3ecaa016383844e34c811bd363e7a44b548a64ca10ff4cb863501b3c0d4b030b"
+    },
+    {
+      "sprite": "btn_quest_plate_enchantment",
+      "file": "btn_quest_plate_enchantment.png",
+      "width": 660,
+      "height": 133,
+      "sha256": "73ce2dd82c8c631f744fa3ba78b79f5c8c205aa0c79f6ca572f12a2b69513cbf",
+      "sourceRgbaSha256": "e36a7d3f9e4dbb5ac9e2a7fe3edaa1dd6b5280d974c41bbc6de50f44b63b2a87"
+    },
+    {
+      "sprite": "btn_quest_plate_equipment",
+      "file": "btn_quest_plate_equipment.png",
+      "width": 660,
+      "height": 133,
+      "sha256": "864a57240accf7f3e4e36cb09384e55dbefaba4c1157d61c81ffde0cd420ae04",
+      "sourceRgbaSha256": "029549915b79088f45aa4abbce5fe15cfb746b4fc52356e2271449290642363f"
+    },
+    {
+      "sprite": "btn_quest_plate_skill",
+      "file": "btn_quest_plate_skill.png",
+      "width": 660,
+      "height": 133,
+      "sha256": "3452e7763d1c9b7f74a9757ecf15c19e1f50668574d3eb619b80530181cc4caf",
+      "sourceRgbaSha256": "8e92eea5c0569cbf01cdb23e754ba1f8ace089a2d3588f1cd360d91d427c52ae"
+    },
+    {
+      "sprite": "btn_quest_plate_skip_B",
+      "file": "btn_quest_plate_skip_B.png",
+      "width": 660,
+      "height": 133,
+      "sha256": "4f829ba2a215712862472c61d08a68adefa07c4e96a2bc6cf5c2aa7bba75b8cd",
+      "sourceRgbaSha256": "d5fc98ec9d935e4bdd8977709d402534166d64a579b69ac906e883c6ee9c05cd"
+    },
+    {
+      "sprite": "btn_quest_plate_upper limit",
+      "file": "btn_quest_plate_upper limit.png",
+      "width": 660,
+      "height": 133,
+      "sha256": "e6193a4bd99d1bceb8e178a7cd0ed32b5b477e2a6438957cb053f987bea200d6",
+      "sourceRgbaSha256": "fda08c9c70c24438ffac9cfb7f4a861e96520457f3c20ede4ffaa489ad123bdf"
+    },
+    {
+      "sprite": "btn_season_pass",
+      "file": "btn_season_pass.png",
+      "width": 111,
+      "height": 111,
+      "sha256": "0874bcea86b2056dae3580cb47ff7978c07b73bb5b21de97ab0f15acaa707024",
+      "sourceRgbaSha256": "9d32c942ecab4f46f48325402a223d9bdf5ca192343c08f94987724680a81ac2"
+    },
+    {
+      "sprite": "btn_shop",
+      "file": "btn_shop.png",
+      "width": 196,
+      "height": 64,
+      "sha256": "d2009858ce3da01b9f5358de0ed991a4859fa33d477e9d15620ffa6a6b716962",
+      "sourceRgbaSha256": "56b858e24f59c0dd5f7c231c7301792400731e0d0616d71d897c0e272d4700cb"
+    },
+    {
+      "sprite": "btn_shop_on",
+      "file": "btn_shop_on.png",
+      "width": 196,
+      "height": 64,
+      "sha256": "5eb3fb9a8ac7303d725871e24d971fe0c5cb69d219d82a94b421282da6f6d5aa",
+      "sourceRgbaSha256": "160022d361b4e2a9308c00c7b9dbe2a20905083d17eefec76207f6613e9eac51"
+    },
+    {
+      "sprite": "btn_stampcard",
+      "file": "btn_stampcard.png",
+      "width": 117,
+      "height": 94,
+      "sha256": "dcb7bb928c6fc678ceb0e7e11662868c1cc8134927e06ac10ae0400967924f25",
+      "sourceRgbaSha256": "18e54fa7f7c3d2f4fbaa2264f8415964cfe5e60ad2a2577c526fa7f8a68e2e12"
+    },
+    {
+      "sprite": "btn_story",
+      "file": "btn_story.png",
+      "width": 196,
+      "height": 64,
+      "sha256": "13a1ac98bcc285497166ace5c47c667e082e0ce114a35199dfd67e24f1bb7a8e",
+      "sourceRgbaSha256": "1a52064b7297c6b624a43405eacbf19fa350f1bb40d342d3b2c6d8048c0bed17"
+    },
+    {
+      "sprite": "btn_story_on",
+      "file": "btn_story_on.png",
+      "width": 196,
+      "height": 64,
+      "sha256": "922db0d2c43f382b24d5829d922bb0c33a99ecc36998b888cbfeb42e605964d8",
+      "sourceRgbaSha256": "923b403e97a43adfc947cf6ffbfb48fd8621b6784a04a1d82eb7643f9b92d6a1"
+    },
+    {
+      "sprite": "filter_off",
+      "file": "filter_off.png",
+      "width": 56,
+      "height": 27,
+      "sha256": "d41c1e84d6860d6fe49001aad5f845affa18ff477c5b87550c1ee961a8b31870",
+      "sourceRgbaSha256": "0e9671e2dd42bd567f0ab6abedcc4041bf248a10a1535c7e9d3343851405065b"
+    },
+    {
+      "sprite": "filter_on",
+      "file": "filter_on.png",
+      "width": 56,
+      "height": 27,
+      "sha256": "98b4d68963410b09f5df46456e5e11b3fa251a1628939ff3a8ac207718f7c442",
+      "sourceRgbaSha256": "14ba17bdd3b8e0a8a0ff124fcbaef5e0f394aa4e39be7d79f5450c2f2357bcbe"
+    },
+    {
+      "sprite": "free_gacha",
+      "file": "free_gacha.png",
+      "width": 151,
+      "height": 76,
+      "sha256": "9ac216f7590dd89a2ea4628518238a25528e097a12dd9aa8b4c50442885b7695",
+      "sourceRgbaSha256": "316e236b139189d639223b4581b1a5f18c231ff82b2141bfe698e04bc01341cc"
+    },
+    {
+      "sprite": "free_gacha_btn2",
+      "file": "free_gacha_btn2.png",
+      "width": 200,
+      "height": 54,
+      "sha256": "79dc9c0cee6532a5c4ba2014c49361ae972609deaf1d72bd227164481c1ebd53",
+      "sourceRgbaSha256": "fc0893fe7367d2134dd0de68e0eaad28ae2c116a4af5f4cf5dcce2c1d1c8031c"
+    },
+    {
+      "sprite": "icon_gacha",
+      "file": "icon_gacha.png",
+      "width": 76,
+      "height": 72,
+      "sha256": "17c66afaadf84e5fd5692e092c5d5d67ec796f7019491bb73ac5cbdcd39b7df1",
+      "sourceRgbaSha256": "7b5e2e45732090de7fd649127213b5b5f15885f6323b14288f5299b4bd8eae38"
+    },
+    {
+      "sprite": "m_gacha_0002",
+      "file": "m_gacha_0002.png",
+      "width": 240,
+      "height": 90,
+      "sha256": "86408bff42f72b679ff9ab7bf2ff749239a42acd594070c81410ee5c25c19838",
+      "sourceRgbaSha256": "1395fbf2a4bb2fab40e6d91626dfcb2acc305eb50eb8e3cc9f5121cea8890fba"
+    },
+    {
+      "sprite": "m_gacha_0003",
+      "file": "m_gacha_0003.png",
+      "width": 240,
+      "height": 90,
+      "sha256": "dec59e387eb52c10f0af8e58a5eb0fd44bf19540c9bee3350e49e4b6deb93f67",
+      "sourceRgbaSha256": "215ffdf196e61a652f9314dcb7a58bcb492e9c927c17c381a2b700db9c0a0348"
+    },
+    {
+      "sprite": "m_gacha_0005",
+      "file": "m_gacha_0005.png",
+      "width": 240,
+      "height": 90,
+      "sha256": "222c2a4ed9467d6db2eaf2833b30bb41c23ff51ee262b6462dc13481e468a007",
+      "sourceRgbaSha256": "1eb3b50bb6b331512bc6b91f0b9d726661a287c3174342ca8cd5eaa9fcab1755"
+    },
+    {
+      "sprite": "m_gacha_0059",
+      "file": "m_gacha_0059.png",
+      "width": 240,
+      "height": 90,
+      "sha256": "69de77c9258da0c863f0b701cce04979eb9ab7597e9bc443067ea2f238066e31",
+      "sourceRgbaSha256": "a7509c0dd7192e1b84c7fc2492e76ddffd74aec1d1797710724e894f69a2c84f"
+    }
+  ],
+  "spine": [
+    {
+      "asset": "btn_1st_story_s_SkeletonData",
+      "texture": "btn_1st_story_s",
+      "regions": [
+        {
+          "name": "btn_1ststory_title",
+          "file": "spine-btn_1st_story_s-title.png",
+          "sha256": "e7eb963298a94a5202aa49eeaf8ce800268e72d1cd2e868c3aa9681b7942a6a1",
+          "sourceRgbaSha256": "39af6c61817830bcdfd36784bd7fde68ac5a9d04b19e24e2e11e3199a5a248be",
+          "width": 262,
+          "height": 64,
+          "degrees": 0,
+          "originalWidth": 369,
+          "originalHeight": 75,
+          "offsetX": 97,
+          "offsetY": 3
+        },
+        {
+          "name": "btn_1ststory_title_w",
+          "file": "spine-btn_1st_story_s-white.png",
+          "sha256": "a78d36f2cf737c718486f42b0c8745bb6f70b37272ca39d0573921aed273bbd6",
+          "sourceRgbaSha256": "4524adb1960809dee6c3d04c0f2179626e5b0e6ba1ec96680a75378d3e027705",
+          "width": 262,
+          "height": 64,
+          "degrees": 90,
+          "originalWidth": 369,
+          "originalHeight": 75,
+          "offsetX": 97,
+          "offsetY": 3
+        }
+      ]
+    },
+    {
+      "asset": "btn_2nd_story_s_SkeletonData",
+      "texture": "btn_2nd_story_s",
+      "regions": [
+        {
+          "name": "btn_2ndstory_title",
+          "file": "spine-btn_2nd_story_s-title.png",
+          "sha256": "c3f0a3becb2a87854de3fc3fee018f6363c4cafa4ed10259e1f3f226d55b0c30",
+          "sourceRgbaSha256": "c427dc4a46fe642e9010e4e230e88174bad61234353159cc96e2eb8865762873",
+          "width": 262,
+          "height": 64,
+          "degrees": 0,
+          "originalWidth": 356,
+          "originalHeight": 83,
+          "offsetX": 83,
+          "offsetY": 10
+        },
+        {
+          "name": "btn_2ndstory_title_w",
+          "file": "spine-btn_2nd_story_s-white.png",
+          "sha256": "650642717003ec45c0debe322c269b6701f71f02acbbe1b2087fb25e2e824b93",
+          "sourceRgbaSha256": "f8610ef5d22f4910bcc95bc12cf3f96c5057c8bdc8af9b17edecc62a380c7a35",
+          "width": 262,
+          "height": 64,
+          "degrees": 0,
+          "originalWidth": 356,
+          "originalHeight": 83,
+          "offsetX": 83,
+          "offsetY": 10
+        }
+      ]
+    },
+    {
+      "asset": "btn_belong_SkeletonData",
+      "texture": "btn_belong",
+      "regions": [
+        {
+          "name": "belong/btn_belong_title",
+          "file": "spine-btn_belong-title.png",
+          "sha256": "ae7324a30e015702160ce248efeb955a5b83a629a8e3765d167724711e4c44f4",
+          "sourceRgbaSha256": "d1ed7367eee14b70031f90f2f9f8eeb0b492a09e363d4c5aef7917e9d9e9ebd5",
+          "width": 217,
+          "height": 71,
+          "degrees": 90,
+          "originalWidth": 230,
+          "originalHeight": 72,
+          "offsetX": 5,
+          "offsetY": 1
+        },
+        {
+          "name": "belong/btn_belong_title_w",
+          "file": "spine-btn_belong-white.png",
+          "sha256": "0c1655723dcf8f162da93a3c5a704ea348509b6fc6d625530fdcfff392176e3a",
+          "sourceRgbaSha256": "a12e5a0b1c5bf1613c17c41b9ba7a99814d6da0ec1821fd7eca6da266ed0aea6",
+          "width": 217,
+          "height": 71,
+          "degrees": 90,
+          "originalWidth": 230,
+          "originalHeight": 72,
+          "offsetX": 5,
+          "offsetY": 1
+        }
+      ]
+    },
+    {
+      "asset": "btn_chara2_SkeletonData",
+      "texture": "btn_chara2",
+      "regions": [
+        {
+          "name": "chara/btn_chara_name2",
+          "file": "spine-btn_chara2-title.png",
+          "sha256": "6fc34183175821858f5e7bc7bd89fc7c6d12588bca6f0df9ede4c06326793932",
+          "sourceRgbaSha256": "d4111047131442682ca4eafc86d2528f65dd5b0ee5150cb481f7d8e147b03f95",
+          "width": 256,
+          "height": 102,
+          "degrees": 0,
+          "originalWidth": 342,
+          "originalHeight": 102,
+          "offsetX": 43,
+          "offsetY": 0
+        }
+      ]
+    },
+    {
+      "asset": "btn_charastory_SkeletonData",
+      "texture": "btn_charastory",
+      "regions": [
+        {
+          "name": "charastory/btn_charastory_title",
+          "file": "spine-btn_charastory-title.png",
+          "sha256": "1b5f4079f02a1cf1ceaf16d4f2746dd9fa2ed4246c0d068905b3d345e6331a16",
+          "sourceRgbaSha256": "61ffe3ef729b26504f4cd060f360919e62b9b5acc27f430adfda763f609cecf8",
+          "width": 322,
+          "height": 74,
+          "degrees": 90,
+          "originalWidth": 340,
+          "originalHeight": 77,
+          "offsetX": 7,
+          "offsetY": 3
+        },
+        {
+          "name": "charastory/btn_charastory_title_w",
+          "file": "spine-btn_charastory-white.png",
+          "sha256": "5c8368d0d04e6e12421b009b2b928c3cb5a23437acda34bcda6135bf7495ee8c",
+          "sourceRgbaSha256": "2e8a8fbc9740d8f40516e51bedcee752bd9ac2ded25e379dd8cf11c117a9baa7",
+          "width": 322,
+          "height": 74,
+          "degrees": 90,
+          "originalWidth": 340,
+          "originalHeight": 77,
+          "offsetX": 7,
+          "offsetY": 3
+        }
+      ]
+    },
+    {
+      "asset": "btn_equip_SkeletonData",
+      "texture": "btn_equip",
+      "regions": [
+        {
+          "name": "equip/btn_equip_title",
+          "file": "spine-btn_equip-title.png",
+          "sha256": "10388c58146ec8ba621d3941416052ec932612df2278948b05905de168a32d4b",
+          "sourceRgbaSha256": "c669e50bc8812f7c1105dc02a59924293cb4ddbb5bf768503184286d5d7d3c3f",
+          "width": 204,
+          "height": 70,
+          "degrees": 0,
+          "originalWidth": 342,
+          "originalHeight": 72,
+          "offsetX": 68,
+          "offsetY": 0
+        },
+        {
+          "name": "equip/btn_equip_title_w",
+          "file": "spine-btn_equip-white.png",
+          "sha256": "414d782e0c7b478ec09adb3c78ce486a71bda4e51d99a9d1c89531ef5c4c5787",
+          "sourceRgbaSha256": "d4909bdfed4c1ff66dbb0ff4f3ee0806fcec23ac04cbd6e5b3bf4f4db13810cb",
+          "width": 204,
+          "height": 70,
+          "degrees": 90,
+          "originalWidth": 342,
+          "originalHeight": 72,
+          "offsetX": 68,
+          "offsetY": 0
+        }
+      ]
+    },
+    {
+      "asset": "btn_eventstory_SkeletonData",
+      "texture": "btn_eventstory",
+      "regions": [
+        {
+          "name": "eventstory/btn_eventstory_title",
+          "file": "spine-btn_eventstory-title.png",
+          "sha256": "5d0a943484167fd79735c25e95334931ae9fd9237c16180b17d7fa089937e37a",
+          "sourceRgbaSha256": "f6501f591cc130831507828d2bb2e2681c3bb6799416de932a65ff79a382d5a0",
+          "width": 333,
+          "height": 96,
+          "degrees": 0,
+          "originalWidth": 338,
+          "originalHeight": 96,
+          "offsetX": 2,
+          "offsetY": 0
+        },
+        {
+          "name": "eventstory/btn_eventstory_title_w",
+          "file": "spine-btn_eventstory-white.png",
+          "sha256": "185d22b5a38277d4f16d1e16ca45768c15ad94461729b0a3fac3b7af3806f9e8",
+          "sourceRgbaSha256": "ecf96fe473e55eb3b9609a7fd289d643847a566737f8ba9cfe76c66806c3fd08",
+          "width": 333,
+          "height": 96,
+          "degrees": 0,
+          "originalWidth": 338,
+          "originalHeight": 96,
+          "offsetX": 2,
+          "offsetY": 0
+        }
+      ]
+    },
+    {
+      "asset": "btn_exchange_SkeletonData",
+      "texture": "btn_exchange",
+      "regions": [
+        {
+          "name": "btn_exchange_title",
+          "file": "spine-btn_exchange-title.png",
+          "sha256": "11a94b647aab9704a526a243bf2fe368362a286cd548e3a790d48cb8e9bf8dbc",
+          "sourceRgbaSha256": "978b01ea621798b98e77c01772c0fe24349f9bce3a86aa339d87987c47a627bd",
+          "width": 176,
+          "height": 75,
+          "degrees": 90,
+          "originalWidth": 290,
+          "originalHeight": 75,
+          "offsetX": 57,
+          "offsetY": 0
+        },
+        {
+          "name": "btn_exchange_title_w",
+          "file": "spine-btn_exchange-white.png",
+          "sha256": "2f02141b82ec5730b305a145fc546a0b068f4d2c6b36a3dcd7f5d57e47780c6d",
+          "sourceRgbaSha256": "f6eda68a03717ce038c47726b6dbcb74b38bb7db6022e564f71504ac106f3dec",
+          "width": 176,
+          "height": 75,
+          "degrees": 90,
+          "originalWidth": 290,
+          "originalHeight": 75,
+          "offsetX": 57,
+          "offsetY": 0
+        }
+      ]
+    },
+    {
+      "asset": "btn_finis_SkeletonData",
+      "texture": "btn_finis",
+      "regions": [
+        {
+          "name": "finis/btn_finis_title",
+          "file": "spine-btn_finis-title.png",
+          "sha256": "5f33f313ba740574d88bcc9b0185d3557f53d57c10776e07be83fd1547fc74eb",
+          "sourceRgbaSha256": "943f4dcbcffd17ce638fab995e79d92d3d1ba97a2fbaf239dd7cd60ea0803f6a",
+          "width": 225,
+          "height": 69,
+          "degrees": 0,
+          "originalWidth": 225,
+          "originalHeight": 69,
+          "offsetX": 0,
+          "offsetY": 0
+        },
+        {
+          "name": "finis/btn_finis_title_w",
+          "file": "spine-btn_finis-white.png",
+          "sha256": "8f0bef5e01fc4ea2d9fa39216b13e1528dce94c226fb52190ede682a372affe0",
+          "sourceRgbaSha256": "b12933a222eca52dffec807d19c2bdb284e4fc36707b21de009b0cbde5424d0e",
+          "width": 225,
+          "height": 69,
+          "degrees": 0,
+          "originalWidth": 225,
+          "originalHeight": 69,
+          "offsetX": 0,
+          "offsetY": 0
+        }
+      ]
+    },
+    {
+      "asset": "btn_mainstory_SkeletonData",
+      "texture": "btn_mainstory",
+      "regions": [
+        {
+          "name": "mainstory/btn_mainstory_title",
+          "file": "spine-btn_mainstory-title.png",
+          "sha256": "fca0b32f3574bf32f5965bc898a0515a25adfc00b4aaef9a6e030d4bb4958de5",
+          "sourceRgbaSha256": "8fd3dcde62de707106dd29ee5f326680196d01fc38083cf193139704d96bdbe8",
+          "width": 318,
+          "height": 72,
+          "degrees": 0,
+          "originalWidth": 360,
+          "originalHeight": 74,
+          "offsetX": 21,
+          "offsetY": 2
+        },
+        {
+          "name": "mainstory/btn_mainstory_title_w",
+          "file": "spine-btn_mainstory-white.png",
+          "sha256": "b838f574fd6a83f4b2169fdae9236115319c5f8e3d8cbe8e99a3dcecaba2149c",
+          "sourceRgbaSha256": "21deb170fbbee318ef47921c5b8fd620e72f6beff7172133e2eb21fceca33c33",
+          "width": 318,
+          "height": 72,
+          "degrees": 90,
+          "originalWidth": 360,
+          "originalHeight": 74,
+          "offsetX": 21,
+          "offsetY": 2
+        }
+      ]
+    },
+    {
+      "asset": "btn_maneuvers_SkeletonData",
+      "texture": "btn_maneuvers",
+      "regions": [
+        {
+          "name": "maneuvers/btn_maneuvers_title",
+          "file": "spine-btn_maneuvers-title.png",
+          "sha256": "8a1eb344608762f7d4a36f761de61b1f47a8546f9140c7f3dd78b612026d15d6",
+          "sourceRgbaSha256": "bd6e933a6935d3989ce47ac0e87cf37c4a804a02d1b6035e508dd3128dea65b9",
+          "width": 192,
+          "height": 74,
+          "degrees": 90,
+          "originalWidth": 230,
+          "originalHeight": 77,
+          "offsetX": 21,
+          "offsetY": 3
+        },
+        {
+          "name": "maneuvers/btn_maneuvers_title_w",
+          "file": "spine-btn_maneuvers-white.png",
+          "sha256": "92c44a7336bd9be01278f1191e57b382978a91924bb0fa14e6f50e3016a12445",
+          "sourceRgbaSha256": "91a98bfe06c545c4ea9d19fae111b6458dc4ba9c06cb2c22619ee783cb7a3b0c",
+          "width": 192,
+          "height": 74,
+          "degrees": 0,
+          "originalWidth": 230,
+          "originalHeight": 77,
+          "offsetX": 21,
+          "offsetY": 3
+        }
+      ]
+    },
+    {
+      "asset": "btn_purchase_SkeletonData",
+      "texture": "btn_purchase",
+      "regions": [
+        {
+          "name": "purchase_ver2/btn_name_purchase",
+          "file": "spine-btn_purchase-title.png",
+          "sha256": "3114fd344b2e723f9dc3e9f723dbd704b1445a9f0f6bac3ef1853c80c0c11188",
+          "sourceRgbaSha256": "248434524bebe1ea98b9392b4ba8bd6abf2afb55a702e922a7bbb532f505f0fe",
+          "width": 176,
+          "height": 75,
+          "degrees": 90,
+          "originalWidth": 290,
+          "originalHeight": 80,
+          "offsetX": 57,
+          "offsetY": 0
+        },
+        {
+          "name": "purchase_ver2/btn_name_purchase_w",
+          "file": "spine-btn_purchase-white.png",
+          "sha256": "ebc08739367bde89033c1670e984ab90ed2ebc75043a2fe54022337ace579349",
+          "sourceRgbaSha256": "6f21167be6a0ba6f7764adf71c46f95692a26b62eaa3d83ae682f80fc3bc15d9",
+          "width": 176,
+          "height": 75,
+          "degrees": 90,
+          "originalWidth": 290,
+          "originalHeight": 80,
+          "offsetX": 57,
+          "offsetY": 0
+        }
+      ]
+    },
+    {
+      "asset": "btn_quest_event_SkeletonData",
+      "texture": "btn_quest_event",
+      "regions": [
+        {
+          "name": "quest_event/btn_quest_event_title",
+          "file": "spine-btn_quest_event-title.png",
+          "sha256": "2421fff196b9fd60d684f3e71b3cc6ad8319399e600cb3abe456f9062da1c188",
+          "sourceRgbaSha256": "4d4aef7fac07e136ffe860b24782b812e73a4815a18e85357f1a053a6e989cfa",
+          "width": 215,
+          "height": 76,
+          "degrees": 0,
+          "originalWidth": 352,
+          "originalHeight": 76,
+          "offsetX": 70,
+          "offsetY": 0
+        },
+        {
+          "name": "quest_event/btn_quest_event_title_w",
+          "file": "spine-btn_quest_event-white.png",
+          "sha256": "fcb3b135b98e35014c866ad5f302fc5fb1a30832eacfbd76cb348ecbc90745f3",
+          "sourceRgbaSha256": "f7f349f8a37dc8f7c697170cd16c8b429665a9d84da641a693814310b38ff628",
+          "width": 215,
+          "height": 76,
+          "degrees": 0,
+          "originalWidth": 352,
+          "originalHeight": 76,
+          "offsetX": 70,
+          "offsetY": 0
+        }
+      ]
+    },
+    {
+      "asset": "btn_quest_main_SkeletonData",
+      "texture": "btn_quest_main",
+      "regions": [
+        {
+          "name": "quest_main/btn_quest_main_title",
+          "file": "spine-btn_quest_main-title.png",
+          "sha256": "5fdb5530c0245557d75f2411036dbb7e81bfb4a224ecdf02e73cf9dcd9c492f6",
+          "sourceRgbaSha256": "f73b8ec87737de0579cc751fee2550897147efed3845db10218bf57e6c0fa9d1",
+          "width": 128,
+          "height": 76,
+          "degrees": 0,
+          "originalWidth": 360,
+          "originalHeight": 76,
+          "offsetX": 116,
+          "offsetY": 0
+        },
+        {
+          "name": "quest_main/btn_quest_main_title_w",
+          "file": "spine-btn_quest_main-white.png",
+          "sha256": "6fd525bd64ccb0be94cdbcede009903a26a11fe749370edaa1dde973c1871974",
+          "sourceRgbaSha256": "31628403911b104466971d1dd8fb2e9e3ed6c6f2edb95adb7471b2c86136908b",
+          "width": 128,
+          "height": 76,
+          "degrees": 0,
+          "originalWidth": 360,
+          "originalHeight": 76,
+          "offsetX": 116,
+          "offsetY": 0
+        }
+      ]
+    },
+    {
+      "asset": "btn_search_SkeletonData",
+      "texture": "btn_search",
+      "regions": [
+        {
+          "name": "search/btn_search_title",
+          "file": "spine-btn_search-title.png",
+          "sha256": "e68de13ca78ac2c60ce40875b4f98fe801b9f877c39c9dbe7bf96b31468ad214",
+          "sourceRgbaSha256": "0d48d33532df85264fd75a7a23a3c2d64ba3e7344d1ae90a2e6514ae58694ede",
+          "width": 218,
+          "height": 71,
+          "degrees": 0,
+          "originalWidth": 230,
+          "originalHeight": 77,
+          "offsetX": 6,
+          "offsetY": 5
+        },
+        {
+          "name": "search/btn_search_title_w",
+          "file": "spine-btn_search-white.png",
+          "sha256": "6729a48a871727b140e841821eb59458e83a7a8867743d3fa06805fe5c4fdb91",
+          "sourceRgbaSha256": "5b26c0ca600f1f5e9c13a5b152ff3aef7f2ce888d265a388b55c407ed55623ba",
+          "width": 218,
+          "height": 71,
+          "degrees": 0,
+          "originalWidth": 230,
+          "originalHeight": 77,
+          "offsetX": 6,
+          "offsetY": 5
+        }
+      ]
+    },
+    {
+      "asset": "btn_team_SkeletonData",
+      "texture": "btn_team",
+      "regions": [
+        {
+          "name": "team/btn_team_title",
+          "file": "spine-btn_team-title.png",
+          "sha256": "ea1152a161fbe3637b2165b3f9557dd3e9f3dd73a2ba5f1b4d057296272cf23e",
+          "sourceRgbaSha256": "0ff932f8f39638a1eebf144fabd1f706e57e68d1735e9c153a95c0d5b17390fe",
+          "width": 242,
+          "height": 71,
+          "degrees": 0,
+          "originalWidth": 342,
+          "originalHeight": 72,
+          "offsetX": 53,
+          "offsetY": 0
+        },
+        {
+          "name": "team/btn_team_title_w",
+          "file": "spine-btn_team-white.png",
+          "sha256": "2ef67b30836f1456a23074e1c91f864c1dc18543059d8d1f3a78ac88886f316b",
+          "sourceRgbaSha256": "48bfa1852b7a5ef7fcc0f6e1f8dc7e7b883479905cf3bc73edf445e5e2196d6a",
+          "width": 242,
+          "height": 71,
+          "degrees": 0,
+          "originalWidth": 342,
+          "originalHeight": 72,
+          "offsetX": 53,
+          "offsetY": 0
+        }
+      ]
+    }
+  ]
+}
