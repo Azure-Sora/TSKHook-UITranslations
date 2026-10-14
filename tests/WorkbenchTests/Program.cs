@@ -98,10 +98,32 @@ try
             Check(File.ReadAllText(original).Replace("\r\n", "\n") == File.ReadAllText(output).Replace("\r\n", "\n"), "new compiler matches migration baseline (platform newlines normalized)");
         }
         else Check(result.Entries > 0, "current translation workspace compiles after baseline evolves");
+        var staticIndex = RuntimeAsset.Load(output);
+        foreach (var song in actual.Snapshot().Where(x => x.Category == "item" && x.Field == "item_name" &&
+                     x.Identity.GetValueOrDefault("item_type") == "23"))
+        {
+            Check(song.Translation == song.Source && song.Status is "reviewed" or "verified",
+                "song titles retain reviewed original names: " + song.Key);
+            Check(!UiRenderedTextTranslator.TryTranslate(song.Source, staticIndex, out _),
+                "music titles cannot inherit translated record names through rendered hash fallback: " + song.Key);
+        }
+        foreach (var staticCatalogRow in StaticUiCatalog.Read(args[0]))
+        {
+            var sample = staticCatalogRow.Source; var expected = staticCatalogRow.Translation;
+            if (staticCatalogRow.Template)
+                for (var parameter = 0; parameter < 4; parameter++)
+                {
+                    sample = sample.Replace("{" + parameter + "}", (37 + parameter).ToString());
+                    expected = expected.Replace("{" + parameter + "}", (37 + parameter).ToString());
+                }
+            Check(UiRenderedTextTranslator.TryTranslate(sample, staticIndex, out var rendered) && rendered == expected,
+                "real static UI catalog row roundtrip: " + staticCatalogRow.Source);
+        }
     }
     tests += await GroupAndSkillTests.Run(root);
     tests += await ReviewTests.Run(root);
     tests += IdentityRepairTests.Run(root);
+    tests += StaticUiTests.Run(root);
     tests += await ModelReviewTests.Run(root);
     tests += await ModelTransportTests.Run(root);
     tests += await ModelReviewProtocolTests.Run(root);

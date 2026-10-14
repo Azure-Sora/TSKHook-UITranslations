@@ -186,15 +186,17 @@ public sealed partial class TranslationWorkspace
             EnsureUnchanged();
             var eligible = entries.Values.Where(x => x.Status is "translated" or "reviewed" or "verified")
                 .Where(x => !string.IsNullOrWhiteSpace(x.Translation)).OrderBy(x => x.Key, StringComparer.Ordinal).ToArray();
-            var issues = eligible.SelectMany(ValidationRules.Check).ToList();
+            var staticUi = StaticUiCatalog.Read(Root);
+            var issues = eligible.Concat(staticUi.Select(x => x.ForValidation())).SelectMany(ValidationRules.Check).ToList();
             if (issues.Any(x => x.Fatal)) throw new InvalidDataException($"编译被 {issues.Count(x => x.Fatal)} 个结构错误阻止：{issues.First(x => x.Fatal).Key}");
-            if (eligible.Length == 0) throw new InvalidDataException("没有可发布的译文。");
-            var text = string.Join(Environment.NewLine, eligible.Select(x => JsonData.Write(new RuntimeRow
-            { Key = x.Key, SourceHash = x.SourceHash, Translation = x.Translation }))) + Environment.NewLine;
+            if (eligible.Length + staticUi.Count == 0) throw new InvalidDataException("没有可发布的译文。");
+            var runtime = eligible.Select(x => new RuntimeRow { Key = x.Key, SourceHash = x.SourceHash, Translation = x.Translation })
+                .Concat(staticUi.Select(x => x.Runtime())).OrderBy(x => x.Key, StringComparer.Ordinal).ToArray();
+            var text = string.Join(Environment.NewLine, runtime.Select(JsonData.Write)) + Environment.NewLine;
             AtomicData.Write(path, text);
             RuntimeAsset.Load(path);
             AtomicData.Write(Path.Combine(Path.GetDirectoryName(Path.GetFullPath(path))!, "validation.json"), JsonData.Write(issues));
-            return new(path, eligible.Length, issues);
+            return new(path, runtime.Length, issues);
         }
     }
 
@@ -205,7 +207,7 @@ public sealed partial class TranslationWorkspace
         var directory = Path.Combine(Root, ".local/packages", version);
         var result = Compile(Path.Combine(directory, "ui_translations.jsonl"));
         using var stream = File.OpenRead(result.AssetPath);
-        var manifest = new TranslationManifest { Version = version, MinimumPluginVersion = "1.4.3", Size = stream.Length, Entries = result.Entries,
+        var manifest = new TranslationManifest { Version = version, MinimumPluginVersion = StaticUiCatalog.Read(Root).Count > 0 ? "1.4.6" : "1.4.3", Size = stream.Length, Entries = result.Entries,
             Sha256 = Convert.ToHexString(SHA256.HashData(stream)).ToLowerInvariant(),
             DownloadUrl = $"https://github.com/{repository}/releases/download/translations-{version}/ui_translations.jsonl" };
         AtomicData.Write(Path.Combine(directory, "manifest.json"), JsonData.Write(manifest));
@@ -238,7 +240,8 @@ public sealed partial class TranslationWorkspace
         }
     }
     private IEnumerable<string> DataFiles() => (File.Exists(SourcePath) ? new[] { SourcePath } : [])
-        .Concat(Directory.Exists(CategoryDirectory) ? Directory.EnumerateFiles(CategoryDirectory, "*.jsonl") : []);
+        .Concat(Directory.Exists(CategoryDirectory) ? Directory.EnumerateFiles(CategoryDirectory, "*.jsonl") : [])
+        .Concat(File.Exists(Path.Combine(Root, StaticUiCatalog.RelativePath)) ? new[] { Path.Combine(Root, StaticUiCatalog.RelativePath) } : []);
     private void RememberFiles() => fingerprints = DataFiles().ToDictionary(x => x, x => { var f = new FileInfo(x); return (f.Length, f.LastWriteTimeUtc); });
     private void EnsureUnchanged()
     {

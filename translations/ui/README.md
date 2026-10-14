@@ -9,6 +9,7 @@
 - `source/ui_conflicts.jsonl`：身份冲突报告。
 - `glossary.md`、`TskNames.json`、`LLM_TRANSLATION_GUIDE.md`：术语、专名与翻译规范。
 - `runtime/`：迁移时的运行包基线，保留用于验证；日常新包生成到 `.local/packages/` 并通过 Release 发布。
+- `static-ui.jsonl`：少量由游戏 UI 树核对的固定标签与数字/日期模板，直接维护，不导入网络捕获或工作台翻译队列。编译时自动合入同一个运行包，并标为 `renderedOnly`；需要插件 1.4.6。字段及验证范围见 [静态 UI 说明](../../docs/static-ui-localization.md)。
 
 状态为 new、translated、reviewed、verified、stale、conflict、needs_review、excluded。机器输出不能标记为人工审校或实机验证；needs_review、冲突与过期译文不发布。
 
